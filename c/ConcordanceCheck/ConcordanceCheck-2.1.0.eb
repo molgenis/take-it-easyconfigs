@@ -1,0 +1,36 @@
+name = 'ConcordanceCheck'
+version = '2.1.0'
+namelower = name.lower()
+homepage = 'https://github.com/molgenis/ConcordanceCheck'
+description = """Various scripts to automate and execute the ConcordanceCheck implemented in the MOLGENIS Compute framework."""
+
+toolchain = {'name': 'dummy', 'version': ''}
+easyblock = 'Tarball'
+
+#
+# Example URL: https://github.com/molgenis/ConcordanceCheck/archive/2.0.0.tar.gz
+# 
+source_urls = [('http://github.com/molgenis/%s/archive/' % (name))]
+sources = [('%s.tar.gz' % (version))]
+
+checksums = ['824733a0d5a9f9f0f5b4a9fafc8ec79c8e5773bd7767c86a185b9b847fcc61c5']
+
+dependencies = [
+       ('CompareGenotypeCalls', '1.8.1', '-Java-8-LTS'),
+]
+
+sanity_check_paths = {
+    'files': [
+        'bin/ConcordanceCheck.sh',
+        'bin/ParseDarwinSamplesheet.sh',
+        'bin/copyConcordanceCheckData.sh',
+        'bin/notifications.sh',
+        'etc/sharedConfig.cfg',
+        'lib/sharedFunctions.bash',
+    ],
+    'dirs': [
+        'etc/cron.d',
+    ]
+}
+
+moduleclass = 'bio'

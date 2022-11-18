@@ -1,0 +1,103 @@
+--- CADD.sh_bk	2020-09-08 05:13:28.422731135 +0000
++++ CADD.sh	2020-09-08 05:47:57.549588194 +0000
+@@ -1,13 +1,18 @@
+ #!/bin/bash
+ 
+-usage="$(basename "$0") [-o <outfile>] [-g <genomebuild>] [-a] <infile>  -- CADD version 1.4
++# HEAD::Add -t help
++usage="$(basename "$0") [-o <outfile>] [-g <genomebuild>] [-a] [-t <tmp-dir>] [-c <nr_cores>] [-s] <infile>  -- CADD version 1.4
+ 
+ where:
+     -h  show this help text
+     -o  out tsv.gz file (generated from input file name if not set)
+     -g  genome build (supported are GRCh37 and GRCh38 [default: GRCh38])
+     -a  include annotation in output
++    -t  temporary dir (please use a tmp-dir if /tmp not enough [default: /tmp])
++    -c  number of cpu cores [default: 1]
++    -s  skip prescoring
+         input vcf of vcf.gz file (required)"
++# TAIL::Add -t help
+ 
+ unset OPTARG
+ unset OPTIND
+@@ -15,7 +20,10 @@
+ GENOMEBUILD="GRCh38"
+ ANNOTATION=false
+ OUTFILE=""
+-while getopts ':ho:g:a' option; do
++CPU_CORES=1
++SKIP=false
++
++while getopts ':ho:g:at:c:s' option; do
+   case "$option" in
+     h) echo "$usage"
+        exit
+@@ -26,6 +34,14 @@
+        ;;
+     a) ANNOTATION=true
+        ;;
++# HEAD::Add -t option
++    t) TMP_DIR=$OPTARG
++       ;;
++# TAIL::Add -t option
++    c) CPU_CORES=$OPTARG
++       ;;
++    s) SKIP=true
++       ;;
+    \?) printf "illegal option: -%s\n" "$OPTARG" >&2
+        echo "$usage" >&2
+        exit 1
+@@ -82,7 +98,9 @@
+ CONVERSION_TABLE=$CADD/data/models/$GENOMEBUILD/conversionTable_CADD1.4-$GENOMEBUILD.txt
+ 
+ # Temp files
+-TMP_FOLDER=$CADD/data/tmp
++# HEAD::Set default temporary directory
++TMP_FOLDER=${TMP_DIR:=/tmp}
++# TAIL::Set default temporary directory
+ TMP_PRE=$TMP_FOLDER/$NAME.pre.tsv.gz
+ TMP_VCF=$TMP_FOLDER/$NAME.vcf
+ TMP_ANNO=$TMP_FOLDER/$NAME.anno.tsv.gz
+@@ -94,7 +112,10 @@
+ ### Pipeline
+ 
+ # Loading the environment
+-source activate cadd-env
++
++# HEAD::Replace Conda by EasyBuild
++# source activate cadd-env 
++# TAIL::Replace Conda by EasyBuild
+ 
+ # File preparation
+ if [ "$FILEFORMAT" == "vcf" ]
+@@ -112,7 +133,7 @@
+ 
+ # Prescoring
+ echo '## Prescored variant file' | gzip -c > $TMP_PRE;
+-if [ -d $PRESCORED_FOLDER ]
++if [ -d $PRESCORED_FOLDER ] && [ "$SKIP" = 'false' ]
+ then
+     for PRESCORED in $(ls $PRESCORED_FOLDER/*.tsv.gz)
+     do
+@@ -127,6 +148,12 @@
+ fi
+ 
+ # Variant annotation
++# HEAD::Add vep to PATH
++if [[ ! ${PATH} =~ ${EBROOTVEP} ]]; then
++    export PATH=${EBROOTVEP}:${PATH}
++fi
++# TAIL::Add vep to PATH
++
+ cat $TMP_VCF \
+ | vep --quiet --cache --buffer 1000 --no_stats --offline --vcf \
+     --dir $CADD/data/annotations/$GENOMEBUILD/vep \
+@@ -134,7 +161,7 @@
+     --assembly $GENOMEBUILD --regulatory --sift b \
+     --polyphen b --per_gene --ccds --domains --numbers --canonical \
+     --total_length --force_overwrite --format vcf --output_file STDOUT \
+-    --warning_file STDERR \
++    --warning_file STDERR --fork ${CPU_CORES}\
+ | python $CADD/src/scripts/annotateVEPvcf.py -c $REFERENCE_CONFIG \
+ | gzip -c > $TMP_ANNO
+ rm $TMP_VCF

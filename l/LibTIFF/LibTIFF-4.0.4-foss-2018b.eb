@@ -1,0 +1,23 @@
+easyblock = 'ConfigureMake'
+
+name = 'LibTIFF'
+version = '4.0.4'
+
+homepage = 'http://www.remotesensing.org/libtiff/'
+description = "tiff: Library and tools for reading and writing TIFF data files"
+
+source_urls = [
+    'http://download.osgeo.org/libtiff/',
+    'ftp://ftp.remotesensing.org/pub/libtiff/',
+]
+sources = ['tiff-%(version)s.tar.gz']
+checksums = ['9aee7107408a128c0c7b24286c0db900']
+
+toolchain = {'name': 'foss', 'version': '2018b'}
+
+sanity_check_paths = {
+    'files': ['bin/tiffinfo'],
+    'dirs': [],
+}
+
+moduleclass = 'lib'

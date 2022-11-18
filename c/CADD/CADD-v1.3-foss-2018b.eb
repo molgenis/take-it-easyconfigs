@@ -1,0 +1,122 @@
+#
+# EasyConfig for Combined Annotation Dependent Depletion (CADD).
+#
+
+easyblock = 'Tarball'
+
+name = 'CADD'
+version = 'v1.3'
+
+homepage = 'http://cadd.gs.washington.edu/home'
+description = """Tool for scoring the deleteriousness of variants in the human genome."""
+
+#
+# Don't use 'dummy' as toolchain version to make sure dependencies are loaded
+# both at build as well as at runtime. With 'dummy' as toolchain version,
+# dependencies will only be loaded at runtime.
+#
+toolchain = {'name': 'foss', 'version': '2018b'}
+
+dependencies = [
+    ('PythonPlus', '2.7.16', '-v21.08.1'),
+    ('HTSlib', '1.14'),
+    ('SAMtools', '1.14'),
+    ('PerlPlus', '5.22.0', '-v17.01.1'),
+    ('Mozilla-CA', '20200520'),
+    ('VEP', '76', '', ('dummy', '')),
+]
+
+#
+# Example URL: http://krishna.gs.washington.edu/download/%(name)s/v1.3/cadd_v1.3_scripts.tgz
+#
+source_urls = [
+    'http://krishna.gs.washington.edu/download/%(name)s/%(version)s/',  # Default URL for scripts prescored variants and primateWGA_annoUpdate.
+    'http://krishna.gs.washington.edu/download/%(name)s/v1.2/',         # Only for annotations which were not updated for v1.3 except for primates.
+]
+sources = [
+{
+        'filename': 'cadd_%(version)s_scripts.tgz',  
+        'extract_cmd': 'tar -xzvf %s -C %(builddir)s/'
+    },
+    {
+        'filename': 'annotations.tgz',
+	'extract_cmd': 'cp %s %(builddir)s/'
+    },
+    #
+    # Overwrite the content of the annotations/primateWGA folder from annotation.tgz with the update from primateWGA_annoUpdate.tgz
+    # and then move the annotations folder inside the main CADD folder.
+    #
+{
+	'filename': 'primateWGA_annoUpdate.tgz',
+	'extract_cmd': 'rm -Rf annotations/primateWGA && tar -xzvf %s -C %(builddir)s/ && mv annotations %(name)s_%(version)s/'
+},
+    #
+    # Do not decompress the pre-scored variant files and their indices, but move them "as is" to the build dir.
+    #
+{
+        'filename': 'InDels.tsv.gz.tbi',
+        'extract_cmd': 'cp %s %(builddir)s/'
+	},
+{
+        'filename': 'InDels.tsv.gz',
+        'extract_cmd': 'cp %s %(builddir)s/'
+	},
+{
+        'filename': 'whole_genome_SNVs.tsv.gz',
+        'extract_cmd': 'cp %s %(builddir)s/'
+	},
+{
+        'filename': 'whole_genome_SNVs.tsv.gz.tbi',
+        'extract_cmd': 'cp %s %(builddir)s/'
+	},
+
+]
+checksums = [
+    '7d516829e89790d737b91bc5d8dd7c121e88341a32c74918f8df63175351d695', # cadd_v1.3_scripts.tgz
+    'be070988a91b55e06ea63a5b02dcc09707eb090b3d9dc5ac6c5e6f350ffb875d', # annotations.tgz
+    '65aa563cecfcbb441b73e20b09c0f3b91b84649b48f480fe6d1cb627c48eafe1', # primateWGA_annoUpdate.tgz
+    'acda1a394915dc026b5ad73918a891ea2e2998e766b5c45cdc2c73bd13b75028', # InDels.tsv.gz.tbi
+    'db94c45744b4133c2cf16c229a9e312cb302f9f6de5018e074a0509810e70df2', # InDels.tsv.gz
+    '6df6e97ad92929c1d3e826b9d54d6936381a5981b1fce7198bc2db5c260eedd4', # whole_genome_SNVs.tsv.gz.tbi
+    '1a43d532fcd97fa05f13a44f0fc86bc8d1531320090755f5a1640a93f6db9806', # whole_genome_SNVs.tsv.gz
+]
+
+#
+# Customizations for the install step.
+#
+bash_scripts = ['config.sh', 'score_anno.sh', 'score.sh']
+python_scripts = [
+    'annotateVEP.py', 'appendPHREDscore.py', 'EDict.py', 'extract_scored.py',
+    'impute.py', 'max_line_hierarchy.py', 'score_linModel.py', 'VCF2vepVCF.py',
+]
+not_scripts = ['README', 'test_output.tsv.gz', 'test.vcf.gz']
+
+#
+# Make scripts executable and move prescored variants to prescored subdir.
+# (Mode may by masked by umask.)
+#
+postinstallcmds = [
+    'mv -v %(builddir)s/InDels.tsv.gz* %(builddir)s/whole_genome_SNVs.tsv.gz* %(installdir)s/prescored/',
+    'sed -i \'s|/home/user/bin/variant_effect_predictor|${EBROOTVEP}|\' %(installdir)s/bin/config.sh',
+    'chmod    a+x            %(installdir)s/bin/*.sh %(installdir)s/bin/src/*.py',
+    'chmod -R g+rwX,o+rX,o-w %(installdir)s/*',
+]
+
+sanity_check_paths = {
+    'files': ['bin/%s' % x for x in bash_scripts]
+             + ['bin/src/%s' % x for x in python_scripts]
+             + ['%s' % x for x in not_scripts],
+    'dirs': ['bin','prescored','annotations'],
+}
+
+moduleclass = 'bio'
+modextrapaths = {'PATH': 'bin'}
+modloadmsg = """
+==================================================================================================
+INFO: To execute CADD use score.sh (or score_anno.sh) and run:
+
+         score.sh  path-to-input/variants.vcf.gz  path-to-output/scored_variants.tsv.gz
+
+NOTE: input must be a valid bgzipped (not gzipped) VCF file.
+==================================================================================================
+"""

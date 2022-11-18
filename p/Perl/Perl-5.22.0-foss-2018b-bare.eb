@@ -1,0 +1,18 @@
+name = 'Perl'
+version = '5.22.0'
+versionsuffix = '-bare'
+
+homepage = 'http://www.perl.org/'
+description = """Larry Wall's Practical Extraction and Report Language"""
+
+toolchain = {'name': 'foss', 'version': '2018b'}
+toolchainopts = {'optarch': True, 'pic': True}
+
+source_urls = ['http://www.cpan.org/src/5.0']
+sources = [SOURCELOWER_TAR_GZ]
+checksums = ['e32cb6a8dda0084f2a43dac76318d68d']
+
+# bare, no extensions
+exts_list = []
+
+moduleclass = 'lang'
