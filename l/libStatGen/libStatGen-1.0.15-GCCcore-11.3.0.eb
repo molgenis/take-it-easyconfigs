@@ -1,4 +1,3 @@
-# This easyconfig was created by Simon Branford of the BEAR Software team at the University of Birmingham.
 easyblock = 'MakeCp'
 
 name = 'libStatGen'
