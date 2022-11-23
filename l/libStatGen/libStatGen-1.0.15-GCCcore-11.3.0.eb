@@ -15,9 +15,9 @@ source_urls = [GITHUB_SOURCE]
 sources = [{'download_filename': '%s.tar.gz' % _hash, 'filename': SOURCELOWER_TAR_GZ}]
 checksums = ['68acb15b6c85f07b0dbf3f8b7a2a99a88fc97d3e29e80bebab82bd2a8e09121e']
 
-builddependencies = [('binutils', '2.35')]
+builddependencies = [('binutils', '2.38')]
 
-dependencies = [('zlib', '1.2.11')]
+dependencies = [('zlib', '1.2.12')]
 
 runtest = 'test'
 
