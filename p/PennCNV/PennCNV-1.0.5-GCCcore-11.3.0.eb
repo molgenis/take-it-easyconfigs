@@ -1,5 +1,3 @@
-# Author: Adam Huffman - Big Data Institute, University of Oxford
-
 easyblock = 'MakeCp'
 
 name = 'PennCNV'
