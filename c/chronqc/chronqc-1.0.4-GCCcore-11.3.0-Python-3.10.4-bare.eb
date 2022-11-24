@@ -1,0 +1,58 @@
+easyblock = 'Bundle'
+
+name = 'chronqc'
+version = '1.0.4'
+
+
+homepage = 'https://github.com/nilesh-tawari/ChronQC'
+description = """A Quality Control Monitoring System for Clinical Next Generation Sequencing."""
+versionsuffix = '-Python-%(pyver)s-bare'
+toolchain = {'name': 'GCCcore', 'version': '11.3.0'}
+
+builddependencies = [
+   ('binutils', '2.38'),
+]
+
+dependencies = [
+    ('libyaml', '0.2.5'),
+    ('libjpeg-turbo', '2.1.3'),
+    ('Python', '3.10.4', '-bare'),
+    ('PythonPlus', '3.10.4', '-v22.11.2'),
+]
+
+
+#checksums = ['7ca486cc959eaca44ed38cc4df2732eeaf408f1cc8ad56cbf7be084a076d517e']
+
+#
+# This is a bundle of extra Python packages to be used with a "bare" Python installation.
+#
+exts_defaultclass = 'PythonPackage'
+exts_filter = ('python -c "import %(ext_name)s"', "")
+exts_default_options = {
+    'download_dep_fail': True,
+    'sanity_pip_check': True,
+    'source_urls': [PYPI_SOURCE],
+    'use_pip': True,
+}
+
+exts_list = [
+('chronqc', version, {
+        'source_urls': ['https://github.com/nilesh-tawari/ChronQC/archive/'],
+        'source_tmpl': '%(version)s.tar.gz',
+        'checksums': [
+            '174dd35fc6a4718188999d4b79305b4c', # chronqc-1.0.4.tar.gz
+        ],
+    }),
+]
+#
+# Run a full sanity check as opposed to just trying to load the Python package.
+#
+full_sanity_check = True
+
+sanity_check_paths = {
+    'files': ['bin/chronqc'],
+    'dirs':  ['lib/python%(pyshortver)s/site-packages'],
+}
+
+modextrapaths = {'PYTHONPATH': ['lib/python%(pyshortver)s/site-packages']}
+moduleclass = 'bio'
