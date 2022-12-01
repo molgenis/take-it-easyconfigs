@@ -22,8 +22,8 @@ toolchain = {'name': 'foss', 'version': '2018b'}
 
 dependencies = [
     ('PythonPlus', '2.7.16', '-v21.08.1', ('foss', '2018b')),
-    ('HTSlib', '1.9', '', ('foss', '2018b')),
-    ('SAMtools', '1.9', '', ('foss', '2018b')),
+    ('HTSlib', '1.14', '', ('foss', '2018b')),
+    ('SAMtools', '1.14', '', ('foss', '2018b')),
     ('VEP', '92.0', '-Perl-5.30.0', ('foss', '2018b')),
 ]
 
@@ -115,7 +115,7 @@ postinstallcmds = [
     # file and alter the permission of `install.sh` and `CADD.sh.orig`
     #
     'chmod 755 %(installdir)s/*.sh %(installdir)s/src/scripts/*.py',
-    'chmod 400 %(installdir)s/install.sh %(installdir)s/CADD.sh.orig',
+#    'chmod 400 %(installdir)s/install.sh %(installdir)s/CADD.sh.orig',
 
     #
     # Annotation files based on genome build GRCh37

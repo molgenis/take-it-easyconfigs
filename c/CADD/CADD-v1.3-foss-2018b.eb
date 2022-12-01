@@ -38,10 +38,10 @@ sources = [
         'filename': 'cadd_%(version)s_scripts.tgz',  
         'extract_cmd': 'tar -xzvf %s -C %(builddir)s/'
     },
-    {
-        'filename': 'annotations.tgz',
-	'extract_cmd': 'cp %s %(builddir)s/'
-    },
+#    {
+#        'filename': 'annotations.tgz',
+#	'extract_cmd': 'cp %s %(builddir)s/'
+#    },
     #
     # Overwrite the content of the annotations/primateWGA folder from annotation.tgz with the update from primateWGA_annoUpdate.tgz
     # and then move the annotations folder inside the main CADD folder.
@@ -61,10 +61,10 @@ sources = [
         'filename': 'InDels.tsv.gz',
         'extract_cmd': 'cp %s %(builddir)s/'
 	},
-{
-        'filename': 'whole_genome_SNVs.tsv.gz',
-        'extract_cmd': 'cp %s %(builddir)s/'
-	},
+#{
+#        'filename': 'whole_genome_SNVs.tsv.gz',
+#        'extract_cmd': 'cp %s %(builddir)s/'
+#	},
 {
         'filename': 'whole_genome_SNVs.tsv.gz.tbi',
         'extract_cmd': 'cp %s %(builddir)s/'
