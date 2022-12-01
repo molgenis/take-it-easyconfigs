@@ -1,0 +1,28 @@
+name = 'opticall'
+version = '0.8.1'
+
+homepage = 'https://github.com/molgenis/molgenis-pipelines'
+description = """This distribution contains several pipelines/protocols/parameter files,
+which you can use 'out-of-the-box' to align and impute your NGS data using MOLGENIS Compute."""
+
+toolchain = {'name': 'foss', 'version': '2022a'}
+easyblock = 'MakeCp'
+
+#
+# Example url:https://bitbucket.org/tss101/opticall/get/master.tar.gz
+#
+
+source_urls = [('https://bitbucket.org/tss101/%s/get/' % (name))]
+sources = ['master.tar.gz']
+checksums = [
+    'f6829ff41ab23a9a76ca06164f3bf613329b0378cc9e7446f31f0e4912179f96',  # tss101-opticall-090d8ed4136a.tar.gz
+]
+
+files_to_copy = ["opticall"]
+
+sanity_check_paths = {
+    'files': ["opticall"],
+    'dirs': ['']
+}
+
+moduleclass = 'bio'
