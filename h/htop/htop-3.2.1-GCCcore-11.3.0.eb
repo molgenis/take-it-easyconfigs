@@ -6,7 +6,7 @@ version = '3.2.1'
 description = """An interactive, ncursus-based process viewer."""
 homepage = 'https://htop.dev/'
 
-toolchain = {'name': 'GCCcore', 'version': '7.3.0'}
+toolchain = {'name': 'GCCcore', 'version': '11.3.0'}
 
 source_urls = ['https://github.com/htop-dev/%(name)s/archive/']
 sources = ['%(version)s.tar.gz']
@@ -19,6 +19,7 @@ checksums = [
 ]
 
 builddependencies = [
+    ('binutils', '2.38'),
     ('Autotools', '20220317')
 ]
 
