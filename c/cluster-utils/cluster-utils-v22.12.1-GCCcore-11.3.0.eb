@@ -55,7 +55,7 @@ postinstallcmds = [
 #
 # Sanity checking.
 #
-executables = [
+local_executables = [
     'caccounts',
     'cfinger',
     'cnodes',
@@ -71,7 +71,7 @@ executables = [
     'sjeff',
 ]
 sanity_check_paths = {
-    'files': ['README.md'] + ['bin/%s' % x for x in executables],
+    'files': ['README.md'] + ['bin/%s' % x for x in local_executables],
     'dirs': ['bin']
 }
 sanity_check_commands = [('quota', '-h')]
