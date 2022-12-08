@@ -1,0 +1,29 @@
+diff -ru htop-3.2.1.original/linux/LinuxProcess.c htop-3.2.1.patched/linux/LinuxProcess.c
+--- htop-3.2.1.original/linux/LinuxProcess.c	2022-06-03 00:54:39.000000000 +0000
++++ htop-3.2.1.patched/linux/LinuxProcess.c	2022-12-05 17:37:16.027350415 +0000
+@@ -60,7 +60,7 @@
+    [PERCENT_CPU] = { .name = "PERCENT_CPU", .title = " CPU%", .description = "Percentage of the CPU time the process used in the last sampling", .flags = 0, .defaultSortDesc = true, .autoWidth = true, },
+    [PERCENT_NORM_CPU] = { .name = "PERCENT_NORM_CPU", .title = "NCPU%", .description = "Normalized percentage of the CPU time the process used in the last sampling (normalized by cpu count)", .flags = 0, .defaultSortDesc = true, .autoWidth = true, },
+    [PERCENT_MEM] = { .name = "PERCENT_MEM", .title = "MEM% ", .description = "Percentage of the memory the process is using, based on resident memory size", .flags = 0, .defaultSortDesc = true, },
+-   [USER] = { .name = "USER", .title = "USER       ", .description = "Username of the process owner (or user ID if name cannot be determined)", .flags = 0, },
++   [USER] = { .name = "USER", .title = "USER                 ", .description = "Username of the process owner (or user ID if name cannot be determined)", .flags = 0, },
+    [TIME] = { .name = "TIME", .title = "  TIME+  ", .description = "Total time the process has spent in user and system time", .flags = 0, .defaultSortDesc = true, },
+    [NLWP] = { .name = "NLWP", .title = "NLWP ", .description = "Number of threads in the process", .flags = 0, .defaultSortDesc = true, },
+    [TGID] = { .name = "TGID", .title = "TGID", .description = "Thread group ID (i.e. process ID)", .flags = 0, .pidColumn = true, },
+diff -ru htop-3.2.1.original/Process.c htop-3.2.1.patched/Process.c
+--- htop-3.2.1.original/Process.c	2022-06-03 00:54:39.000000000 +0000
++++ htop-3.2.1.patched/Process.c	2022-12-05 17:34:22.206297905 +0000
+@@ -956,11 +956,11 @@
+          attr = CRT_colors[PROCESS_SHADOW];
+ 
+       if (this->user) {
+-         Process_printLeftAlignedField(str, attr, this->user, 10);
++         Process_printLeftAlignedField(str, attr, this->user, 20);
+          return;
+       }
+ 
+-      xSnprintf(buffer, n, "%-10d ", this->st_uid);
++      xSnprintf(buffer, n, "%-20d ", this->st_uid);
+       break;
+    default:
+       if (DynamicColumn_writeField(this, str, field))

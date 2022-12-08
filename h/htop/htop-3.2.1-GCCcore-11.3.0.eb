@@ -1,0 +1,41 @@
+easyblock = 'ConfigureMake'
+
+name = 'htop'
+version = '3.2.1'
+
+description = """An interactive, ncursus-based process viewer."""
+homepage = 'https://htop.dev/'
+
+toolchain = {'name': 'GCCcore', 'version': '11.3.0'}
+
+source_urls = ['https://github.com/htop-dev/%(name)s/archive/']
+sources = ['%(version)s.tar.gz']
+patches = ['%(name)s-%(version)s-longer-user-names.patch']
+
+checksums = [
+    'b5ffac1949a8daaabcffa659c0964360b5008782aae4dfa7702d2323cfb4f438',  # htop-3.2.1.tar.gz
+    'f79de5583be0ee924d2d69c7878ae7a8921463e1886caf918d97e3748777be92',  # htop-3.2.1-longer-user-names.patch
+    
+]
+
+builddependencies = [
+    ('binutils', '2.38'),
+    ('Autotools', '20220317')
+]
+
+dependencies = [
+    ('ncurses', '6.3'),
+]
+
+#
+# The source distro does not contain a configure script out of the box:
+# Execute autogen.sh, which calls various tools from the Autotools module to create the configure script.
+#
+preconfigopts = './autogen.sh && chmod a+x configure && '
+
+sanity_check_paths = {
+    'files': ['bin/htop', 'share/man/man1/htop.1'],
+    'dirs': [''],
+}
+
+moduleclass = 'tools'

@@ -1,0 +1,26 @@
+easyblock = 'ConfigureMake'
+
+name = 'nano'
+version = '7.0'
+
+homepage = 'http://www.nano-editor.org/'
+description = """Small and friendly text editor. A free replacement for Pico."""
+
+toolchain = {'name': 'GCCcore', 'version': '11.3.0'}
+
+sources = [SOURCE_TAR_GZ]
+source_urls = ['http://www.nano-editor.org/dist/v%s' % version.split('.')[0]]
+checksums = ['767d595237a4b40b981e2daaeb31de94283d60b1fae03fbd52a67d95c454518a']
+
+builddependencies = [
+    ('binutils', '2.38'),
+]
+
+dependencies = [('ncurses', '6.3')]
+
+sanity_check_paths = {
+    'files': ['bin/nano'],
+    'dirs': [],
+}
+
+moduleclass = 'tools'
