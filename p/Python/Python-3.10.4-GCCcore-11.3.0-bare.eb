@@ -30,6 +30,35 @@ dependencies = [
     ('OpenSSL', '1.1.1q'),
 ]
 
-install_pip = True
 
+#osdependencies = [('openssl-devel', 'libssl-dev', 'libopenssl-devel')]
+
+#
+# Symlink 'pip' command to 'pip3' that is included with Python installation.
+# Required for updating pip using pip to version included in extensions from an PythonPlus bundle.
+#
+installopts = " && ln -s %(installdir)s/bin/pip3 %(installdir)s/bin/pip"
+
+exts_default_options = {
+    'download_dep_fail': True,
+    'sanity_pip_check': True,
+    'source_urls': [PYPI_SOURCE],
+    'use_pip': False,
+}
+
+#
+# This is a "bare" Python, but do include minimal list of packages required to install other packages.
+#
+exts_list = [
+    ('setuptools', '65.6.3', {
+        'checksums': ['a7620757bf984b58deaf32fc8a4577a9bbc0850cf92c20e1ce41c38c19e5fb75'],
+    }),
+    ('wheel', '0.38.4', {
+        'checksums': ['965f5259b566725405b05e7cf774052044b1ed30119b5d586b2703aafe8719ac'],
+    }),
+    ('pip', '22.3.1', {
+        'checksums': ['65fd48317359f3af8e593943e6ae1506b66325085ea64b706a998c6e83eeaf38'],
+    }),
+
+]
 moduleclass = 'lang'

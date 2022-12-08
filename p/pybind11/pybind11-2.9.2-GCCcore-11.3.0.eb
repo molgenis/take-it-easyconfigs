@@ -1,0 +1,48 @@
+name = 'pybind11'
+version = '2.9.2'
+
+homepage = 'https://pybind11.readthedocs.io'
+description = """pybind11 is a lightweight header-only library that exposes C++ types in Python and vice versa,
+ mainly to create Python bindings of existing C++ code."""
+
+toolchain = {'name': 'GCCcore', 'version': '11.3.0'}
+
+source_urls = ['https://github.com/pybind/pybind11/archive/']
+sources = ['v%(version)s.tar.gz']
+checksums = ['6bd528c4dbe2276635dc787b6b1f2e5316cf6b49ee3e150264e455a0d68d19c1']
+
+builddependencies = [
+    ('binutils', '2.38'),
+    ('CMake', '3.23.1'),
+    ('Eigen', '3.4.0'),
+]
+dependencies = [
+#('PythonPlus', '3.10.4','-v22.11.5'),
+('Python', '3.10.4'),
+]
+
+configopts = "-DPYTHON_EXECUTABLE=$EBROOTPYTHON/bin/python"
+
+install_pip = True
+
+exts_default_options = {
+    'download_dep_fail': True,
+    'sanity_pip_check': True,
+    'source_urls': [PYPI_SOURCE],
+    'use_pip': True,
+}
+
+moduleclass = 'lib'
+
+exts_list = [
+    ('importlib-metadata', '5.1.0', {
+        'checksums': ['d5059f9f1e8e41f80e9c56c2ee58811450c31984dfa625329ffd7c0dad88a73b'],
+    }),
+    ('pytz', '2022.6', {
+        'checksums': ['e89512406b793ca39f5971bc999cc538ce125c0e51c27941bef4568b460095e2'],
+    }),
+    ('typing-extensions', '4.4.0', {
+        'checksums': ['1511434bb92bf8dd198c12b1cc812e800d4181cfcb867674e0f8279cc93087aa'],
+    }),
+
+]
