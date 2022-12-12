@@ -18,36 +18,35 @@ py2ver = '2.7.16'
 #
 source_urls = [('http://github.com/molgenis/%s/archive/' % (name))]
 sources = [('%s.tar.gz' % (version))]
-checksums = ['08017ca2def7ddb8a0a270e9b7f79e1d1f4e4597f335f285ebc1027369d9492d']
+checksums = ['333cfc2752d839bf8550e030f07edd4aa303795e8f9e472671a1b5b186cd5e9f']
 
 #
 # Dependencies.
 #
 dependencies = [
-    ('BEDTools', '2.30.0'),
+    ('VCFped','20180527_d1bbdf5','-Python-%s' % (py2ver),('foss','2018b')),
+    ('manta','1.6.0'),
     ('BCFtools', '1.16'),
+    ('BEDTools', '2.30.0'),
+    ('BWA', '0.7.17-20220923-139f68f'),
+#    ('CADD', 'v1.4','',('system','')),
     ('FastQC', '0.11.9', '-Java-%s' % (javaver), ('system', '')),
     ('GATK', '4.2.4.1', '-Java-8-LTS', ('system', '')),
     ('gVCF2BED','1.0.0'),
+    ('HTSlib', '1.16'),
     ('ngs-utils', '22.10.1','',('system','')),
     ('pigz', '2.7',''),
     ('picard', '2.26.10', '-Java-%s' % (javaver), ('system', '')),
-    ('sambamba', '0.7.0', '', ('system', '')),
-    ('SAMtools', '1.16.1'),
-    ('HTSlib', '1.16'),
-    ('vcfanno', 'v0.3.3', '', ('system', '')),
-    ('BWA', '0.7.17-20220923-139f68f'),
     ('gavin-plus', '1.5.0', '-Java-%s' % (javaver), ('system', '')),
     ('io_lib', '1.14.11'),
-    ('manta','1.6.0'),
     ('Molgenis-Compute', 'v19.01.1', '-Java-%s' % (javaver), ('system', '')),
+    ('multiqc', '1.12'),
+    ('R','4.2.1','-bare'),
+    ('sambamba', '0.7.0', '', ('system', '')),
+    ('SAMtools', '1.16.1'),
     ('seqtk', '1.3'),
     ('snpEff', '4.3t', '-Java-%s' % (javaver), ('system', '')),
-#    ('VCFped','20180527_d1bbdf5','-Python-%s' % (py2ver),('foss','2018b')),
-    ('multiqc', '1.12'),
-    ('R','4.2.1','-bare',('foss','2022a')),
-    # ToDo: update the modules below.
-#    ('CADD', 'v1.3', '', ('system', '')),
+    ('vcfanno', 'v0.3.3', '', ('system', '')),
 ]
 
 
