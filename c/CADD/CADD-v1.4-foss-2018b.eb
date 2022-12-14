@@ -20,10 +20,10 @@ Tool for scoring the deleteriousness of variants in the human genome(v1.4).
 toolchain = {'name': 'foss', 'version': '2018b'}
 
 dependencies = [
-    ('PythonPlus', '2.7.16', '-v21.08.1', ('foss', '2018b')),
-    ('HTSlib', '1.16'),
-    ('SAMtools', '1.16.1'),
-    ('VEP', '107'),
+	('PythonPlus', '2.7.16', '-v21.08.1', ('foss', '2018b')),
+	('HTSlib', '1.16','',('GCCcore','11.3.0')),
+	('SAMtools', '1.16.1','',('GCCcore','11.3.0')),
+	('VEP', '107','',('GCC','11.3.0')),
 ]
 
 #
