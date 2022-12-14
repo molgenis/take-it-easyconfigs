@@ -29,7 +29,7 @@ dependencies = [
     ('BCFtools', '1.16'),
     ('BEDTools', '2.30.0'),
     ('BWA', '0.7.17-20220923-139f68f'),
-#    ('CADD', 'v1.4','',('system','')),
+    ('CADD', 'v1.4','',('foss','2018b')),
     ('FastQC', '0.11.9', '-Java-%s' % (javaver), ('system', '')),
     ('GATK', '4.2.4.1', '-Java-8-LTS', ('system', '')),
     ('gVCF2BED','1.0.0'),
