@@ -1,0 +1,51 @@
+# EasyBuild reciPY as per https://github.com/easybuilders/easybuild
+#
+# Copyright:: Copyright 2012-2013 The Cyprus Institute
+# Authors::   Andreas Panteli <a.panteli@cyi.ac.cy>,
+#             Thekla Loizou <t.loizou@cyi.ac.cy>,
+#             George Tsouloupas <g.tsouloupas@cyi.ac.cy>
+# License::   MIT/GPL
+#
+# Updated: Pavel Grochal (INUITS)
+easyblock = 'PythonPackage'
+
+name = 'Cython'
+version = '0.29.32'
+
+homepage = 'https://cython.org/'
+description = """
+Cython is an optimising static compiler for both the Python programming
+language and the extended Cython programming language (based on Pyrex).
+"""
+docurls = [
+    'https://cython.org/#documentation',
+    'https://github.com/cython/cython',
+]
+
+toolchain = {'name': 'GCCcore', 'version': '11.3.0'}
+
+sources = [SOURCE_TAR_GZ]
+checksums = ['8733cf4758b79304f2a4e39ebfac5e92341bce47bcceb26c1254398b2f8c1af7']
+
+builddependencies = [('binutils', '2.38')]
+
+# Can't use multi_dep because EBPYTHONPREFIXES are not loaded in order.
+# This results in not beeing able to choose Cython version in multi_dep.
+dependencies = [('Python', '3.10.4','-bare')]
+
+download_dep_fail = True
+
+use_pip = True
+
+sanity_pip_check = True
+
+sanity_check_paths = {
+    'files': ['bin/cygdb', 'bin/cython', 'bin/cythonize'],
+    'dirs': ['lib/python%(pyshortver)s/site-packages'],
+}
+
+sanity_check_commands = [
+    'cython --version',
+]
+
+moduleclass = 'lang'
