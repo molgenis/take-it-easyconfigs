@@ -393,9 +393,9 @@ charset-normalizer==2.1.1 \
     # via
     #   -r PythonPlus-3.10.4-GCCcore-11.3.0-v22.11.3-requirements.txt
     #   requests
-cleo==1.0.0a5 \
-    --hash=sha256:097c9d0e0332fd53cc89fc11eb0a6ba0309e6a3933c08f7b38558555486925d3 \
-    --hash=sha256:ff53056589300976e960f75afb792dfbfc9c78dcbb5a448e207a17b643826360
+cleo==2.0.0 \
+    --hash=sha256:daad7ff76134ebe2c7bf74520b1bbd59e6e77026535b967efc5a15a0eaa2e19c \
+    --hash=sha256:fbc5cb141cbc31ea8ffd3d5cd67d3b183fa38aa5098fd37e39e9a953a232fda9
     # via
     #   -r PythonPlus-3.10.4-GCCcore-11.3.0-v22.11.3-requirements.txt
     #   poetry
