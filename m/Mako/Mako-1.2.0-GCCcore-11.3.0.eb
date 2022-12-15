@@ -18,8 +18,8 @@ sanity_pip_check = True
 builddependencies = [('binutils', '2.38')]
 
 dependencies = [
-('PythonPlus', '3.10.4','-v22.11.2'),
-('Python', '3.10.4'),
+	('PythonPlus', '3.10.4','-v22.11.2'),
+	('Python', '3.10.4'),
 ]
 
 sanity_check_paths = {

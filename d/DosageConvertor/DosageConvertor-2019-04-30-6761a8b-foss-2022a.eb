@@ -20,7 +20,6 @@ checksums = [
 
 builddependencies = [
     ('CMake', '3.23.1'),
-#    ('libStatGen', '20210125-fae4fca', '', ('foss','2018b'))
     ('libStatGen', '1.0.15'),
 ]
 
