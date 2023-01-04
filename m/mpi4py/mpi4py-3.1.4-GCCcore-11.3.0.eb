@@ -14,14 +14,13 @@ sources = [SOURCE_TAR_GZ]
 checksums = ['17858f2ebc623220d0120d1fa8d428d033dde749c4bc35b33d81a66ad7f93480']
 
 dependencies = [
-	('PythonPlus', '3.10.4','-v22.11.3'),
-	('Python', '3.10.4','-bare'),
+	('PythonPlus', '3.10.4','-v23.01.1'),
 	('OpenMPI','4.1.4','',('GCC','11.3.0'))
 ]
 
 sanity_check_paths = {
     'files': [],
-    'dirs': ['lib/python%(pyshortver)s/site-packages/mpi4py'],
+    'dirs': ['lib/python3.10/site-packages/mpi4py'],
 }
 
 moduleclass = 'lib'
