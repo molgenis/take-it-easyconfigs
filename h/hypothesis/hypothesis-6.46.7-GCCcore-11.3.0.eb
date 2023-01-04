@@ -1,4 +1,4 @@
-easyblock = 'PythonPackage'
+easyblock = 'PythonBundle'
 
 name = 'hypothesis'
 version = '6.46.7'
@@ -10,16 +10,29 @@ description = """Hypothesis is an advanced testing library for Python. It lets y
 
 toolchain = {'name': 'GCCcore', 'version': '11.3.0'}
 
-sources = [SOURCE_TAR_GZ]
 checksums = ['967009fa561b3a3f8363a73d71923357271c37dc7fa27b30c2d21a1b6092b240']
 
 builddependencies = [('binutils', '2.38')]
 
 dependencies = [
-('PythonPlus', '3.10.4','-v22.11.2'),
-('Python', '3.10.4')
+	('Python', '3.10.4'),
 ]
+exts_list = [
+    ('sortedcontainers', '2.4.0', {
+        'checksums': [
+		'25caa5a06cc30b6b83d11423433f65d1f9d76c4c6a0c90e3379eaa43b9bfdb88',
+		'a163dcaede0f1c021485e957a39245190e74249897e2ae4b2aa38595db237ee0'
+	],
+    }),
+    ('attrs', '22.1.0', {
+        'checksums': [
+		'29adc2665447e5191d0e7c568fde78b21f9672d344281d0c6e1ab085429b22b6',
+		'86efa402f67bf2df34f51a335487cf46b1ec130d02b8d39fd248abfd30da551c'
+	],
+    }),
 
+
+]
 use_pip = True
 download_dep_fail = True
 sanity_pip_check = True

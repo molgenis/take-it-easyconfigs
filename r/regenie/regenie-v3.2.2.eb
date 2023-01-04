@@ -15,10 +15,7 @@ checksums = ['90b0a162c40c25ce1bebd524d0c940e235a13aa5bd46235a413fd4d7f173a961']
 
 
 postinstallcmds = [
-#	"mkdir -p %(installdir)s/bin",
-#	"chmod 755 %(installdir)s/bin",
 	"ln -s %(installdir)s/bin/" + custom_filename + " %(installdir)s/bin/%(name)s",
-#	"mv %(installdir)s/%(custom_filename)s %(installdir)s/bin/%(name)s",
 ]
                                                                                 
 sanity_check_paths = {

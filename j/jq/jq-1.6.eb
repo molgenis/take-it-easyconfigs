@@ -12,10 +12,13 @@ sources = [('jq-linux64')]
 
 checksums = ['af986793a515d500ab2d35f8d2aecd656e764504b789b66d7e1a0b727a124c44']
 
-builddependencies = []
+postinstallcmds = [
+	"mkdir -p %(installdir)s/bin",
+	"mv %(installdir)s/jq-linux64 %(installdir)s/bin/",
 
+]
 sanity_check_paths = {
-    'files': ['jq-linux64'],
+    'files': ['bin/jq-linux64'],
     'dirs': ['']
 }
 
