@@ -11,12 +11,11 @@ toolchainopts = {'pic': True, 'lowopt': True}
 builddependencies = [
     ('hypothesis', '6.46.7'),
     ('UnZip', '6.0'),
-    ('PythonPlus', '3.10.4', '-v22.11.4'),
+    ('PythonPlus', '3.10.4', '-v23.01.1'),
 ]
 
 dependencies = [
     ('pybind11', '2.9.2'),  # required by scipy
-    ('PythonPlus', '3.10.4', '-v22.11.4'),
 ]
 
 

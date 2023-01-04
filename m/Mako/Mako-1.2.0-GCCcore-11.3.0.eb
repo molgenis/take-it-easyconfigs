@@ -18,13 +18,12 @@ sanity_pip_check = True
 builddependencies = [('binutils', '2.38')]
 
 dependencies = [
-	('PythonPlus', '3.10.4','-v22.11.2'),
-	('Python', '3.10.4'),
+	('PythonPlus', '3.10.4','-v23.01.1')
 ]
 
 sanity_check_paths = {
     'files': ['bin/mako-render'],
-    'dirs': ['lib/python%(pyshortver)s/site-packages/%(namelower)s'],
+    'dirs': ['lib/python3.10/site-packages/%(namelower)s'],
 }
 
 sanity_check_commands = ["mako-render --help"]

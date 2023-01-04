@@ -17,7 +17,7 @@ builddependencies = [
     ('Eigen', '3.4.0'),
 ]
 dependencies = [
-	('PythonPlus', '3.10.4','-v22.11.4'),
+	('PythonPlus', '3.10.4','-v23.01.1'),
 ]
 
 configopts = "-DPYTHON_EXECUTABLE=$EBROOTPYTHON/bin/python"

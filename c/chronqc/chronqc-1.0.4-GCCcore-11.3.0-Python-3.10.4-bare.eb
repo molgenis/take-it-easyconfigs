@@ -6,7 +6,7 @@ version = '1.0.4'
 
 homepage = 'https://github.com/nilesh-tawari/ChronQC'
 description = """A Quality Control Monitoring System for Clinical Next Generation Sequencing."""
-versionsuffix = '-Python-%(pyver)s-bare'
+versionsuffix = '-Python-3.10.4-bare'
 toolchain = {'name': 'GCCcore', 'version': '11.3.0'}
 
 builddependencies = [
@@ -16,8 +16,7 @@ builddependencies = [
 dependencies = [
     ('libyaml', '0.2.5'),
     ('libjpeg-turbo', '2.1.3'),
-    ('Python', '3.10.4', '-bare'),
-    ('PythonPlus', '3.10.4', '-v22.11.2'),
+    ('PythonPlus', '3.10.4', '-v23.01.1'),
 ]
 
 
@@ -51,8 +50,8 @@ full_sanity_check = True
 
 sanity_check_paths = {
     'files': ['bin/chronqc'],
-    'dirs':  ['lib/python%(pyshortver)s/site-packages'],
+    'dirs':  ['lib/python3.10/site-packages'],
 }
 
-modextrapaths = {'PYTHONPATH': ['lib/python%(pyshortver)s/site-packages']}
+modextrapaths = {'PYTHONPATH': ['lib/python3.10/site-packages']}
 moduleclass = 'bio'
