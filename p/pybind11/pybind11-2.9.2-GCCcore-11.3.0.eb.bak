@@ -17,11 +17,32 @@ builddependencies = [
     ('Eigen', '3.4.0'),
 ]
 dependencies = [
-	('PythonPlus', '3.10.4','-v22.11.4'),
+('PythonPlus', '3.10.4','-v22.11.3'),
+#('Python', '3.10.4'),
 ]
 
 configopts = "-DPYTHON_EXECUTABLE=$EBROOTPYTHON/bin/python"
 
 install_pip = True
 
+exts_default_options = {
+    'download_dep_fail': True,
+    'sanity_pip_check': True,
+    'source_urls': [PYPI_SOURCE],
+    'use_pip': True,
+}
+
 moduleclass = 'lib'
+
+exts_list = [
+    ('importlib-metadata', '5.1.0', {
+        'checksums': ['d5059f9f1e8e41f80e9c56c2ee58811450c31984dfa625329ffd7c0dad88a73b'],
+    }),
+    ('pytz', '2022.6', {
+        'checksums': ['e89512406b793ca39f5971bc999cc538ce125c0e51c27941bef4568b460095e2'],
+    }),
+    ('typing-extensions', '4.4.0', {
+        'checksums': ['1511434bb92bf8dd198c12b1cc812e800d4181cfcb867674e0f8279cc93087aa'],
+    }),
+
+]

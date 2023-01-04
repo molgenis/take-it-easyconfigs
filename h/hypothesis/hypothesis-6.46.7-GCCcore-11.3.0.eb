@@ -10,7 +10,6 @@ description = """Hypothesis is an advanced testing library for Python. It lets y
 
 toolchain = {'name': 'GCCcore', 'version': '11.3.0'}
 
-#sources = [SOURCE_TAR_GZ]
 checksums = ['967009fa561b3a3f8363a73d71923357271c37dc7fa27b30c2d21a1b6092b240']
 
 builddependencies = [('binutils', '2.38')]
