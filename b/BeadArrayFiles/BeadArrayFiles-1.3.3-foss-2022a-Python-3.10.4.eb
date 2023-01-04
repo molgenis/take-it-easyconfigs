@@ -16,7 +16,6 @@ checksums = [
 ]
 
 dependencies = [
-#    ('Python', '3.10.4'),
     ('PythonPlus', '3.10.4', '-v23.01.1'),
 ]
 
