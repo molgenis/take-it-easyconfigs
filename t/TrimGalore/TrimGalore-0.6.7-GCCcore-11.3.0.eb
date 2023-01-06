@@ -18,11 +18,10 @@ checksums = [
 ]
 
 dependencies = [
-    ('Python', '3.10.4'),
     ('Java', '11', '', SYSTEM),
     ('pigz', '2.7'),
     ('Perl', '5.34.1', '-bare'),
-    ('cutadapt', '3.5'),
+    ('cutadapt', '4.2'),
     ('FastQC', '0.11.9', '-Java-%(javaver)s', SYSTEM),
 ]
 
