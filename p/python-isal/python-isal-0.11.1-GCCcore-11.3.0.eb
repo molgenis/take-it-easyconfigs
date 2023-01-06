@@ -18,6 +18,7 @@ checksums = ['43d885814f1ee19f5c3a7e9ada3d696fe75f19c0853728fe0ade564bc021a78f']
 builddependencies = [('binutils', '2.38')]
 
 dependencies = [
+    ('Python', '3.10.4', '-bare'),
     ('PythonPlus', '3.10.4', '-v23.01.1'),
     ('ISA-L', '2.30.0'),
 ]
