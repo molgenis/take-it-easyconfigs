@@ -13,9 +13,7 @@ builddependencies = [('binutils', '2.38')]
 
 dependencies = [
     ('pigz', '2.7'),
-    ('Python', '3.10.4', '-bare'),
-    ('PythonPlus', '%(pyver)s', '-v23.01.1'),
-    ('python-isal', '0.11.1'),
+    ('Python', '3.10.4'),
 ]
 
 use_pip = True
