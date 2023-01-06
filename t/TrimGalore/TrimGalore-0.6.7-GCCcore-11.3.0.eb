@@ -3,8 +3,6 @@ easyblock = 'Tarball'
 name = 'TrimGalore'
 version = '0.6.7'
 
-_local_executable = 'trim_galore'
-
 homepage = 'https://www.bioinformatics.babraham.ac.uk/projects/trim_galore/'
 description = """Trim Galore! is a wrapper script to automate quality and adapter
 trimming as well as quality control, with some added functionality to remove biased
@@ -13,7 +11,7 @@ methylation positions for RRBS sequence files (for directional, non-directional
 
 toolchain = {'name': 'GCCcore', 'version': '11.3.0'}
 
-source_urls = ['https://github.com/FelixKrueger/TrimGalore/archive/']
+source_urls = ['https://github.com/FelixKrueger/%(name)s/archive/']
 sources = ['%(version)s.tar.gz']
 checksums = [
     '49b4622c9f839f8a7037fa2f7de9ab873e4fb702f29c14b4d7f095abf6738f74',  # 0.6.7.tar.gz
@@ -28,16 +26,17 @@ dependencies = [
 ]
 
 postinstallcmds = [
-    "mkdir %(installdir)s/bin && mv %(installdir)s/%(_local_executable)s %(installdir)s/bin/%(_local_executable)s",
+    'mkdir "%(installdir)s/bin"',
+    'mv -v "%(installdir)s/trim_galore" "%(installdir)s/bin/trim_galore"',
 ]
 
-fix_perl_shebang_for = ['bin/%(_local_executable)s']
+fix_perl_shebang_for = ['bin/trim_galore']
 
 sanity_check_paths = {
-    'files': ["bin/%(_local_executable)s"],
+    'files': ["bin/trim_galore"],
     'dirs': [],
 }
 
-sanity_check_commands = [('%(_local_executable)s', '-v')]
+sanity_check_commands = [('trim_galore', '-v')]
 
 moduleclass = 'bio'
