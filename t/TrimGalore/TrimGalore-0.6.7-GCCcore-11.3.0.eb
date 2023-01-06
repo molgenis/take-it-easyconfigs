@@ -3,6 +3,8 @@ easyblock = 'Tarball'
 name = 'TrimGalore'
 version = '0.6.7'
 
+_local_executable = 'trim_galore'
+
 homepage = 'https://www.bioinformatics.babraham.ac.uk/projects/trim_galore/'
 description = """Trim Galore! is a wrapper script to automate quality and adapter
 trimming as well as quality control, with some added functionality to remove biased
@@ -26,16 +28,16 @@ dependencies = [
 ]
 
 postinstallcmds = [
-    "mkdir %(installdir)s/bin && mv %(installdir)s/%(namelower)s %(installdir)s/bin/%(namelower)s",
+    "mkdir %(installdir)s/bin && mv %(installdir)s/%(_local_executable)s %(installdir)s/bin/%(_local_executable)s",
 ]
 
-fix_perl_shebang_for = ['bin/%(namelower)s']
+fix_perl_shebang_for = ['bin/%(_local_executable)s']
 
 sanity_check_paths = {
-    'files': ["bin/trim_galore"],
+    'files': ["bin/%(_local_executable)s"],
     'dirs': [],
 }
 
-sanity_check_commands = [('trim_galore', '-v')]
+sanity_check_commands = [('%(_local_executable)s', '-v')]
 
 moduleclass = 'bio'
