@@ -1776,9 +1776,9 @@ werkzeug==0.15.6 \
     # via
     #   -r /apps/software/easyconfigs/easybuild-easyconfigs-2.8.43/easybuild/easyconfigs/p/PythonPlus/PythonPlus-2.7.16-foss-2018b-v21.08.1-requirements.txt
     #   pytest-localserver
-wheel==0.33.4 \
-    --hash=sha256:5e79117472686ac0c4aef5bad5172ea73a1c2d1646b808c35926bd26bdfb0c08 \
-    --hash=sha256:62fcfa03d45b5b722539ccbc07b190e4bfff4bb9e3a4d470dd9f6a0981002565
+wheel==0.38.1 \
+    --hash=sha256:7a95f9a8dc0924ef318bd55b616112c70903192f524d120acc614f59547a9e1f \
+    --hash=sha256:ea041edf63f4ccba53ad6e035427997b3bb10ee88a4cd014ae82aeb9eea77bb9
     # via -r /apps/software/easyconfigs/easybuild-easyconfigs-2.8.43/easybuild/easyconfigs/p/PythonPlus/PythonPlus-2.7.16-foss-2018b-v21.08.1-requirements.txt
 xgboost==0.82 \
     --hash=sha256:50619aa6ade391fe0584ff1c9011451cd0c570fcedf94e6d7b3eaa324cb0db31 \
