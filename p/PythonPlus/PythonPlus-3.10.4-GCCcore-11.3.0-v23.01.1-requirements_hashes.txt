@@ -1147,9 +1147,9 @@ jupyter-client==7.4.8 \
     #   -r /home/umcg-rkanninga/PythonPlus-3.10.4-GCCcore-11.3.0-v22.11.4-requirements.txt
     #   ipykernel
     #   nbclient
-jupyter-core==5.1.2 \
-    --hash=sha256:0f99cc639c8d00d591acfcc028aeea81473ea6c72fabe86426398220e2d91b1d \
-    --hash=sha256:62b00d52f030643d29f86aafdfd9b36d42421823599a272eb4c2df1d1cc7f723
+jupyter-core==4.11.2 \
+    --hash=sha256:3815e80ec5272c0c19aad087a0d2775df2852cfca8f5a17069e99c9350cecff8 \
+    --hash=sha256:c2909b9bc7dca75560a6c5ae78c34fd305ede31cd864da3c0d0bb2ed89aa9337
     # via
     #   -r /home/umcg-rkanninga/PythonPlus-3.10.4-GCCcore-11.3.0-v22.11.4-requirements.txt
     #   jupyter-client
