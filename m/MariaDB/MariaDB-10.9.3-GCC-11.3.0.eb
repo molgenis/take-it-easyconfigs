@@ -46,7 +46,7 @@ configopts += "-DWITH_PCRE=auto "  # External download sometimes fails so we bui
 configopts += "-DWITH_ZLIB=system "
 configopts += "-DWITH_EMBEDDED_SERVER=ON "  # for libmysqld.so & co
 configopts += "-DWITH_SAFEMALLOC=OFF "  # Disable memory debugger with jemalloc
-
+configopts += "-DWITH_SYSTEMD=no "
 sanity_check_commands = ["mysql --help", "mysqltest --help"]
 
 sanity_check_paths = {

@@ -1,0 +1,52 @@
+--- v1.4-foss-2018b/CADD.sh	2023-01-30 15:02:15.319194000 +0000
++++ v1.4-foss-2018b_1/CADD.sh	2023-01-30 15:08:54.219782550 +0000
+@@ -65,6 +65,7 @@
+ 
+ SCRIPT=$(readlink -f "$0")
+ export CADD=$(dirname "$SCRIPT")
++export CADD_DATAPATH="/apps/data/CADD/"
+ 
+ if [ "$FILEFORMAT" != "vcf" ] && [ "$FILEFORMAT" != "vcf.gz" ]
+ then
+@@ -91,7 +92,7 @@
+ fi
+ 
+ # Pipeline configuration
+-PRESCORED_FOLDER=$CADD/data/prescored/$GENOMEBUILD/$ANNO_FOLDER
++PRESCORED_FOLDER=$CADD_DATAPATH/prescored/$GENOMEBUILD/$ANNO_FOLDER
+ REFERENCE_CONFIG=$CADD/config/${GENOMEBUILD}references.cfg
+ IMPUTE_CONFIG=$CADD/config/impute_$GENOMEBUILD.cfg
+ MODEL=$CADD/data/models/$GENOMEBUILD/CADD1.4-$GENOMEBUILD.mod
+@@ -156,7 +157,7 @@
+ 
+ cat $TMP_VCF \
+ | vep --quiet --cache --buffer 1000 --no_stats --offline --vcf \
+-    --dir $CADD/data/annotations/$GENOMEBUILD/vep \
++    --dir $CADD_DATAPATH/annotations/$GENOMEBUILD/vep \
+     --species homo_sapiens --db_version=92 \
+     --assembly $GENOMEBUILD --regulatory --sift b \
+     --polyphen b --per_gene --ccds --domains --numbers --canonical \
+diff -ru v1.4-foss-2018b/config/GRCh37references.cfg v1.4-foss-2018b_1/config/GRCh37references.cfg
+--- v1.4-foss-2018b/config/GRCh37references.cfg	2018-12-03 16:00:24.000000000 +0000
++++ v1.4-foss-2018b_1/config/GRCh37references.cfg	2023-01-30 15:04:54.646630835 +0000
+@@ -1,7 +1,7 @@
+ [Path]
+ roottype = var
+ rootdir = CADD
+-annodir = /data/annotations/GRCh37/
++annodir = /annotations/GRCh37/
+ 
+ reference = /reference/reference.fa
+ 
+diff -ru v1.4-foss-2018b/src/scripts/annotateVEPvcf.py v1.4-foss-2018b_1/src/scripts/annotateVEPvcf.py
+--- v1.4-foss-2018b/src/scripts/annotateVEPvcf.py	2018-12-03 16:00:24.000000000 +0000
++++ v1.4-foss-2018b_1/src/scripts/annotateVEPvcf.py	2023-01-30 15:05:36.004484478 +0000
+@@ -54,7 +54,7 @@
+         root_dir = os.environ[pathConf['rootdir']]
+     else:
+         root_dir = pathConf['rootdir']
+-    root_anno = (root_dir+pathConf['annodir']).replace('//','/')
++    root_anno = ('/apps/data/CADD/'+pathConf['annodir']).replace('//','/')
+     reference = root_anno + pathConf['reference']
+ 
+     included_annotations = [annotationName for annotationName in annotationConf.keys() if annotationConf[annotationName] != 'Ignore']
