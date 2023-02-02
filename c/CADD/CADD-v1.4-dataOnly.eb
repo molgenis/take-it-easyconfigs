@@ -32,7 +32,7 @@ sources = [
     # Use arbitrary 232fc0bda9f9ed127694f1d38669db043918328e.zip from github.
     #
     {
-        'filename': 'annotationsGRCh37.tar.gz',
+       'filename': 'annotationsGRCh37.tar.gz',
         'extract_cmd': 'cp %s %(builddir)s/'
     },
     #
@@ -48,11 +48,11 @@ sources = [
         'extract_cmd': 'cp %s %(builddir)s/'
     },
     {
-        'filename': 'whole_genome_SNVs.tsv.gz.tbi',
+        'filename': 'whole_genome_SNVs.tsv.gz',
         'extract_cmd': 'cp %s %(builddir)s/'
     },
     {
-        'filename': 'whole_genome_SNVs.tsv.gz',
+        'filename': 'whole_genome_SNVs.tsv.gz.tbi',
         'extract_cmd': 'cp %s %(builddir)s/'
     },
     {
@@ -66,13 +66,13 @@ sources = [
 ]
 
 checksums = [
-    {'annotationsGRCh37.tar.gz': '66afec8cc12b7201daed3ba4172cde5d'},
-    {'InDels_inclAnno.tsv.gz.tbi': '43d0206d626333a681bdd6b16ee6c3c3'},
-    {'InDels_inclAnno.tsv.gz': '8ce893ea1b82431011fc7fa4ff12dfbf'},
-    {'whole_genome_SNVs.tsv.gz': '1431f9249abd142bed6c78653d1bbc7d'},
-    {'whole_genome_SNVs.tsv.gz.tbi': '1ec8d0e24c4d4d2973cf84954b6e7cd5'},
-    {'gnomad.genomes.r2.0.1.sites.tsv.gz.tbi': '85eb138b68b8c89cdf89d5517df7b83d'},
-    {'gnomad.genomes.r2.0.1.sites.tsv.gz': '78d5d0ecc81aed2abedf1bff6fa7d479'},
+    '66afec8cc12b7201daed3ba4172cde5d'  #annotationsGRCh37.tar.gz
+    '43d0206d626333a681bdd6b16ee6c3c3'  #InDels_inclAnno.tsv.gz.tbi
+    '8ce893ea1b82431011fc7fa4ff12dfbf'  #InDels_inclAnno.tsv.gz
+    '1431f9249abd142bed6c78653d1bbc7d'  #whole_genome_SNVs.tsv.gz
+    '1ec8d0e24c4d4d2973cf84954b6e7cd5'  #whole_genome_SNVs.tsv.gz.tbi
+    '85eb138b68b8c89cdf89d5517df7b83d'  #gnomad.genomes.r2.0.1.sites.tsv.gz.tbi
+    '78d5d0ecc81aed2abedf1bff6fa7d479'  #gnomad.genomes.r2.0.1.sites.tsv.gz
 ]
 
 postinstallcmds = [
@@ -83,18 +83,18 @@ postinstallcmds = [
     # build GRCh37/h19 and remove the `tar.gz` file
     #
     'tar -vzxf %(builddir)s/annotationsGRCh37.tar.gz '
-        + ' -C %(local_destination_dir)s/annotations',
+        + ' -C %s/annotations' % local_destination_dir,
     'rm -f %(builddir)s/annotationsGRCh37.tar.gz',
-    
     # Deal with the prescored file
-    
-    'mkdir -p %(local_destination_dir)s/prescored/GRCh37/no_anno',
+    'mkdir -p /apps/data/CADD/prescored/GRCh37/no_anno',
     'mv -v  %(builddir)s/gnomad.genomes.r2.0.1.sites.tsv.gz* '
-        + ' %(local_destination_dir)s/prescored/GRCh37/no_anno/',
-    'mkdir -p %(local_destination_dir)s/prescored/GRCh37/incl_anno',
+        + ' %(builddir)s/whole_genome_SNVs.tsv.gz* '
+        + ' %s/prescored/GRCh37/no_anno/' % local_destination_dir,
+    'mv -v  %(builddir)s/whole_genome_SNVs.tsv.gz.tbi '
+  	 + ' /apps/data/CADD/prescored/GRCh37/no_anno/',
+    'mkdir -p /apps/data/CADD/prescored/GRCh37/incl_anno',
     'mv -v  %(builddir)s/InDels_inclAnno.tsv.gz* '
-        + ' %(builddir)s/whole_genome_SNVs_inclAnno.tsv.gz* '
-        + ' %(local_destination_dir)s/prescored/GRCh37/incl_anno/',
+        + ' /apps/data/CADD/prescored/GRCh37/incl_anno/',
 ]
 
 sanity_check_paths = {
