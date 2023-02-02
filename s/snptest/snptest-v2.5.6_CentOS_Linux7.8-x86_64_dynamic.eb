@@ -1,0 +1,30 @@
+name = 'snptest'
+version = 'v2.5.6'
+versionsuffix = '_CentOS_Linux7.8-x86_64_dynamic'
+
+homepage = 'https://mathgen.stats.ox.ac.uk/genetics_software/snptest/snptest.html'
+description = """SNPTEST is a program for the analysis of single SNP association in genome-wide studies"""
+
+toolchain = {'name': 'dummy', 'version': 'dummy'}
+easyblock = 'Tarball'
+
+#
+# Example URL: http://www.well.ox.ac.uk/~gav/resources/snptest_v2.5.6_CentOS7.8_x86_64_static.tgz
+###############http://www.well.ox.ac.uk/~gav/resources/snptest_v2.5.6_CentOS_Linux7.8-x86_64_dynamic.tgz
+#
+source_urls = [('http://www.well.ox.ac.uk/~gav/resources/')]
+sources = [('%s_%s%s.tgz' % (name,version,versionsuffix))]
+checksums = ['c2c829def961dd2f6377c388d8aa22cab17945961c47e39c4a94493466c0a52e'] # snptest_v2.5.6_CentOS_Linux_7.8_x86_64_static.tgz
+
+postinstallcmds = [
+    'chmod -R g+rwX,o+rX,o-w %(installdir)s/*',
+    'cd %(installdir)s/ && ln -s %(name)s_%(version)s %(name)s'
+]
+
+sanity_check_paths = {
+    'files': ['snptest_%(version)s', 'LICENCE'],
+    'dirs': ['doc', 'example']
+}
+
+moduleclass = 'bio'
+modextrapaths = {'PATH': ''}
