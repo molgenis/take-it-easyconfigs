@@ -15,6 +15,7 @@ builddependencies = [
 ]
 
 dependencies = [
+    ('Python', '3.10.4', '-bare'),
     ('pybind11', '2.9.2'),  # required by scipy
 ]
 
@@ -52,7 +53,7 @@ exts_list = [
 
 sanity_check_paths = {
     'files': [],
-    'dirs': ['lib/python3.10/site-packages/'],
+    'dirs': ['lib/python%(pyshortver)s/site-packages/'],
 }
 
 sanity_pip_check = True

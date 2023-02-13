@@ -31,8 +31,8 @@ dependencies = [
 
 # make sure they do not involve pip or setuptools as those two should be
 # alredy included in python core
-sources = ['%(name)s-%(version)s-GCCcore-11.3.0%(versionsuffix)s-requirements_hashes.txt']
-checksums = ['ae9ea5ce471c66a068afbd5bbb878e82c5fba5f64e2eecab68b752053827b419']
+sources = ['%(name)s-%(version)s-GCCcore-11.3.0%(versionsuffix)s-requirements.txt']
+checksums = ['7b23d9ea3eee0e3e78afdc0e658e2ec58f916789b4b7f5546603b4a3b65f42aa']
 
 pip_ignore_installed = False
 sanity_pip_check = True
@@ -40,7 +40,7 @@ unpack_sources = False
 use_pip = True
 use_pip_for_deps = True
 use_pip_requirement = True
-installopts = '--require-hashes'
+#installopts = '--require-hashes'
 
 #
 # Sanity checking.
