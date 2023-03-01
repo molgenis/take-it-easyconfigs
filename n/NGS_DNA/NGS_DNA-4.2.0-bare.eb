@@ -1,0 +1,37 @@
+easyblock = 'Tarball'
+
+name = 'NGS_DNA'
+version = '4.2.0'
+versionsuffix = '-bare'
+namelower = name.lower()
+
+homepage = 'https://github.com/molgenis/NGS_DNA'
+description = """NGS_DNA pipeline used in the UMCG"""
+
+toolchain = {'name': 'system', 'version': ''}
+
+javaver = '11-LTS'
+
+#
+# Example URL: https://github.com/molgenis/NGS_DNA/archive/3.2.3.tar.gz
+#
+source_urls = [('http://github.com/molgenis/%s/archive/' % (name))]
+sources = [('%s.tar.gz' % (version))]
+checksums = ['333cfc2752d839bf8550e030f07edd4aa303795e8f9e472671a1b5b186cd5e9f']
+
+#
+# Dependencies.
+#
+dependencies = [
+    ('Molgenis-Compute', '20.03.1', '-Java-11-LTS', ('system', '')),
+    ('Python', '3.10.4','-bare',('GCCcore','11.3.0')),
+]
+
+
+sanity_check_paths = {
+    'files': ['workflow.csv', 'parameters.csv'],
+    'dirs': []
+}
+
+moduleclass = 'bio'
+modextrapaths = {'PATH': ['scripts/']}
