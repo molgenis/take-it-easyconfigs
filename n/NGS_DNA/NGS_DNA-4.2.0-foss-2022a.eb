@@ -39,7 +39,7 @@ dependencies = [
     ('picard', '2.26.10', '-Java-%s' % (javaver), ('system', '')),
     ('gavin-plus', '1.5.0', '-Java-%s' % (javaver), ('system', '')),
     ('io_lib', '1.14.11'),
-    ('Molgenis-Compute', 'v19.01.1', '-Java-%s' % (javaver), ('system', '')),
+    ('Molgenis-Compute', 'v20.03.1', '-Java-11-LTS', ('system', '')),
     ('multiqc', '1.12'),
     ('R','4.2.1','-bare'),
     ('sambamba', '0.7.0', '', ('system', '')),
