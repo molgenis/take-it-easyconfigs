@@ -26,7 +26,7 @@ dependencies = [
     ('LibTIFF', '4.3.0'),
     ('ncurses', '6.3'),
     ('R', '4.2.2', '-bare', ('foss', '2022a')),
-    ('MariaDB', '10.9.3', '', ('GCC', '11.3.0')),
+    ('MariaDB', '10.10.2', '', ('GCC', '11.3.0')),
 ]
 
 exts_defaultclass = 'PerlModule'
