@@ -14,7 +14,7 @@ checksums = ['f07071cab969d83de0f6a049764925acf58a3687c9cec25e153f9a546c637bba']
 
 extract_sources = True
 
-install_cmd = "mkdir -p %(installdir)s/bin && aws/install --install-dir %(installdir)s --bin-dir %(installdir)s/bin"
+install_cmd = "mkdir -p %(installdir)s/bin && %(builddir)s/aws/install --install-dir %(installdir)s --bin-dir %(installdir)s/bin"
 
 sanity_check_paths = {
     'files': ['bin/%(namelower)s'],
