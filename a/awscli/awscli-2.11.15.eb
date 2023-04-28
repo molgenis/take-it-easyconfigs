@@ -1,0 +1,26 @@
+easyblock = 'Binary'
+
+name = 'awscli'
+version = '2.11.15'
+
+homepage = 'https://docs.aws.amazon.com/cli/index.html'
+description = """AWS Command Line Interface (AWS CLI)."""
+
+toolchain = SYSTEM
+
+source_urls = ['https://awscli.amazonaws.com/']
+sources = ['awscli-exe-linux-x86_64-%(version)s.zip']
+checksums = ['f07071cab969d83de0f6a049764925acf58a3687c9cec25e153f9a546c637bba']
+
+extract_sources = True
+
+install_cmd = "mkdir -p %(installdir)s/bin && aws/install --install-dir %(installdir)s --bin-dir %(installdir)s/bin"
+
+sanity_check_paths = {
+    'files': ['bin/%(namelower)s'],
+    'dirs': [],
+}
+
+sanity_check_commands = ["%(namelower)s --help"]
+
+moduleclass = 'tools'
