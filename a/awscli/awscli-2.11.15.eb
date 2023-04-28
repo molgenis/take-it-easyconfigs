@@ -21,6 +21,6 @@ sanity_check_paths = {
     'dirs': ['v2/current/dist/'],
 }
 
-sanity_check_commands = ["aws --help"]
+sanity_check_commands = ["aws help"]
 
 moduleclass = 'tools'
