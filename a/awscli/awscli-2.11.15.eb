@@ -17,10 +17,10 @@ extract_sources = True
 install_cmd = "mkdir -p %(installdir)s/bin && %(builddir)s/aws/install --install-dir %(installdir)s --bin-dir %(installdir)s/bin"
 
 sanity_check_paths = {
-    'files': ['bin/%(namelower)s'],
-    'dirs': [],
+    'files': ['bin/aws', 'bin/aws_completer'],
+    'dirs': ['v2/current/dist/'],
 }
 
-sanity_check_commands = ["%(namelower)s --help"]
+sanity_check_commands = ["aws --help"]
 
 moduleclass = 'tools'
