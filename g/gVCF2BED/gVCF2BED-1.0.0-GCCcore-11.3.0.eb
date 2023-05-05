@@ -3,7 +3,7 @@ easyblock = 'PackedBinary'
 
 name = 'gVCF2BED'
 version = '1.0.0'
-ngsutilsreleaseversion = '21.11.1'
+ngsutilsreleaseversion = '23.04.1'
 
 homepage = 'https://github.com/molgenis/ngs-utils'
 description = """Collection of notes and scripts related to NGS """
@@ -11,12 +11,12 @@ description = """Collection of notes and scripts related to NGS """
 toolchain = {'name': 'GCCcore', 'version': '11.3.0'}
 
 #
-# Example URL: https://github.com/molgenis/ngs-utils/releases/download/21.11.1/ngs-utils-21.11.1.zip
+# Example URL: https://github.com/molgenis/ngs-utils/archive/refs/tags/23.04.1.tar.gz
 #
-source_urls = [('https://github.com/molgenis/ngs-utils/releases/download/%s/' % (ngsutilsreleaseversion))]
-sources = [('ngs-utils-%s.zip' % (ngsutilsreleaseversion))]
+source_urls = [('http://github.com/molgenis/ngs-utils/archive/%s/' % (ngsutilsreleaseversion))]
+sources = [('%s.tar.gz' % (ngsutilsreleaseversion))]
 
-checksums = ['b37b4b284ff7e6dba8d10159a32a65d17540a8469b00ab354b406d29234610c5']
+checksums = ['5ba6b7db1a6d4d8e17e73b2782606bdb65319925778096cb48e51f5b776c4e4d']
 
 dependencies = [ 
     ('gVCF2BEDPyDepBundle','1.0.0' ,'-Python-3.10.4'),
