@@ -13,7 +13,7 @@ easyblock = 'PackedBinary'
 source_urls = [('http://github.com/molgenis/ngs-utils/archive/%s/' % (version))]
 sources = [('%s.tar.gz' % (version))]
 
-checksums = ['0b6086a41262579ab0fc300f7920238b4f3ad6875d8ec2c6995d78db7f222bec']
+checksums = ['5ba6b7db1a6d4d8e17e73b2782606bdb65319925778096cb48e51f5b776c4e4d']
 
 postinstallcmds = [
     'chmod -R 775 %(installdir)s/bin/*.sh',
