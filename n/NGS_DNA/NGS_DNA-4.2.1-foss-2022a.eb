@@ -24,12 +24,12 @@ checksums = ['378a64de57fe599cafecd8937fa991441168e8f7f3db8747ac7da50f8801ed2b']
 # Dependencies.
 #
 dependencies = [
-    ('VCFped','20180527_d1bbdf5','-Python-%s' % (py2ver),('foss','2018b')),
-    ('manta','1.6.0'),
+#    ('VCFped','20180527_d1bbdf5','-Python-%s' % (py2ver),('foss','2018b')),
+#    ('manta','1.6.0'),
+#    ('CADD', 'v1.4','',('foss','2018b')),
     ('BCFtools', '1.16'),
     ('BEDTools', '2.30.0'),
     ('BWA', '0.7.17-20220923-139f68f'),
-    ('CADD', 'v1.4','',('foss','2018b')),
     ('FastQC', '0.11.9', '-Java-%s' % (javaver), ('system', '')),
     ('GATK', '4.2.4.1', '-Java-8-LTS', ('system', '')),
     ('gVCF2BED','1.0.0'),
