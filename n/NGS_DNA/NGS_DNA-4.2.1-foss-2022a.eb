@@ -18,7 +18,7 @@ py2ver = '2.7.16'
 #
 source_urls = [('http://github.com/molgenis/%s/archive/' % (name))]
 sources = [('%s.tar.gz' % (version))]
-checksums = ['378a64de57fe599cafecd8937fa991441168e8f7f3db8747ac7da50f8801ed2b']
+checksums = ['a6f7c62f22d84ada86deb5a12e2f79ac5fe44607575842da4375466fa74bfc14']
 
 #
 # Dependencies.
@@ -33,6 +33,7 @@ dependencies = [
     ('FastQC', '0.11.9', '-Java-%s' % (javaver), ('system', '')),
     ('GATK', '4.2.4.1', '-Java-8-LTS', ('system', '')),
     ('gVCF2BED','1.0.0'),
+    ('jq','1.6'),
     ('HTSlib', '1.16'),
     ('ngs-utils', '22.10.1','',('system','')),
     ('pigz', '2.7',''),
@@ -51,7 +52,7 @@ dependencies = [
 
 
 sanity_check_paths = {
-    'files': ['workflow.csv', 'parameters.csv'],
+    'files': ['workflow_DRAGEN.csv', 'parameters.csv'],
     'dirs': []
 }
 
