@@ -11,7 +11,7 @@ description = """Collection of notes and scripts related to NGS """
 toolchain = {'name': 'GCCcore', 'version': '11.3.0'}
 
 #
-# Example URL: https://github.com/molgenis/ngs-utils/archive/refs/tags/23.04.1.tar.gz
+# Example URL: https://github.com/molgenis/ngs-utils/archive/23.04.1/23.04.1.tar.gz
 #
 source_urls = [('http://github.com/molgenis/ngs-utils/archive/%s/' % (ngsutilsreleaseversion))]
 sources = [('%s.tar.gz' % (ngsutilsreleaseversion))]
