@@ -1,0 +1,31 @@
+name = 'ngs-utils'
+version = '23.07.1'
+
+homepage = 'https://github.com/molgenis/ngs-utils'
+description = """Collection of notes and scripts related to NGS """
+
+toolchain = SYSTEM
+easyblock = 'PackedBinary'
+
+#
+# Example URL: https://github.com/molgenis/ngs-utils/archive/23.02.1.tar.gz
+#
+source_urls = [('http://github.com/molgenis/ngs-utils/archive/%s/' % (version))]
+sources = [('%s.tar.gz' % (version))]
+
+checksums = ['6c8e735032527657013559d7621e9738f5f9e5ad00e507e6bf6264a2ceb6bd97']
+
+postinstallcmds = [
+    'chmod -R 775 %(installdir)s/bin/*.sh',
+    'chmod -R 775 %(installdir)s/bin/*.bash',
+    'chmod -R 775 %(installdir)s/bin/*.pl',
+    'chmod -R 775 %(installdir)s/bin/*.py',
+    'chmod -R g+rwX,o+rX,o-w %(installdir)s/bin/*'
+]
+
+sanity_check_paths = {
+    'files': ['bin/pseudo_array.sh'],
+    'dirs': []
+}
+
+moduleclass = 'bio'

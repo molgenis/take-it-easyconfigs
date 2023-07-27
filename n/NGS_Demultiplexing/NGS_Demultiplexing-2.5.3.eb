@@ -5,7 +5,7 @@ namelower = name.lower()
 homepage = 'https://github.com/molgenis/molgenis-pipelines'
 description = """This distribution already contains several pipelines/protocols/parameter files which you can use 'out-of-the-box' to align and impute your NGS data using MOLGENIS Compute."""
 
-toolchain = {'name': 'system', 'version': ''}
+toolchain = SYSTEM 
 easyblock = 'Tarball'
 
 #dependencies
@@ -23,7 +23,7 @@ dependencies = [
 source_urls = [('http://github.com/molgenis/%s/archive/' % (name))]
 sources = [('%s.tar.gz' % (version))]
 
-checksums = ['545f8190ceec755f93396dd4a01b547d421d8e6b3744a33d95f334b9c747b372']
+checksums = ['7279cbbd01a44d7c38674f63df2b3485d15008d1619536b491579dc1cb8914dc']
 
 sanity_check_paths = {
     'files': ['workflow.csv', 'parameters.csv'],
