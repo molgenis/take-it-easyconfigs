@@ -9,7 +9,7 @@ description = 'Whole-genome association analysis toolset.'
 
 toolchain = {'name': 'dummy', 'version': 'dummy'}
 
-source_urls = [('http://s3.amazonaws.com/plink2-assets/')]
+source_urls = [('http://s3.amazonaws.com/plink2-assets/alpha4/')]
 sources = [('%s2_linux_amd_avx2%s.zip' % (name.lower(), versionsuffix.replace('-', '_')))]
 checksums = [
     'f4019a067dd4ff44e31901221ed2d3047181a70c24afd692421037ee884557db', #  plink2_linux_avx2_20191006.zip
