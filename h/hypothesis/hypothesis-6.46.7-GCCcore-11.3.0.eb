@@ -15,7 +15,7 @@ checksums = ['967009fa561b3a3f8363a73d71923357271c37dc7fa27b30c2d21a1b6092b240']
 builddependencies = [('binutils', '2.38')]
 
 dependencies = [
-	('Python', '3.10.4'),
+	('Python', '3.10.4', '-bare'),
 ]
 exts_list = [
     ('sortedcontainers', '2.4.0', {
