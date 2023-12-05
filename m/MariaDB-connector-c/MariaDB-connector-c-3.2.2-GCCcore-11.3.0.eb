@@ -1,0 +1,39 @@
+easyblock = 'CMakeMake'
+
+name = 'MariaDB-connector-c'
+version = '3.2.2'
+
+homepage = 'https://downloads.mariadb.org/connector-c/'
+description = "MariaDB Connector/C is used to connect applications developed in C/C++ to MariaDB and MySQL databases."
+
+toolchain = {'name': 'GCCcore', 'version': '11.3.0'}
+
+source_urls = ['https://github.com/MariaDB/mariadb-connector-c/archive/']
+sources = ['v%(version)s.tar.gz']
+checksums = ['f8360a801794cf261fe24934c92164196f87e60faa6792d2f24cf9338f56655d']
+
+builddependencies = [
+    ('binutils', '2.38'),
+    ('CMake', '3.23.1'),
+]
+
+dependencies = [
+    ('zlib', '1.2.12'),
+    ('cURL', '7.83.0'),
+]
+
+configopts  = "-DWITH_MYSQLCOMPAT=yes -DWITH_EXTERNAL_ZLIB=yes -DWITH_CURL=yes "
+configopts += "-DCMAKE_SHARED_LINKER_FLAGS='-fuse-ld=bfd' "
+
+sanity_check_paths = {
+    'files': ['lib/mariadb/libmariadbclient.a', 'lib/mariadb/libmariadb.%s' % SHLIB_EXT],
+    'dirs': ['include/mariadb'],
+}
+
+modextrapaths = {
+    'CPATH': ['include/mariadb'],
+    'LD_LIBRARY_PATH': ['lib/mariadb'],
+    'LIBRARY_PATH': ['lib/mariadb'],
+}
+
+moduleclass = 'lib'

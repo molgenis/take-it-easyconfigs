@@ -20,7 +20,7 @@ checksums = ['17df1560764892182250130f3c051b0992aa3c9f7be4abc09b5f0dfba6d1f51a']
 #
 dependencies = [
     ('PerlPlus', '5.34.1', '-v22.11.1', ('GCCcore', '11.3.0')),
-    ('RPlus', '4.2.1', '-v22.12.1', ('foss', '2022a')),
+    ('RPlus', '4.2.2', '-UPDio-1.1.0', ('foss', '2022a')),
 ]
 
 #PerlPlus/5.30.0-GCCcore-7.3.0-v19.08.1

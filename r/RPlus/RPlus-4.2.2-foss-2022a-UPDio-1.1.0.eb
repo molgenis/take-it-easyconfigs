@@ -1,0 +1,413 @@
+#
+# This EasyBuild config file for RPlus was generated with generateEasyConfig.R
+#
+easyblock = 'Bundle'
+name = 'RPlus'
+version = '4.2.2'
+versionsuffix = '-UPDio-1.1.0'
+homepage = 'http://www.r-project.org/'
+description = """R is a free software environment for statistical computing and graphics."""
+moduleclass = 'lang'
+modextrapaths = {'R_LIBS': ['library', '']}
+toolchain = {'name': 'foss', 'version': '2022a'}
+
+#
+# You may need to include a more recent Python to download R packages from HTTPS based URLs
+# when the Python that comes with your OS is too old and you encounter:
+#     SSL routines:SSL23_GET_SERVER_HELLO:sslv3 alert handshake failure
+# In that case make sure to include a Python as builddependency. 
+# This Python should not be too new either: it's dependencies like for example on ncursus should be compatible with R's dependencies.
+# The alternative is to replace the https URLs with http URLs in the generated EasyConfig.
+#
+builddependencies = [
+    ('Python', '3.10.4', '-bare')
+]
+
+dependencies = [
+    ('R', '%(version)s', '-bare'),
+    ('GMP', '6.2.1'),
+    ('UDUNITS', '2.2.28'),
+    ('ImageMagick', '7.1.0-37'),
+    ('MariaDB-connector-c', '3.2.2'),
+    ('NLopt', '2.7.1'),
+    ('HDF5', '1.12.2'),
+    ('nodejs', '16.15.1'),
+    ('unixODBC', '2.3.11'),
+    ('librsvg', '2.55.1'),
+]
+
+#
+# The '.' is a silly workaround to check for whatever current dir as workaround
+# until an updated RPackage is available, which installs extension R packages in a library subdir.
+#
+sanity_check_paths = {
+    'files': [],
+    'dirs': [('library', '.')],
+}
+
+local_package_name_tmpl = '%(name)s_%(version)s.tar.gz'
+exts_defaultclass = 'RPackage'
+exts_filter = ('R -q --no-save', 'library(%(ext_name)s)')
+
+local_cran_options = {
+    'source_urls': [
+        'http://cran.r-project.org/src/contrib/',
+        'http://cran.r-project.org/src/contrib/Archive/%(name)s',
+    ],
+    'source_tmpl': local_package_name_tmpl,
+}
+local_bioconductor_options = {
+    'source_urls': [
+        'http://www.bioconductor.org/packages/release/bioc/src/contrib/',
+        'http://www.bioconductor.org/packages/release/data/annotation/src/contrib/',
+        'http://www.bioconductor.org/packages/release/data/experiment/src/contrib/',
+        'http://www.bioconductor.org/packages/release/extra/src/contrib/',
+        'http://bioconductor.org/packages/3.16/bioc/src/contrib/',
+        'http://bioconductor.org/packages/3.16/data/annotation/src/contrib/',
+        'http://bioconductor.org/packages/3.16/data/experiment/src/contrib/',
+        'http://bioconductor.org/packages/3.16/workflows/src/contrib/',
+        'http://bioconductor.org/packages/3.16/books/src/contrib/',
+        'http://bioconductor.org/packages/3.16/bioc/src/contrib/Archive/%(name)s/',
+        'http://bioconductor.org/packages/3.16/data/annotation/src/contrib/Archive/%(name)s/',
+        'http://bioconductor.org/packages/3.16/data/experiment/src/contrib/Archive/%(name)s/',
+        'http://bioconductor.org/packages/3.16/workflows/src/contrib/Archive/%(name)s/',
+        'http://bioconductor.org/packages/3.16/books/src/contrib/Archive/%(name)s/',
+    ],
+    'source_tmpl': local_package_name_tmpl,
+}
+
+#
+# R package list.
+#   * Order of packages is important!
+#   * Packages should be specified with fixed versions!
+#
+exts_list = [
+    ('BiocManager', '1.30.22', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': [
+            'http://cran.r-project.org/src/contrib/',
+            'http://cran.r-project.org/src/contrib/Archive/%(name)s',
+        ],
+        'checksums': ['5389c9c0d6562b0757659fb8262ab51b48225c4ba7e9acd4f5e7c0049735e835'],
+    }),
+    ('BiocVersion', '3.16.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': [
+            'http://www.bioconductor.org/packages/release/bioc/src/contrib/',
+            'http://www.bioconductor.org/packages/release/data/annotation/src/contrib/',
+            'http://www.bioconductor.org/packages/release/data/experiment/src/contrib/',
+            'http://www.bioconductor.org/packages/release/extra/src/contrib/',
+            'http://bioconductor.org/packages/3.16/bioc/src/contrib/',
+            'http://bioconductor.org/packages/3.16/data/annotation/src/contrib/',
+            'http://bioconductor.org/packages/3.16/data/experiment/src/contrib/',
+            'http://bioconductor.org/packages/3.16/workflows/src/contrib/',
+            'http://bioconductor.org/packages/3.16/books/src/contrib/',
+            'http://bioconductor.org/packages/3.16/bioc/src/contrib/Archive/%(name)s/',
+            'http://bioconductor.org/packages/3.16/data/annotation/src/contrib/Archive/%(name)s/',
+            'http://bioconductor.org/packages/3.16/data/experiment/src/contrib/Archive/%(name)s/',
+            'http://bioconductor.org/packages/3.16/workflows/src/contrib/Archive/%(name)s/',
+            'http://bioconductor.org/packages/3.16/books/src/contrib/Archive/%(name)s/',
+        ],
+        'checksums': ['dc7af08c09242cc436be7b91e46705789d13ac3a3939211ee9be8511fc1057b6'],
+    }),
+    ('cli', '3.6.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': [
+            'http://cran.r-project.org/src/contrib/',
+            'http://cran.r-project.org/src/contrib/Archive/%(name)s',
+        ],
+        'checksums': ['be3006cec7e67f9ae25e21b4658c4bec680038c2ef7467df5f14da3311a05e36'],
+    }),
+    ('colorspace', '2.1-0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': [
+            'http://cran.r-project.org/src/contrib/',
+            'http://cran.r-project.org/src/contrib/Archive/%(name)s',
+        ],
+        'checksums': ['04078abb6b54119c90dc7085d62916bf292ccb163e213f9ea70567d1be82614c'],
+    }),
+    ('fansi', '1.0.5', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': [
+            'http://cran.r-project.org/src/contrib/',
+            'http://cran.r-project.org/src/contrib/Archive/%(name)s',
+        ],
+        'checksums': ['c616ce357fbfd43253c366da578549a38066459058c22fb99c82fc05992e23f6'],
+    }),
+    ('farver', '2.1.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': [
+            'http://cran.r-project.org/src/contrib/',
+            'http://cran.r-project.org/src/contrib/Archive/%(name)s',
+        ],
+        'checksums': ['0dcfda6ca743f465372790bcff1bcbc6a7145fdac1c682b021f654e8c6c996ce'],
+    }),
+    ('glue', '1.6.2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': [
+            'http://cran.r-project.org/src/contrib/',
+            'http://cran.r-project.org/src/contrib/Archive/%(name)s',
+        ],
+        'checksums': ['9da518f12be584c90e75fe8e07f711ee3f6fc0d03d817f72c25dc0f66499fdbf'],
+    }),
+    ('rlang', '1.1.2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': [
+            'http://cran.r-project.org/src/contrib/',
+            'http://cran.r-project.org/src/contrib/Archive/%(name)s',
+        ],
+        'checksums': ['2a0ee1dc6e5c59b283c32db5e74e869922a336197cb406fe92622b6ec66f8092'],
+    }),
+    ('lifecycle', '1.0.4', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': [
+            'http://cran.r-project.org/src/contrib/',
+            'http://cran.r-project.org/src/contrib/Archive/%(name)s',
+        ],
+        'checksums': ['ada4d3c7e84b0c93105e888647c5754219a8334f6e1f82d5afaf83d4855b91cc'],
+    }),
+    ('gtable', '0.3.4', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': [
+            'http://cran.r-project.org/src/contrib/',
+            'http://cran.r-project.org/src/contrib/Archive/%(name)s',
+        ],
+        'checksums': ['7032039371a4ec1bde9d3e4b7dae450dcc9aab50bb0e6287ab26a1b0199c7977'],
+    }),
+    ('isoband', '0.2.7', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': [
+            'http://cran.r-project.org/src/contrib/',
+            'http://cran.r-project.org/src/contrib/Archive/%(name)s',
+        ],
+        'checksums': ['7693223343b45b86de2b5b638ff148f0dafa6d7b1237e822c5272902f79cdf61'],
+    }),
+    ('MASS', '7.3-60', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': [
+            'http://cran.r-project.org/src/contrib/',
+            'http://cran.r-project.org/src/contrib/Archive/%(name)s',
+        ],
+        'checksums': ['b802410feab01464d112b27b3501176eb8e68511d4ba9d052ac4db1f2a72f0c2'],
+    }),
+    ('lattice', '0.22-5', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': [
+            'http://cran.r-project.org/src/contrib/',
+            'http://cran.r-project.org/src/contrib/Archive/%(name)s',
+        ],
+        'checksums': ['ba1fbe5e18a133507dca9851b7f933002bdb6d1f3ea5f410a0a441103b6da5f1'],
+    }),
+    ('nlme', '3.1-164', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': [
+            'http://cran.r-project.org/src/contrib/',
+            'http://cran.r-project.org/src/contrib/Archive/%(name)s',
+        ],
+        'checksums': ['79a5a020ce7037b83ee6c28336e35a1310058c13fc59f7fcb11eca0bc9bdd4e8'],
+    }),
+    ('Matrix', '1.6-4', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': [
+            'http://cran.r-project.org/src/contrib/',
+            'http://cran.r-project.org/src/contrib/Archive/%(name)s',
+        ],
+        'checksums': ['70ca7bdaece68d4837da0523d067e1553947c3c81b0b55206223bb647617bb01'],
+    }),
+    ('mgcv', '1.9-0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': [
+            'http://cran.r-project.org/src/contrib/',
+            'http://cran.r-project.org/src/contrib/Archive/%(name)s',
+        ],
+        'checksums': ['b2b10078c1f8b2ce3cadcca405496eedacc8d4632ee4357e17632cae1b043b70'],
+    }),
+    ('labeling', '0.4.3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': [
+            'http://cran.r-project.org/src/contrib/',
+            'http://cran.r-project.org/src/contrib/Archive/%(name)s',
+        ],
+        'checksums': ['c62f4fc2cc74377d7055903c5f1913b7295f7587456fe468592738a483e264f2'],
+    }),
+    ('munsell', '0.5.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': [
+            'http://cran.r-project.org/src/contrib/',
+            'http://cran.r-project.org/src/contrib/Archive/%(name)s',
+        ],
+        'checksums': ['d0f3a9fb30e2b5d411fa61db56d4be5733a2621c0edf017d090bdfa5e377e199'],
+    }),
+    ('R6', '2.5.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': [
+            'http://cran.r-project.org/src/contrib/',
+            'http://cran.r-project.org/src/contrib/Archive/%(name)s',
+        ],
+        'checksums': ['8d92bd29c2ed7bf15f2778618ffe4a95556193d21d8431a7f75e7e5fc102bf48'],
+    }),
+    ('RColorBrewer', '1.1-3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': [
+            'http://cran.r-project.org/src/contrib/',
+            'http://cran.r-project.org/src/contrib/Archive/%(name)s',
+        ],
+        'checksums': ['4f42f5423c45688b39f492c7892d93f37b4541831c8ffb140364d2bd89031ac0'],
+    }),
+    ('viridisLite', '0.4.2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': [
+            'http://cran.r-project.org/src/contrib/',
+            'http://cran.r-project.org/src/contrib/Archive/%(name)s',
+        ],
+        'checksums': ['893f111d31deccd2cc959bc9db7ba2ce9020a2dd1b9c1c009587e449c4cce1a1'],
+    }),
+    ('scales', '1.3.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': [
+            'http://cran.r-project.org/src/contrib/',
+            'http://cran.r-project.org/src/contrib/Archive/%(name)s',
+        ],
+        'checksums': ['b33e0f6b44259551ce02befd52eac53602509fbfdd903920620c658c50f35888'],
+    }),
+    ('magrittr', '2.0.3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': [
+            'http://cran.r-project.org/src/contrib/',
+            'http://cran.r-project.org/src/contrib/Archive/%(name)s',
+        ],
+        'checksums': ['a2bff83f792a1acb801bfe6330bb62724c74d5308832f2cb6a6178336ace55d2'],
+    }),
+    ('utf8', '1.2.4', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': [
+            'http://cran.r-project.org/src/contrib/',
+            'http://cran.r-project.org/src/contrib/Archive/%(name)s',
+        ],
+        'checksums': ['418f824bbd9cd868d2d8a0d4345545c62151d321224cdffca8b1ffd98a167b7d'],
+    }),
+    ('vctrs', '0.6.4', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': [
+            'http://cran.r-project.org/src/contrib/',
+            'http://cran.r-project.org/src/contrib/Archive/%(name)s',
+        ],
+        'checksums': ['8a80192356e724d21bd89a0ce3e5835856fd5bb1651e7fc205c6fee58fd001c8'],
+    }),
+    ('pillar', '1.9.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': [
+            'http://cran.r-project.org/src/contrib/',
+            'http://cran.r-project.org/src/contrib/Archive/%(name)s',
+        ],
+        'checksums': ['f23eb486c087f864c2b4072d5cba01d5bebf2f554118bcba6886d8dbceb87acc'],
+    }),
+    ('pkgconfig', '2.0.3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': [
+            'http://cran.r-project.org/src/contrib/',
+            'http://cran.r-project.org/src/contrib/Archive/%(name)s',
+        ],
+        'checksums': ['330fef440ffeb842a7dcfffc8303743f1feae83e8d6131078b5a44ff11bc3850'],
+    }),
+    ('tibble', '3.2.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': [
+            'http://cran.r-project.org/src/contrib/',
+            'http://cran.r-project.org/src/contrib/Archive/%(name)s',
+        ],
+        'checksums': ['65a72d0c557fd6e7c510d150c935ed6ced5db7d05fc20236b370f11428372131'],
+    }),
+    ('withr', '2.5.2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': [
+            'http://cran.r-project.org/src/contrib/',
+            'http://cran.r-project.org/src/contrib/Archive/%(name)s',
+        ],
+        'checksums': ['d5b6fa6d728fda5201310d6ad5921a43aae1c23029c25334bfc1e54cb13d4205'],
+    }),
+    ('ggplot2', '3.4.4', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': [
+            'http://cran.r-project.org/src/contrib/',
+            'http://cran.r-project.org/src/contrib/Archive/%(name)s',
+        ],
+        'checksums': ['2d76ec065d3e604d019506f45b3b713ae20f38e47dbebfb5ba1648b47fe63e46'],
+    }),
+    ('logging', '0.10-108', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': [
+            'http://cran.r-project.org/src/contrib/',
+            'http://cran.r-project.org/src/contrib/Archive/%(name)s',
+        ],
+        'checksums': ['85c91aa5a313f5f9fbb0394cda3f924a2495cca3cc5cd68dde0695fe3c20ed8d'],
+    }),
+    ('MatrixModels', '0.5-3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': [
+            'http://cran.r-project.org/src/contrib/',
+            'http://cran.r-project.org/src/contrib/Archive/%(name)s',
+        ],
+        'checksums': ['c2db5406c6b0b9d348b44eea215a39c64fc087099fea1342a04d50326577f20f'],
+    }),
+    ('SparseM', '1.81', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': [
+            'http://cran.r-project.org/src/contrib/',
+            'http://cran.r-project.org/src/contrib/Archive/%(name)s',
+        ],
+        'checksums': ['bd838f381ace680fa38508ff70b3d83cb9ffa28ac1ab568509249bca53c34b33'],
+    }),
+    ('survival', '3.5-7', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': [
+            'http://cran.r-project.org/src/contrib/',
+            'http://cran.r-project.org/src/contrib/Archive/%(name)s',
+        ],
+        'checksums': ['d50e2dd32add39f0d148c17ec301eeff1ba9b74d9f9674324a9acd5ef234272e'],
+    }),
+    ('quantreg', '5.97', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': [
+            'http://cran.r-project.org/src/contrib/',
+            'http://cran.r-project.org/src/contrib/Archive/%(name)s',
+        ],
+        'checksums': ['87e7de5776dee936ef0809dcc9ac2e0d51a7580368e6defa12ec21276a676da1'],
+    }),
+    ('quantsmooth', '1.64.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': [
+            'http://www.bioconductor.org/packages/release/bioc/src/contrib/',
+            'http://www.bioconductor.org/packages/release/data/annotation/src/contrib/',
+            'http://www.bioconductor.org/packages/release/data/experiment/src/contrib/',
+            'http://www.bioconductor.org/packages/release/extra/src/contrib/',
+            'http://bioconductor.org/packages/3.16/bioc/src/contrib/',
+            'http://bioconductor.org/packages/3.16/data/annotation/src/contrib/',
+            'http://bioconductor.org/packages/3.16/data/experiment/src/contrib/',
+            'http://bioconductor.org/packages/3.16/workflows/src/contrib/',
+            'http://bioconductor.org/packages/3.16/books/src/contrib/',
+            'http://bioconductor.org/packages/3.16/bioc/src/contrib/Archive/%(name)s/',
+            'http://bioconductor.org/packages/3.16/data/annotation/src/contrib/Archive/%(name)s/',
+            'http://bioconductor.org/packages/3.16/data/experiment/src/contrib/Archive/%(name)s/',
+            'http://bioconductor.org/packages/3.16/workflows/src/contrib/Archive/%(name)s/',
+            'http://bioconductor.org/packages/3.16/books/src/contrib/Archive/%(name)s/',
+        ],
+        'checksums': ['f7c68e30ab169fe2a13928b7fb06f3714e859abdb1456f1e6901acbc86e6bca9'],
+    }),
+    ('stringi', '1.8.2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': [
+            'http://cran.r-project.org/src/contrib/',
+            'http://cran.r-project.org/src/contrib/Archive/%(name)s',
+        ],
+        'checksums': ['6ad0223037ab7c540c0046b6f53e7bba0bde1221eac814db9d1766405feaa72d'],
+    }),
+    ('stringr', '1.5.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': [
+            'http://cran.r-project.org/src/contrib/',
+            'http://cran.r-project.org/src/contrib/Archive/%(name)s',
+        ],
+        'checksums': ['a4adec51bb3f04214b1d8ef40d3a58949f21b1497cbeaf2ba552e0891eef45de'],
+    }),
+]

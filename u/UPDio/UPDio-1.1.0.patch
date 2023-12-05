@@ -1,0 +1,23 @@
+
+diff -ru UPDio-1.1.0_bu/UPDio.pl UPDio-1.1.0.patched/UPDio.pl
+--- UPDio-1.1.0_bu/UPDio.pl     2023-11-30 10:21:49.139691747 +0000
++++ UPDio-1.1.0.patched/UPDio.pl        2023-11-30 12:10:36.262296178 +0000
+@@ -14,7 +14,7 @@
+ use Data::Dumper;
+ use Path::Class;
+ use Getopt::Long;
+-use Vcf;
++use VCF;
+ use Iterator::Simple qw( iter );
+ use List::Util qw(sum);
+ use List::MoreUtils qw( any uniq all );
+@@ -477,7 +477,7 @@
+ sub parse_vcf {
+     my $path = shift;
+     print {$fh_href->{log}} "Reading genotypes for $path...\n";
+-    my $vcf = Vcf->new( file => $path );
++    my $vcf = VCF->new( file => $path );
+     $vcf->parse_header();
+     return iter sub {
+         my $x_href = $vcf->next_data_hash() or return;
+
