@@ -1,0 +1,33 @@
+name = 'NGS_Demultiplexing'
+version = '2.5.4'
+namelower = name.lower()
+
+homepage = 'https://github.com/molgenis/molgenis-pipelines'
+description = """This distribution already contains several pipelines/protocols/parameter files which you can use 'out-of-the-box' to align and impute your NGS data using MOLGENIS Compute."""
+
+toolchain = SYSTEM 
+easyblock = 'Tarball'
+
+#dependencies
+dependencies = [
+    ('Molgenis-Compute','20.03.1', '-Java-11-LTS'),
+    ('PerlPlus', '5.34.1', '-v22.11.1',('GCCcore','11.3.0')),
+    ('interop', '1.2.0', '', ('foss', '2022a')),
+    ('bcl2fastq2', '2.20.0', '', ('GCC', '11.3.0')),
+]
+
+#
+# Example URL: https://github.com/molgenis/NGS_Demultiplexing/archive/2.6.1.tar.gz
+#
+#
+source_urls = [('http://github.com/molgenis/%s/archive/' % (name))]
+sources = [('%s.tar.gz' % (version))]
+
+checksums = ['4f4e11782fc34ef6349c12100a9908455f303ae2990fbc5c5d8c9143aeefe682']
+
+sanity_check_paths = {
+    'files': ['workflow.csv', 'parameters.csv'],
+    'dirs': []
+}
+
+moduleclass = 'bio'
