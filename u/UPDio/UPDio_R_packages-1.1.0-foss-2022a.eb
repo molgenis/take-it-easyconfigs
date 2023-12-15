@@ -2,9 +2,9 @@
 # This EasyBuild config file for RPlus was generated with generateEasyConfig.R
 #
 easyblock = 'Bundle'
-name = 'RPlus'
-version = '4.2.2'
-versionsuffix = '-UPDio-1.1.0'
+name = 'UPDio_R_packages'
+version = '1.1.0'
+#versionsuffix = '-UPDio-1.1.0'
 homepage = 'http://www.r-project.org/'
 description = """R is a free software environment for statistical computing and graphics."""
 moduleclass = 'lang'
