@@ -1,5 +1,5 @@
 name = 'cluster-utils'
-version = 'v23.05.1'
+version = 'v24.01.1'
 
 homepage = 'https://github.com/molgenis/cluster-utils/'
 description = """Utilities for cluster users."""
@@ -13,7 +13,7 @@ easyblock = 'CmdCp'
 #
 source_urls = [('http://github.com/molgenis/%s/archive/' % (name))]
 sources = [('%s.tar.gz' % (version))]
-checksums = ['9b2fceccf88c607a2ffa567bc2612d6774560ce8ddf7b35953b4b3af300efbfd']
+checksums = ['0134ef390eae5b54b8947b65052778c9f6be22fa9de3c072803b565774d6e9ad']
 
 #
 # Deps.
