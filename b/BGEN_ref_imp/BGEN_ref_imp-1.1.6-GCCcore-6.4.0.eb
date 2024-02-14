@@ -1,0 +1,37 @@
+easyblock = 'ConfigureMake'
+
+name = 'BGEN_ref_imp'
+version = '1.1.6'
+
+homepage = 'https://enkre.net/cgi-bin/code/bgen/'
+description = """a reference implementation of the BGEN format, written in C++. The library can be used as the basis for BGEN support in other software, or as a reference for developers writing their own implementations of the BGEN format."""
+
+toolchain = {'name': 'GCCcore', 'version': '6.4.0'}
+
+sources = [{
+    'source_urls': ['http://code.enkre.net/bgen/tarball/release/'],
+    'filename': 'bgen.tgz',
+}]
+
+checksums = ['22a5e9254b71a08f233779350472f03c6f32a60cb6e07750305a9115454d7470']
+
+configopts  = ' '
+configure_cmd = './waf configure'
+
+buildopts = ''
+build_cmd = './waf # '
+
+installopts = ''
+install_cmd = 'mkdir -p %(installdir)s/ && cp -r %(builddir)s/bgen.tgz/* %(installdir)s/ && '
+install_cmd += 'ln -s %(installdir)s/build/apps %(installdir)s/bin'
+
+sanity_check_paths = {
+    'files': [
+      'bin/bgenix',
+      'bin/cat-bgen',
+      'bin/edit-bgen',
+    ],
+    'dirs': [ 'build' ]
+}
+
+moduleclass = 'bio'
