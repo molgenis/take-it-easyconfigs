@@ -9,11 +9,11 @@ description = """a reference implementation of the BGEN format, written in C++. 
 toolchain = {'name': 'GCCcore', 'version': '6.4.0'}
 
 sources = [{
-    'source_urls': ['http://code.enkre.net/bgen/tarball/release/'],
-    'filename': 'bgen.tgz',
+    'source_urls': ['https://enkre.net/cgi-bin/code/bgen/tarball/703a453117/'],
+    'filename': 'BGEN-703a453117.tar.gz',
 }]
 
-checksums = ['22a5e9254b71a08f233779350472f03c6f32a60cb6e07750305a9115454d7470']
+checksums = ['a5472bb4c89805d6fee7ce052f4366ba82192ef90d1cde992f3e01bcc19b0017']
 
 configopts  = ' '
 configure_cmd = './waf configure'
@@ -22,7 +22,7 @@ buildopts = ''
 build_cmd = './waf # '
 
 installopts = ''
-install_cmd = 'mkdir -p %(installdir)s/ && cp -r %(builddir)s/bgen.tgz/* %(installdir)s/ && '
+install_cmd = 'mkdir -p %(installdir)s/ && cp -r %(builddir)s/BGEN-703a453117/* %(installdir)s/ && '
 install_cmd += 'ln -s %(installdir)s/build/apps %(installdir)s/bin'
 
 sanity_check_paths = {
