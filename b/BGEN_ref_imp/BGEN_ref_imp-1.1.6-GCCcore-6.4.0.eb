@@ -1,4 +1,4 @@
-easyblock = 'ConfigureMake'
+easyblock = 'Waf'
 
 name = 'BGEN_ref_imp'
 version = '1.1.6'
@@ -15,15 +15,6 @@ sources = [{
 
 checksums = ['a5472bb4c89805d6fee7ce052f4366ba82192ef90d1cde992f3e01bcc19b0017']
 
-configopts  = ' '
-configure_cmd = './waf configure'
-
-buildopts = ''
-build_cmd = './waf # '
-
-installopts = ''
-install_cmd = 'mkdir -p %(installdir)s/ && cp -r %(builddir)s/BGEN-703a453117/* %(installdir)s/ && '
-install_cmd += 'ln -s %(installdir)s/build/apps %(installdir)s/bin'
 
 sanity_check_paths = {
     'files': [
@@ -31,7 +22,7 @@ sanity_check_paths = {
       'bin/cat-bgen',
       'bin/edit-bgen',
     ],
-    'dirs': [ 'build' ]
+    'dirs': [ ]
 }
 
 moduleclass = 'bio'
