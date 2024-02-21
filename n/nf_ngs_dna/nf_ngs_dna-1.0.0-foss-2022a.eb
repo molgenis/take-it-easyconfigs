@@ -14,7 +14,7 @@ toolchain = {'name': 'foss', 'version': '2022a'}
 #
 source_urls = [('http://github.com/molgenis/%s/archive/' % (name))]
 sources = [('%s.tar.gz' % (version))]
-checksums = ['c34c25bce14a0acc3fdc43c798a013824d0d695bc2d78cd5781ff7edc280dbae']
+checksums = ['e976030f93af45c2f61c2ef16b4729df00392146e286e6daa3d9ab7fd3914ca5']
 
 #
 # Dependencies.
@@ -23,7 +23,7 @@ dependencies = [
     ('BCFtools', '1.16'),
     ('BEDTools', '2.30.0'),
     ('HTSlib', '1.16'),
-    ('ngs-utils', '23.12.1','',('system','')),
+    ('ngs-utils', '24.02.1','',('system','')),
 ]
 
 
