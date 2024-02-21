@@ -14,7 +14,7 @@ easyblock = 'Tarball'
 source_urls = [('http://github.com/molgenis/%s/archive/' % (name))]
 sources = [('%s.tar.gz' % (version))]
 
-checksums = ['9257ba9ccceee39c96d5850866cd7e2d034b1f0b0a958d490afde9867cff8a38']
+checksums = ['36819092d1669bdb479c167ea23ae7c028ed2bfe4e3947e5e45435df132eb099']
 
 sanity_check_paths = {
     'files': [
