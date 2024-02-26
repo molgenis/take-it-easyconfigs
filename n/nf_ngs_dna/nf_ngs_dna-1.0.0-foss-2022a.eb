@@ -28,7 +28,7 @@ dependencies = [
 
 
 sanity_check_paths = {
-    'files': ['main.nf'],
+    'files': ['wgs.nf','swgs.nf'],
     'dirs': []
 }
 
