@@ -18,7 +18,7 @@ py2ver = '2.7.16'
 #
 source_urls = [('http://github.com/molgenis/%s/archive/' % (name))]
 sources = [('%s.tar.gz' % (version))]
-checksums = ['38f98f783d9a1b3089c376e682793be9924ce70a391bf0bc2489bdcf0b1e4d7b']
+checksums = ['a897b84b7f7fd7f336ff4e4576d23765d0c90322b9aecc2d2dd1bfeb4eb59e90']
 
 #
 # Dependencies.
