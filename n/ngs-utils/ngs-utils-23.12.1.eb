@@ -1,0 +1,31 @@
+name = 'ngs-utils'
+version = '23.12.1'
+
+homepage = 'https://github.com/molgenis/ngs-utils'
+description = """Collection of notes and scripts related to NGS """
+
+toolchain = SYSTEM
+easyblock = 'PackedBinary'
+
+#
+# Example URL: https://github.com/molgenis/ngs-utils/archive/23.02.1.tar.gz
+#
+source_urls = [('http://github.com/molgenis/ngs-utils/archive/%s/' % (version))]
+sources = [('%s.tar.gz' % (version))]
+
+checksums = ['bb40164561b58e44a09e1087e43db18c72d8156432f45bbd7f98d58d596a0b88']
+
+postinstallcmds = [
+    'chmod -R 775 %(installdir)s/bin/*.sh',
+    'chmod -R 775 %(installdir)s/bin/*.bash',
+    'chmod -R 775 %(installdir)s/bin/*.pl',
+    'chmod -R 775 %(installdir)s/bin/*.py',
+    'chmod -R g+rwX,o+rX,o-w %(installdir)s/bin/*'
+]
+
+sanity_check_paths = {
+    'files': ['bin/vcf-compare-precision-sensitivity.sh'],
+    'dirs': []
+}
+
+moduleclass = 'bio'

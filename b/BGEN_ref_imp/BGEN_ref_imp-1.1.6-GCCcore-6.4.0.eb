@@ -1,0 +1,28 @@
+easyblock = 'Waf'
+
+name = 'BGEN_ref_imp'
+version = '1.1.6'
+
+homepage = 'https://enkre.net/cgi-bin/code/bgen/'
+description = """a reference implementation of the BGEN format, written in C++. The library can be used as the basis for BGEN support in other software, or as a reference for developers writing their own implementations of the BGEN format."""
+
+toolchain = {'name': 'GCCcore', 'version': '6.4.0'}
+
+sources = [{
+    'source_urls': ['https://enkre.net/cgi-bin/code/bgen/tarball/703a453117/'],
+    'filename': 'BGEN-703a453117.tar.gz',
+}]
+
+checksums = ['a5472bb4c89805d6fee7ce052f4366ba82192ef90d1cde992f3e01bcc19b0017']
+
+
+sanity_check_paths = {
+    'files': [
+      'bin/bgenix',
+      'bin/cat-bgen',
+      'bin/edit-bgen',
+    ],
+    'dirs': [ ]
+}
+
+moduleclass = 'bio'

@@ -1,7 +1,7 @@
 name = 'NGS_Automated'
-version = '4.1.0'
+version = '4.2.0'
 namelower = name.lower()
-versionsuffix = "-NGS_Demultiplexing-2.5.3"
+versionsuffix = "-NGS_DNA-4.2.2"
 
 homepage = 'https://github.com/molgenis/NGS_Automated'
 description = """Various scripts to automate the NGS pipelines implemented in the MOLGENIS Compute framework."""
@@ -10,8 +10,9 @@ toolchain = SYSTEM
 easyblock = 'Bundle'
 
 dependencies = [
-    ('NGS_Automated', '4.1.0','-bare'),
-    ('NGS_Demultiplexing', '2.5.3'),
+    ('NGS_DNA', '4.2.2','',('foss','2022a')),
+    ('NGS_Automated', '4.2.0','-bare'),
+    ('hashdeep', '4.4-20180907-18a6b5d','', ('GCCcore','11.3.0'))
 ]
 
 moduleclass = 'bio'

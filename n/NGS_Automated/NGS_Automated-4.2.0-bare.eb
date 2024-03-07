@@ -1,5 +1,5 @@
 name = 'NGS_Automated'
-version = '4.1.0'
+version = '4.2.0'
 namelower = name.lower()
 versionsuffix='-bare'
 homepage = 'https://github.com/molgenis/NGS_Automated'
@@ -14,12 +14,11 @@ easyblock = 'Tarball'
 source_urls = [('http://github.com/molgenis/%s/archive/' % (name))]
 sources = [('%s.tar.gz' % (version))]
 
-checksums = ['85cbba44b0f020818352ff53e2c7543c7d8f276b158f08302409f4f6d51ac705']
+checksums = ['7baeecaa26e843cad1639f4ad4de81125917d782db39f046360b6f70b0d51712']
 
 sanity_check_paths = {
     'files': [
-        'bin/cleanupDataOnTmp.sh',
-        'etc/umcg-pr.cfg',
+        'bin/moveSequencingData.sh'
     ],
     'dirs': [
         'bin/',

@@ -1,0 +1,35 @@
+easyblock = 'Tarball'
+
+name = 'nf_ngs_dna'
+version = '1.0.0'
+namelower = name.lower()
+
+homepage = 'https://github.com/molgenis/nf_ngs_dna'
+description = """Nexflow ngs_dna pipeline used in the UMCG"""
+
+toolchain = {'name': 'foss', 'version': '2022a'}
+
+#
+# Example URL: https://github.com/molgenis/nf_ngs_dna/archive/1.0.0.tar.gz
+#
+source_urls = [('http://github.com/molgenis/%s/archive/' % (name))]
+sources = [('%s.tar.gz' % (version))]
+checksums = ['5aa536249b5dab3788b3bcee279f3124b38f18aae13d1326ca4979731d4ea908']
+
+#
+# Dependencies.
+#
+dependencies = [
+    ('BCFtools', '1.16'),
+    ('BEDTools', '2.30.0'),
+    ('HTSlib', '1.16'),
+    ('ngs-utils', '24.02.2','',('system','')),
+]
+
+
+sanity_check_paths = {
+    'files': ['wgs.nf','swgs.nf'],
+    'dirs': []
+}
+
+moduleclass = 'bio'
