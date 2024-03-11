@@ -17,7 +17,7 @@ sources = ['v%(version)s.tar.gz']
 patches = ['SHAPEIT4_%(version)s_use_EB_settings.patch']
 checksums = [
     '9f109e307b5cc22ab68e7bf77de2429a9bbb2212d66303386e6a3dd81a5bc556',  # v4.2.2.tar.gz
-    '92ed45545bfcde7b1fbe079e6321ccae00865c8f0f66a924e872967d762df885',  # SHAPEIT4_4.2.2_use_EB_settings.patch
+    'b9d5753b49a3d7c046366e7ddadc4f2833f61ac8f75c3b46e69bfca418a1ac53',  # SHAPEIT4_4.2.2_use_EB_settings.patch
 ]
 
 github_account = 'odelaneau'
