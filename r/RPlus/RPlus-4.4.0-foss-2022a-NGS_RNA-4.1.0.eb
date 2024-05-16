@@ -113,14 +113,15 @@ exts_list = [
     ('data.table', '1.15.2', {
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
-            'http://cran.r-project.org/src/contrib/',
-            'http://cran.r-project.org/src/contrib/00Archive/%(name)s',
+            'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['d2c433e5c730a32b2127fbb91d5054aa5912e1aaed17e96f3e29517f4765ee12'],
     }),
     ('cli', '3.6.1', {
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
+            'https://cran.r-project.org/src/contrib/',
             'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['be3006cec7e67f9ae25e21b4658c4bec680038c2ef7467df5f14da3311a05e36'],
@@ -128,6 +129,7 @@ exts_list = [
     ('glue', '1.6.2', {
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
+            'https://cran.r-project.org/src/contrib/',
             'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['9da518f12be584c90e75fe8e07f711ee3f6fc0d03d817f72c25dc0f66499fdbf'],
@@ -135,6 +137,7 @@ exts_list = [
     ('rlang', '1.1.2', {
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
+            'https://cran.r-project.org/src/contrib/',
             'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['2a0ee1dc6e5c59b283c32db5e74e869922a336197cb406fe92622b6ec66f8092'],
@@ -142,27 +145,31 @@ exts_list = [
     ('lifecycle', '1.0.3', {
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
+            'https://cran.r-project.org/src/contrib/',
             'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['6459fdc3211585c0cdf120427579c12149b02161efe273a64b825c05e9aa69c2'],
     }),
-    ('gtable', '0.3.4', {
+    ('gtable', '0.3.5', {
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
+            'https://cran.r-project.org/src/contrib/',
             'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
-        'checksums': ['7032039371a4ec1bde9d3e4b7dae450dcc9aab50bb0e6287ab26a1b0199c7977'],
+        'checksums': ['b19fc1a30359945adbab7d4e915fe95523a839c380e34ae705d70b7ebddeea72'],
     }),
-    ('isoband', '0.2.6', {
+    ('isoband', '0.2.7', {
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
+            'https://cran.r-project.org/src/contrib/',
             'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
-        'checksums': ['27e460945753f6710649563dc817e2f314392ef6d1f8b6af2b1bf9447fab43a3'],
+        'checksums': ['7693223343b45b86de2b5b638ff148f0dafa6d7b1237e822c5272902f79cdf61'],
     }),
     ('MASS', '7.3-60', {
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
+            'https://cran.r-project.org/src/contrib/',
             'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['b802410feab01464d112b27b3501176eb8e68511d4ba9d052ac4db1f2a72f0c2'],
@@ -170,34 +177,39 @@ exts_list = [
     ('lattice', '0.22-5', {
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
+            'https://cran.r-project.org/src/contrib/',
             'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['ba1fbe5e18a133507dca9851b7f933002bdb6d1f3ea5f410a0a441103b6da5f1'],
     }),
-    ('nlme', '3.1-163', {
+    ('nlme', '3.1-164', {
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
+            'http://cran.r-project.org/src/contrib/'
             'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
-        'checksums': ['7d46ff4c4fb7fda8df6129b28cd2aa7d32e814eac87dae8ea9fa7560593c128a'],
+        'checksums': ['79a5a020ce7037b83ee6c28336e35a1310058c13fc59f7fcb11eca0bc9bdd4e8'],
     }),
-    ('Matrix', '1.6-5', {
+    ('Matrix', '1.7-0', {
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
+            'https://cran.r-project.org/src/contrib/'
             'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
-        'checksums': ['726c8d46626e73d1d6e76a74679813c6df96ffdee1aee45d94e7014cb4ceb97d'],
+        'checksums': ['fb97bba0df370222eb4f7e2da2e94dd01053b5e054b1c51829ff9a6efc08ad37'],
     }),
-    ('mgcv', '1.9-0', {
+    ('mgcv', '1.9-1', {
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
+            'https://cran.r-project.org/src/contrib/'
             'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
-        'checksums': ['b2b10078c1f8b2ce3cadcca405496eedacc8d4632ee4357e17632cae1b043b70'],
+        'checksums': ['700fbc37bedd3a49505b9bc4949faee156d9cfb4f669d797d06a10a15a5bdb32'],
     }),
     ('farver', '2.1.0', {
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
+            'https://cran.r-project.org/src/contrib/',
             'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['e5c8630607049f682fb3002b99ca4f5e7c6b94f8b2a4342df594e7853b77cef4'],
@@ -205,6 +217,7 @@ exts_list = [
     ('labeling', '0.4.2', {
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
+            'https://cran.r-project.org/src/contrib/',
             'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['e022d79276173e0d62bf9e37d7574db65ab439eb2ae1833e460b1cff529bd165'],
@@ -212,6 +225,7 @@ exts_list = [
     ('colorspace', '2.0-3', {
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
+            'https://cran.r-project.org/src/contrib/',
             'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['e75681cc4dd6e4b70303fd96a6d4597065dc6bffcaa4ae4244b73ff19016857f'],
@@ -219,6 +233,7 @@ exts_list = [
     ('munsell', '0.5.0', {
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
+            'https://cran.r-project.org/src/contrib/',
             'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['d0f3a9fb30e2b5d411fa61db56d4be5733a2621c0edf017d090bdfa5e377e199'],
@@ -226,6 +241,7 @@ exts_list = [
     ('R6', '2.5.0', {
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
+            'https://cran.r-project.org/src/contrib/',
             'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['aec1af9626ec532cb883b544bf9eff4cb2d89c343c7ce0fa31761ec5a7882e02'],
@@ -233,6 +249,7 @@ exts_list = [
     ('RColorBrewer', '1.1-2', {
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
+            'https://cran.r-project.org/src/contrib/',
             'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['f3e9781e84e114b7a88eb099825936cc5ae7276bbba5af94d35adb1b3ea2ccdd'],
@@ -240,6 +257,7 @@ exts_list = [
     ('viridisLite', '0.4.1', {
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
+            'https://cran.r-project.org/src/contrib/',
             'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['a896db1ccae5fc1a8b3764d02f24cef74ef7a8341cf9f3401c4efe799870ea97'],
@@ -255,6 +273,7 @@ exts_list = [
     ('fansi', '1.0.5', {
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
+            'https://cran.r-project.org/src/contrib/',
             'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['c616ce357fbfd43253c366da578549a38066459058c22fb99c82fc05992e23f6'],
@@ -262,6 +281,7 @@ exts_list = [
     ('magrittr', '2.0.2', {
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
+            'https://cran.r-project.org/src/contrib/',
             'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['7be6fd0d0da75b92d8bad0136076da96260ee84bf639ef632a24668acdc163a6'],
@@ -269,6 +289,7 @@ exts_list = [
     ('utf8', '1.2.3', {
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
+            'https://cran.r-project.org/src/contrib/',
             'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['c0a88686591f4ad43b52917d0964e9df4c62d8858fe25135a1bf357dfcbd6347'],
@@ -276,6 +297,7 @@ exts_list = [
     ('vctrs', '0.6.4', {
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
+            'https://cran.r-project.org/src/contrib/',
             'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['8a80192356e724d21bd89a0ce3e5835856fd5bb1651e7fc205c6fee58fd001c8'],
@@ -283,6 +305,7 @@ exts_list = [
     ('pillar', '1.8.1', {
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
+            'https://cran.r-project.org/src/contrib/',
             'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['2f06a7cc9e5638390c9b98a6ec9a9ec1beec0f2b9dbdfa42e39a5ab2456d87ec'],
@@ -290,6 +313,7 @@ exts_list = [
     ('pkgconfig', '2.0.2', {
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
+            'https://cran.r-project.org/src/contrib/',
             'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['25997754d1adbe7a251e3bf9879bb52dced27dd8b84767d558f0f644ca8d69ca'],
@@ -297,6 +321,7 @@ exts_list = [
     ('tibble', '3.2.0', {
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
+            'https://cran.r-project.org/src/contrib/',
             'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['8f2ff14bca39e342f36d026776351f21b7627fe0f20f009b7a9e0a69a166298a'],
@@ -304,6 +329,7 @@ exts_list = [
     ('withr', '2.5.2', {
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
+            'https://cran.r-project.org/src/contrib/',
             'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['d5b6fa6d728fda5201310d6ad5921a43aae1c23029c25334bfc1e54cb13d4205'],
@@ -365,6 +391,7 @@ exts_list = [
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'http://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['7de21316984c3ba3d7423d12f43d1c30c716007c5e39bf07e11885e0ceb0caa4'],
     }),
@@ -372,6 +399,7 @@ exts_list = [
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'http://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['4a7a4d8c08aa1bca2fcd9c58ade7b4b0ea2ed9076d0521071be29baac8adfa90'],
     }),
@@ -379,6 +407,7 @@ exts_list = [
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'http://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['a9001051d6c1e556e881910b1816b42872a1ee41ab76d0040ce66a27135e3849'],
     }),
@@ -386,6 +415,7 @@ exts_list = [
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'http://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['b7bdce66f0fb681830ea6fb77b5a2c6babb43920abb1eddc733f95c0a63ce5b3'],
     }),
@@ -393,6 +423,7 @@ exts_list = [
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'http://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['b922369781934d0ffc8d0c0177e8ace56796c2e6a726f65e460c16f792592cef'],
     }),
@@ -400,6 +431,7 @@ exts_list = [
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'http://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['77e5419df6b96aeb1c894db7062b05c3e633b2e43d5f74cbdf939b3a1ccda056'],
     }),
@@ -407,6 +439,7 @@ exts_list = [
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'http://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['1555e6c2fb67bd38ff11b479f74aa287b2d93f4add487aec53b836ff07de3a3a'],
     }),
@@ -448,6 +481,7 @@ exts_list = [
     ('abind', '1.4-3', {
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
+            'https://cran.r-project.org/src/contrib/',
             'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['b6c255878c1ab81701ae701f34546e88be115629b984ac4272e311fa3c0ea6ce'],
@@ -455,6 +489,7 @@ exts_list = [
     ('crayon', '1.5.1', {
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
+            'https://cran.r-project.org/src/contrib/',
             'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['c025c73b78a8e88e8e4363c8e1a941da5089a7baea39e59ea5342ab9ebe45df9'],
@@ -469,6 +504,7 @@ exts_list = [
     ('matrixStats', '1.2.0', {
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
+            'https://cran.r-project.org/src/contrib/',
             'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['e403c12e597283f80097092d133be8e8d002f20f8286748acd5b908a7fa54573'],
@@ -512,6 +548,7 @@ exts_list = [
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['7a9cc974e09598077b242a1069f7fbf4fa7f85ffe25067f6c4c32314ef532570'],
     }),
@@ -519,6 +556,7 @@ exts_list = [
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['4ebaab2c3f8527871655246b62abd060bc75dae1cec7f962ca4752b8080f474c'],
     }),
@@ -526,6 +564,7 @@ exts_list = [
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['d252fee39065326c6d9f45ad798076522cec05e73b8905c1b30f95a61f7801d6'],
     }),
@@ -533,6 +572,7 @@ exts_list = [
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['5e8b32d65f77a86d17d90fd8690fc085aa0612df8018e4d6d6c1a60fa65776e4'],
     }),
@@ -540,6 +580,7 @@ exts_list = [
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['84587f46f222a96f3e2fde10ad6ec6ddbd878f4e917cd926d632f61a87db13c9'],
     }),
@@ -547,6 +588,7 @@ exts_list = [
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['3be6f375ec178723ddfd559d1e8e85bfeee04a5fbaf9f53f2f844e1669fea863'],
     }),    
@@ -554,6 +596,7 @@ exts_list = [
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['6fb660755f572cd975073d7052075654acf8db12d208954ca223b8e4f77ef1ac'],
     }),
@@ -561,6 +604,7 @@ exts_list = [
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['801d1266824c3972642bce2db2a5fd0528a65ec845c58eb5a886edf082264344'],
     }),    
@@ -574,6 +618,7 @@ exts_list = [
     ('locfit', '1.5-9.8', {
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
+            'https://cran.r-project.org/src/contrib/',
             'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['0d0a9bfb32e50e8f8f97de771f91b17db1db7c5be35027f2d7840a7293e11de3'],
@@ -597,6 +642,7 @@ exts_list = [
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['15b5e7f711d53bf41b8687923983b8ef424563aa2f74c5195feb5b1df1aee103'],
     }),
@@ -604,6 +650,7 @@ exts_list = [
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['f4b451d86fbb56ff9ade043ddd6b0944368c37d0dad12d02837750ecdc708ad6'],
     }),
@@ -611,6 +658,7 @@ exts_list = [
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['d8c4d19ff9aeb31b0c628bd4a16378e51c1c9a3813b525469a31fe89af00b345'],
     }),
@@ -618,6 +666,7 @@ exts_list = [
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['c3505e5ac06d5e01b3a6bad94177f8375cd9867bb0146cc9c63d92424ecb7922'],
     }),
@@ -625,6 +674,7 @@ exts_list = [
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['848287bb0016eaeab7cef474087ed4e6fadb805e26c767c816c204037d3d9aff'],
     }),
@@ -632,6 +682,7 @@ exts_list = [
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['d92a0cf819fe4c08b8eb17f5e03275c8accde7f3b54f990cbba5ab926575b60b'],
     }),  
@@ -639,6 +690,7 @@ exts_list = [
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['26044b7ea1b42304b4dfde48afa94dd487acf979da4db2bf670ba41222083c19'],
     }),
@@ -646,6 +698,7 @@ exts_list = [
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['28d4a02011129f9b7a2a2bbe69ec4cca7676b072d5aca9dc1cefa8f96af45136'],
     }),
@@ -653,6 +706,7 @@ exts_list = [
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['2f0715d68a975403e2aa3f087939542001921623bd1bb8d905ebaff05d82d786'],
     }),
@@ -667,6 +721,7 @@ exts_list = [
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['8d55a0b3654511b776ae8ad201f4ebefa707c5f5f4ee6ae39af3856913d5a781'],
     }),
@@ -674,6 +729,7 @@ exts_list = [
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['f0f2536a8874b6a30b80baefbc68cb21f0ffbf51f3877bda8038c3f9f354bfbc'],
     }),
@@ -681,6 +737,7 @@ exts_list = [
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['25df6826ea5e93241c4874cad4fa8dadc87a40f4ff74c9107aa12a9e033e1578'],
     }),
@@ -688,6 +745,7 @@ exts_list = [
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['d08922ebc4147d930fe4762b1b289935217308c6d3fcaa5ae028ce3f5cf2728f'],
     }),
@@ -695,20 +753,23 @@ exts_list = [
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['3623809dd016ae8abd235200ba7834effc4b916915a059deb76044137c5c7173'],
     }),
-    ('cachem', '1.0.8', {
+    ('cachem', '1.1.0', {
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
-        'checksums': ['ea9ca919fe615dce8770758ecc2fc88ac99074f66ff1cde3a0b95d40007f45c2'],
+        'checksums': ['550839fc2ae5d865db475ba2c1714144f07fa0c052c72135b0e4a70287492e21'],
     }),
     ('memoise', '2.0.1', {
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['f85034ee98c8ca07fb3cd826142c1cd1e1e5747075a94c75a45783bbc4fe2deb'],
     }),    
@@ -716,6 +777,7 @@ exts_list = [
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['0e63ba2e1f624005fe25c67cdd403636a912e063d682eca07f2f1d65e9870d29'],
     }),
@@ -723,6 +785,7 @@ exts_list = [
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['fbb1b7a58ff49af30059a802a9fed0055b8cf1e401b8022382b94fc6c3c9f8f2'],
     }),
@@ -737,6 +800,7 @@ exts_list = [
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['5a36fabb6d62ba2533d3fc4cececd07891942cfb76fe689ec0d550d08762f61c'],
     }),    
@@ -758,6 +822,7 @@ exts_list = [
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['a30ae3a3e0d559a2b84b118aa185ef9c42adcf644bf042569f6d192762d2eec4'],
     }),
@@ -800,6 +865,7 @@ exts_list = [
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['eead278694471dfa9bd2f256d229eebed782e71dc1c734fb457ec35377f303cf'],
     }),
@@ -807,6 +873,7 @@ exts_list = [
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['982b56d35ccc0c7db0b20c1d3eab5f5f47c620309646fdc278ff1cc3433ea2e2'],
     }),
@@ -814,6 +881,7 @@ exts_list = [
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['9ed079e2159cae214f3fefcbc4c8eb3b888ceabe902350adbdb1d181eda23fd8'],
     }),
@@ -821,6 +889,7 @@ exts_list = [
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['40ff8f1fb2987af2223e1a855bb1680c5ce2143fbce7ebc42f1edb291f80e692'],
     }),
@@ -842,6 +911,7 @@ exts_list = [
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['845c3c59fbb05e5a892c4231b955a0afdd331d82b7cc815bcff0672023242474'],
     }),
@@ -849,6 +919,7 @@ exts_list = [
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['e7e6ba0cca400137f352a599ea29cf35a83f40a5ad26e7c4f06e6c35471884f6'],
     }),
@@ -856,6 +927,7 @@ exts_list = [
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['1145dcf9fed15e7beeaa4a5c7075d8a8badd17c8246838cd63e40cd9551e4405'],
     }),
@@ -863,6 +935,7 @@ exts_list = [
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['75046163bfa8b8a4f4214c1b689e796207f6447182f2e5062cf570302387d053'],
     }),
@@ -870,6 +943,7 @@ exts_list = [
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['c219f8f64d1a2bfd4ca9528452d44d30db1899af14f4b9ef248412443bc669f3'],
     }),
@@ -877,6 +951,7 @@ exts_list = [
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['a4adec51bb3f04214b1d8ef40d3a58949f21b1497cbeaf2ba552e0891eef45de'],
     }),    
@@ -884,6 +959,7 @@ exts_list = [
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['d88dcf9e2530fa9695fc57d0c78adfc5e361305fe8919fe09410b17da5ca12d8'],
     }),
@@ -891,6 +967,7 @@ exts_list = [
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['7cb08f0b30485dac26f72e4056ec4ed8825d1398e8b9f25ed63db228fe3a0ed0'],
     }),
@@ -898,6 +975,7 @@ exts_list = [
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['cc333fbb05059c4973d0ca5d0f1322c812943d81cdbfa18455f72267abd8781f'],
     }),
@@ -905,13 +983,215 @@ exts_list = [
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['6d856d8a364bcdc499a0bf38bfd283b7c743d08f0b288174fba7dbf0a04b688d'],
+    }),
+        ('fs', '1.6.4', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': [
+            'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
+        ],
+        'checksums': ['7e06290f2dbe36f54fdf51b748a4b00b8b0f68967b5754e37e0c83df7fea5ac8'],
+    }),
+    ('rappdirs', '0.3.3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': [
+            'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
+        ],
+        'checksums': ['49959f65b45b0b189a2792d6c1339bef59674ecae92f8c2ed9f26ff9e488c184'],
+    }),
+    ('sass', '0.4.9', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': [
+            'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
+        ],
+        'checksums': ['e133049aad7964e0f6150257e1470b3748f36029322265ee797b8caf7517d4d2'],
+    }),
+    ('evaluate', '0.23', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': [
+            'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
+        ],
+        'checksums': ['c9cf9c37502b8fbfa78e4eb96b8c3d1789060e49505c86c07cb7476da804a45c'],
+    }),
+    ('highr', '0.10', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': [
+            'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
+        ],
+        'checksums': ['ec55bc1ff66390ed66806dc2a7b6c17dbfd089b3d73fe2e369017f8cb4bc347b'],
+    }),
+    ('xfun', '0.44', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': [
+            'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
+        ],
+        'checksums': ['b6c84004a09ba9f6645700a052a608d7891c7e9c7d6f44ab8bc45e0f86d88325'],
+    }),
+    ('bslib', '0.7.0', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': [
+            'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
+        ],
+        'checksums': ['2135d9841af382673b815a14454abff2f2ce0f5dc97484d1499298b85b752ca0'],
+    }),
+    ('fontawesome', '0.5.2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': [
+            'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
+        ],
+        'checksums': ['da3de2a9717084d1400d48edd783f06c66b8c910ce9c8d753d1b7d99be1c5cc9'],
+    }),
+    ('jquerylib', '0.4.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': [
+            'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
+        ],
+        'checksums': ['f0bcc11dcde3a6ff180277e45c24642d3da3c8690900e38f44495efbc9064411'],
+    }),
+    ('tinytex', '0.51', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': [
+            'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
+        ],
+        'checksums': ['bb113b51b4b58e78902a0220d709650c1458a8c6d3fa03f58ba007f0eb74c8ea'],
+    }),
+    ('ps', '1.7.6', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': [
+            'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
+        ],
+        'checksums': ['52c35ffc3d1e1d984a94c7bbd671ef4ad70946990cbcd80e814e17937b056dd2'],
+    }),
+    ('knitr', '1.46', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': [
+            'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
+        ],
+        'checksums': ['8f51c33c93a8c1a87ca618c9254372d9407948707e544d0d796c6b960e9fe859'],
+    }),
+    ('rmarkdown', '2.26', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': [
+            'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
+        ],
+        'checksums': ['8f8c170dfeb91f550d893aef0971b7390a23d3ce9a10fe2df94d5ee38314dfe0'],
+    }),
+    ('processx', '3.8.4', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': [
+            'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
+        ],
+        'checksums': ['6627672d7fb109f37dc1d0eaef913f4cfc7ad8ac807abf0397e6d37753b1e70b'],
+    }),
+    ('later', '1.3.2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': [
+            'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
+        ],
+        'checksums': ['52f5073d33cd0d3c12e56526c9c53c323ebafcc79b22cc6e51fb0c41ee2b561e'],
+    }),
+    ('gridExtra', '2.3', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': [
+            'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
+        ],
+        'checksums': ['81b60ce6f237ec308555471ae0119158b115463df696d2eca9b177ded8988e3b'],
+    }),
+    ('ca', '0.71.1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': [
+            'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
+        ],
+        'checksums': ['040c2fc94c356075f116cc7cd880530b3c9e02206c0035182c03a525ee99b424'],
+    }),
+    ('cluster', '2.1.6', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': [
+            'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
+        ],
+        'checksums': ['d1c50efafd35a55387cc5b36086b97d5591e0b33c48dc718005d2f5907113164'],
+    }),
+    ('foreach', '1.5.2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': [
+            'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
+        ],
+        'checksums': ['56338d8753f9f68f262cf532fd8a6d0fe25a71a2ff0107f3ce378feb926bafe4'],
+    }),
+    ('gclus', '1.3.2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': [
+            'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
+        ],
+        'checksums': ['9cc61cdff206c11213e73afca3d570a7234250cf6044a9202c2589932278e0b3'],
+    }),
+    ('qap', '0.1-2', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': [
+            'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
+        ],
+        'checksums': ['47a4ada3ae7a3a5c9304174bd5291daad60d329d527c0c6bb5ec1ac257584da5'],
+    }),
+    ('registry', '0.5-1', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': [
+            'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
+        ],
+        'checksums': ['dfea36edb0a703ec57e111016789b47a1ba21d9c8ff30672555c81327a3372cc'],
+    }),
+    ('TSP', '1.2-4', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': [
+            'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
+        ],
+        'checksums': ['30bd0bfe9a7ca3fdf4f91c131f251e2835640f7d61389b50fd5564d58657c388'],
+    }),
+    ('vegan', '2.6-6', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': [
+            'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
+        ],
+        'checksums': ['2c873d1a4555944e328e2237b634271b2f304fb01ecd8d8304eba0d631fd37ba'],
+    }),
+    ('callr', '3.7.6', {
+        'source_tmpl': '%(name)s_%(version)s.tar.gz',
+        'source_urls': [
+            'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
+        ],
+        'checksums': ['e4bce367e869e42eaeea05566d2033d8cee2103179b11cd9a401440b58a351f8'],
     }),
     ('htmltools', '0.5.8.1', {
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['f9f62293ec06c353c4584db6ccedb06a2da12e485208bd26b856f17dd013f176'],
     }),
@@ -919,6 +1199,7 @@ exts_list = [
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['e820c261cb5543f572f49276a7bdc7302aa4215da4bf850b1b939a315353835d'],
     }),
@@ -926,6 +1207,7 @@ exts_list = [
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['cf730414d5d4ab387b4e9890a4b1df9d17a3903488e8da8df1cf2e11e44558cb'],
     }),
@@ -933,6 +1215,7 @@ exts_list = [
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['d6904112a21056222cfcd5eb8175a78aa063afe648a562d9c42c6b960a8820d4'],
     }),
@@ -940,6 +1223,7 @@ exts_list = [
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['680cf08416d6d5a1194dd85ee5695c268af9d4d01b201448e1d486c6e06014f1'],
     }),
@@ -947,6 +1231,7 @@ exts_list = [
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['2c1bc6bb88433dff0892b41136f2f5c23573b335ff35a4775c72aa57b48bbb63'],
     }),
@@ -954,6 +1239,7 @@ exts_list = [
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['f8209df3bab33340c1bc8c0d26caee2890fafb93129ff1423302abae5931fad3'],
     }),
@@ -961,6 +1247,7 @@ exts_list = [
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['cfa995b7ed55d31a196707a3ae6ea352dd907cef3058a3bf1956fde39366d867'],
     }),
@@ -968,6 +1255,7 @@ exts_list = [
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['862b5cb6be115deea0207cdd3c8bb33de28552cfdc29900777512fd488d0005c'],
     }),
@@ -975,6 +1263,7 @@ exts_list = [
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['87e96e119e7236b4f5df1c6f1b0d4d4e12aab606a2142e039f56d8ec71f9e521'],
     }),
@@ -982,6 +1271,7 @@ exts_list = [
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['f7834c86fd68330ae706d33dfaeb3ee53fa58c2137a29f2b5b37a38158bc046d'],
     }),
@@ -989,6 +1279,7 @@ exts_list = [
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['d675913ccac80e0af8ee396f95a24124eae6c42d80aed9f47f7a88218ecbb913'],
     }),
@@ -996,6 +1287,7 @@ exts_list = [
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['85cf7fcc4753a8c86da9a6f454e46c2a58ffc70c4f47cac4d3e3bcefda2a9e9f'],
     }),
@@ -1003,6 +1295,7 @@ exts_list = [
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['15c8ba7cf2676eb0460de7e5dfbc89fc3175ac22a8869cfd44d66d156fd6c7bb'],
     }),    
@@ -1010,6 +1303,7 @@ exts_list = [
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['aca4dd8b0181aa97969c8c25c73343e294c4d9c24e7cbf52e97fecbed5a92db3'],
     }),
@@ -1017,6 +1311,7 @@ exts_list = [
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['579d96ee0417203b85417780eca921969cda3acc210c859bf9dfeff11539b0c1'],
     }),
@@ -1031,6 +1326,7 @@ exts_list = [
         'source_tmpl': '%(name)s_%(version)s.tar.gz',
         'source_urls': [
             'https://cran.r-project.org/src/contrib/',
+            'https://cran.r-project.org/src/contrib/00Archive/%(name)s',
         ],
         'checksums': ['479118ce47c527bc97fb58d531a31cabc094d9843d62f16922009dc62e8248d4'],
     }),
