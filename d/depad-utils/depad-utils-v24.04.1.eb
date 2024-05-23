@@ -40,8 +40,8 @@ cmds_map = [('.*', "ls -ahl %(source)s")]
 # (Mode may by masked by umask.)
 #
 postinstallcmds = [
-    'for executable in $(ls -1 %(installdir)s/bin/* 2> /dev/null | grep -v '.cfg'); do chmod 775 ${executable}; done',
-    'chmod -R g+rwX,o+rX,o-w %(installdir)s/*'
+    'for executable in $(ls -1 "%(installdir)s/bin/"* 2> /dev/null | grep -v ".cfg"); do chmod 775 "${executable}"; done',
+    'chmod -R g+rwX,o+rX,o-w "%(installdir)s/"*'
 ]
 
 #
