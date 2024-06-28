@@ -30,7 +30,7 @@ dependencies = [
 
 # make sure they do not involve pip or setuptools as those two should be
 # alredy included in python core
-sources = ['%(name)s-%(version)s-GCCcore-11.3.0-requirements.txt']
+sources = ['%(name)s-%(version)s-GCCcore-11.3.0-requirements_hashed.txt']
 checksums = ['9d995c901c61474dc647f3f9ad0cbc9338c896327502aeb527bcac3ebe0b650a']
 
 pip_ignore_installed = False
