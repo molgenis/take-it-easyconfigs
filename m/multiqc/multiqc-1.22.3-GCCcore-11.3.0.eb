@@ -44,7 +44,7 @@ use_pip_requirement = True
 # Sanity checking.
 #
 
-local_binaries = ['futurize', 'multiqc', 'pasteurize']
+local_binaries = ['multiqc']
 sanity_check_paths = {
     'files': ['bin/%s' % x for x in local_binaries],
     'dirs':  ['bin', 'lib/python%(pyshortver)s/site-packages'],
