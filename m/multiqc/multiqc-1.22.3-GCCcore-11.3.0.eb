@@ -1,7 +1,7 @@
 easyblock = 'PythonPackage'
 
 name = 'multiqc'
-version = '1.12'
+version = '1.22.3'
 
 # solving santiy check:
 #   sanity tries to import module multiqc, as it thinks it's python module = fail
@@ -13,25 +13,25 @@ options = {'modulename': False,}
 homepage = 'http://multiqc.info/'
 description = """Create aggregate bioinformatics analysis reports across many samples and tools."""
 
-toolchain = {'name': 'foss', 'version': '2018b'}
+toolchain = {'name': 'GCCcore', 'version': '11.3.0'}
 toolchainopts = {'pic': True}
 
 # depend on numpy because of https://github.com/biocore/scikit-bio/issues/1734
 dependencies = [
-    ('Python', '3.10.2', '-bare'),
+    ('Python', '3.10.4', '-bare'),
     ('LZO', '2.10'),
-    ('libxml2', '2.9.8'),
-    ('libxslt', '1.1.33'),
+    ('libxml2', '2.9.13'),
+    ('libxslt', '1.1.34'),
     ('libpng', '1.6.37'),
-    ('cairo', '1.16.0'),
-    ('libffi', '3.3'),
-    ('ICU', '64.2'),
+    ('cairo', '1.17.4'),
+    ('libffi', '3.4.2'),
+    ('ICU', '71.1'),
 ]
 
 # make sure they do not involve pip or setuptools as those two should be
 # alredy included in python core
-sources = ['%(name)s-%(version)s-foss-2018b-requirements_hashes.txt']
-checksums = ['d5eb1c59fe2df6d0ff71995ae80e14b93cebe3db9417b94694740dcb23d91d8f']
+sources = ['%(name)s-%(version)s-GCCcore-11.3.0-requirements.txt']
+checksums = ['9d995c901c61474dc647f3f9ad0cbc9338c896327502aeb527bcac3ebe0b650a']
 
 pip_ignore_installed = False
 sanity_pip_check = True
@@ -39,7 +39,6 @@ unpack_sources = False
 use_pip = True
 use_pip_for_deps = True
 use_pip_requirement = True
-installopts = '--require-hashes'
 
 #
 # Sanity checking.
