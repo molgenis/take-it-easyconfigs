@@ -1,17 +1,17 @@
 easyblock = 'PythonPackage'
 
 name = 'multiqc'
-version = '1.11'            # Same as the vanilla Python module on which these add-on modules depend.
+version = '1.11'
 
 # solving santiy check:
-#   sanity tries to import module pythonplus, as it thinks it's python module = fail
+#   sanity tries to import module multiqc, as it thinks it's python module = fail
 # solution (implemented in 2013)
 #   https://github.com/easybuilders/easybuild-framework/blob/develop/easybuild/framework/extension.py#L204
 #   https://www.mail-archive.com/easybuild@lists.ugent.be/msg06020.html
 options = {'modulename': False,} 
 
-homepage = 'https://www.python.org/'
-description = """The PythonPlus bundle contains a plain vanilla Python supplemented with a selection of add-on modules."""
+homepage = 'http://multiqc.info/'
+description = """Create aggregate bioinformatics analysis reports across many samples and tools."""
 
 toolchain = {'name': 'foss', 'version': '2018b'}
 toolchainopts = {'pic': True}
