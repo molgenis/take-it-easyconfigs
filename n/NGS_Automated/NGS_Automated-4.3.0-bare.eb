@@ -1,0 +1,29 @@
+name = 'NGS_Automated'
+version = '4.3.0'
+namelower = name.lower()
+versionsuffix='-bare'
+homepage = 'https://github.com/molgenis/NGS_Automated'
+description = """Various scripts to automate the NGS pipelines implemented in the MOLGENIS Compute framework."""
+
+toolchain = SYSTEM
+easyblock = 'Tarball'
+
+#
+# Example URL: https://github.com/molgenis/NGS_Automated/archive/1.0.1.tar.gz
+# 
+source_urls = [('http://github.com/molgenis/%s/archive/' % (name))]
+sources = [('%s.tar.gz' % (version))]
+
+checksums = ['caa72f9c02e13f926e5d1430b6d681d920925343694d2f46bca312433b5131b3']
+
+sanity_check_paths = {
+    'files': [
+        'bin/copyRawNanoporeDataToTmp.sh'
+    ],
+    'dirs': [
+        'bin/',
+        'lib',
+    ]
+}
+
+moduleclass = 'bio'
