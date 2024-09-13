@@ -1,0 +1,27 @@
+name = 'NGS_RNA'
+version = '4.1.1'
+namelower = name.lower()
+
+homepage = 'https://github.com/molgenis/molgenis-pipelines'
+description = """This distribution already contains several pipelines/protocols/parameter 
+files which you can use 'out-of-the-box' to align and impute your NGS data using MOLGENIS Compute."""
+
+toolchain = {'name': 'foss', 'version': '2022a'}
+easyblock = 'Tarball'
+
+dependencies = [
+    ('Molgenis-Compute', '20.03.1', '-Java-11-LTS', ('system', ''))]
+
+#
+# Example URL: https://github.com/molgenis/molgenis-pipelines/releases/download/NGS_RNA-3.2.1/NGS_RNA-3.2.2.tar.gz
+#
+source_urls = [('https://github.com/molgenis/NGS_RNA/archive/refs/tags/') ]
+sources = [('%s.tar.gz' % (version))]
+checksums = ['c62e4b1a7a20f920b5f5dc86aec01ce6efeacf5a5bde4cd96253de7058e2d809']
+
+sanity_check_paths = {
+    'files': ['workflow_STAR.csv', 'parameters.csv'],
+    'dirs': []
+}
+
+moduleclass = 'bio'
