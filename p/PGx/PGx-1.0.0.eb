@@ -1,0 +1,20 @@
+name = 'PGx'
+version = '1.0.0'
+
+homepage = 'https://github.com/molgenis/PGx-pipeline'
+description = """Pharmacogenetics pipeline"""
+
+toolchain = SYSTEM
+easyblock = 'PackedBinary'
+
+source_urls = [('http://github.com/molgenis/PGx-pipeline/archive/refs/tags/')]
+sources = [('%s.tar.gz' % (version))]
+
+checksums = ['30cb7b9408ad54924927cffed5fd34fbd1be44a2a6202884b2c35b68ab98d235']
+
+sanity_check_paths = {
+    'files': ['parameters_template.sh'],
+    'dirs': []
+}
+
+moduleclass = 'bio'
