@@ -12,6 +12,11 @@ sources = [('%s.tar.gz' % (version))]
 
 checksums = ['bcfca758452c16c66d5c93fef86c268f15134d0d1149895c874ad8b15ed6e07c']
 
+dependencies = [
+	('Java', '11', '-LTS'),
+]
+
+
 sanity_check_paths = {
     'files': ['requirements.txt'],
     'dirs': []
