@@ -10,7 +10,7 @@ easyblock = 'PackedBinary'
 source_urls = [('http://github.com/molgenis/PGx-pipeline/archive/refs/tags/')]
 sources = [('%s.tar.gz' % (version))]
 
-checksums = ['5953bc3e8f0ad4b1ed1e28359dae286a950795f712d80ed1a980a49ae3d94d42']
+checksums = ['ff5c769d613f343cfc1c14b7f656b7be17808097a691a7beeaa793b684a05f46']
 
 sanity_check_paths = {
     'files': ['workflow_pgx.csv'],
