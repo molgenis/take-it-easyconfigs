@@ -10,10 +10,19 @@ easyblock = 'PackedBinary'
 source_urls = [('http://github.com/molgenis/PGx-pipeline/archive/refs/tags/')]
 sources = [('%s.tar.gz' % (version))]
 
-checksums = ['ff5c769d613f343cfc1c14b7f656b7be17808097a691a7beeaa793b684a05f46']
+checksums = ['a1625038ee2e1c89f2e14350fc0050a5e4139d69d393904e9910d3ad4fc88ee7']
+
+dependencies = [
+	('Perl', '5.34.1', '', ('GCCcore', '11.3.0')),
+	('R', '4.2.2', '', ('foss', '2022a')),
+	('Python', '3.9.1', '-bare', ('GCCcore', '11.3.0')),
+	('nextflow', '21.10.6', '-Java-11-LTS'),
+	('GAP', '2.8.0', '', ('system', '')),
+	('Molgenis-Compute', '20.03.1', '-Java-11-LTS')
+]
 
 sanity_check_paths = {
-    'files': ['workflow_pgx.csv'],
+    'files': ['protocols_compute/sample_filtering.sh'],
     'dirs': []
 }
 
