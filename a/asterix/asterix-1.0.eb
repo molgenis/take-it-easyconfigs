@@ -10,7 +10,7 @@ easyblock = 'PackedBinary'
 source_urls = [('http://github.com/molgenis/asterix/archive/refs/tags/')]
 sources = [('%s.tar.gz' % (version))]
 
-checksums = ['bcfca758452c16c66d5c93fef86c268f15134d0d1149895c874ad8b15ed6e07c']
+checksums = ['07d147c0d6a5aaa0502bc75a59ee040de896fdf9ecf180ec2176551aa8253906']
 
 dependencies = [
 	('Java', '11', '-LTS'),
