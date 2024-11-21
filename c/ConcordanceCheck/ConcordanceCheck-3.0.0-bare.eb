@@ -1,6 +1,7 @@
 name = 'ConcordanceCheck'
 version = '3.0.0'
 namelower = name.lower()
+versionsuffix='-bare'
 homepage = 'https://github.com/molgenis/ConcordanceCheck'
 description = """Various scripts to automate and execute the ConcordanceCheck implemented in the MOLGENIS Compute framework."""
 
