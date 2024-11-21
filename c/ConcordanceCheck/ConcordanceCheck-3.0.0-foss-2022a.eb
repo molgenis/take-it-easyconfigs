@@ -13,7 +13,7 @@ easyblock = 'Tarball'
 source_urls = [('http://github.com/molgenis/%s/archive/' % (name))]
 sources = [('%s.tar.gz' % (version))]
 
-checksums = ['fe292d9ac9fe91e353573f462e45d81edc7321b160b3511215cbc97943926754']
+checksums = ['70e27fd3094c89ede02e91b4b748965a748cca1fdb516fcc52fc82241c805072']
 
 dependencies = [
        ('CompareGenotypeCalls', '1.8.1', '-Java-8-LTS', ('system', '')),
