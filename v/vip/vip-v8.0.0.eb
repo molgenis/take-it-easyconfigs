@@ -14,6 +14,11 @@ source_urls = [('http://github.com/molgenis/%s/releases/download/%s/' % (name,ve
 sources = [('install.sh')]
 checksums = ['0ed3d4cae0a518146dc8e26bf4fae4be2d8fee648dda6a07b8fc4bef5a999445']
 
+dependencies = [
+ ('Java', '21-LTS')
+
+]
+
 #
 # set default singularity image folder
 #
