@@ -1,0 +1,19 @@
+name = 'NGS_Automated'
+version = 'beta'
+namelower = name.lower()
+versionsuffix = "-vip-v8.1.1-umcg-config-gd-v1.0.1"
+
+homepage = 'https://github.com/molgenis/NGS_Automated'
+description = """Various scripts to automate the NGS pipelines implemented in the MOLGENIS Compute framework. - VIP UMCG GD version"""
+
+toolchain = SYSTEM
+easyblock = 'Bundle'
+
+dependencies = [
+    ('vip', 'v8.1.1'),
+    ('vip-umcg-config-gd', 'v1.0.1'),
+    ('NGS_Automated', 'beta','-bare'), #FIXME: fixed version
+    ('hashdeep', '4.4-20180907-18a6b5d','', ('GCCcore','11.3.0'))
+]
+
+moduleclass = 'bio'
