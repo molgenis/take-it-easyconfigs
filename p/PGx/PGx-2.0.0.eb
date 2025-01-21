@@ -1,0 +1,27 @@
+name = 'PGx'
+version = '2.0.0'
+
+homepage = 'https://github.com/molgenis/PGx-pipeline'
+description = """Pharmacogenetics pipeline"""
+
+toolchain = SYSTEM
+easyblock = 'PackedBinary'
+
+source_urls = [('http://github.com/molgenis/PGx-pipeline/archive/refs/tags/')]
+sources = [('%s.tar.gz' % (version))]
+
+checksums = ['fcc97c225f837b20541c71fbca6e43c7b75bc8439db7d3420e7ac24d41c44c7f']
+
+dependencies = [
+	('Perl', '5.34.1', '', ('GCCcore', '11.3.0')),
+	('Python', '3.9.1', '-bare', ('GCCcore', '11.3.0')),
+	('nextflow', '21.10.6', '-Java-11-LTS'),
+	('Molgenis-Compute', '20.03.1', '-Java-11-LTS')
+]
+
+sanity_check_paths = {
+    'files': ['protocols_compute/sample_filtering.sh'],
+    'dirs': []
+}
+
+moduleclass = 'bio'

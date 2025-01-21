@@ -1,0 +1,56 @@
+name = 'depad-utils'
+version = 'v24.04.1'
+
+homepage = 'https://github.com/molgenis/depad-utils/'
+description = """Utilities for deploy admins to manage HPC environments."""
+
+toolchain = SYSTEM
+easyblock = 'CmdCp'
+
+#
+# Example URL:
+# https://github.com/molgenis/depad-utils/archive/v15.06.1.tar.gz
+# Private repo: download source manually
+#
+source_urls = [('https://github.com/molgenis/%s/archive/' % (name))]
+sources = [('%s.tar.gz' % (version))]
+checksums = ['18a59c3f8d5a69b0ab5f34760f3ae8fb2a5b9603626695b27dfd9d7df06050c8']
+
+executables = [
+    'GetPerlModuleDepTreeFromCPAN.pl',
+    'generateEasyConfig.R',
+    'hpc-environment-sync.bash',
+    'module-usage'
+]
+
+files_to_copy = [
+    'README.md',
+    'LICENSE',
+    (['bin/*'], 'bin/')
+]
+
+#
+# We don't really need a command to install depad-utils, 
+# but as we have to have one in order to recycle the CmdCp easyblock... just ls.
+#
+cmds_map = [('.*', "ls -ahl %(source)s")]
+
+#
+# Make scripts executable.
+# (Mode may by masked by umask.)
+#
+postinstallcmds = [
+    'for executable in $(ls -1 "%(installdir)s/bin/"* 2> /dev/null | grep -v ".cfg"); do chmod 775 "${executable}"; done',
+    'chmod -R g+rwX,o+rX,o-w "%(installdir)s/"*'
+]
+
+#
+# Sanity checking.
+#
+sanity_check_paths = {
+    'files': ['README.md'] + ['bin/%s' % x for x in executables],
+    'dirs': ['bin']
+}
+sanity_check_commands = [('hpc-environment-sync.bash', '-h')]
+
+moduleclass = 'tools'
