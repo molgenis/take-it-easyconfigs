@@ -1,5 +1,5 @@
 name = 'NGS_Automated'
-version = 'beta'
+version = '4.4.0'
 namelower = name.lower()
 versionsuffix = "-vip-v8.1.1-umcg-config-gd-v1.0.1"
 
@@ -12,7 +12,7 @@ easyblock = 'Bundle'
 dependencies = [
     ('vip', 'v8.1.1'),
     ('vip-umcg-config-gd', 'v1.0.1'),
-    ('NGS_Automated', 'beta','-bare'), #FIXME: fixed version
+    ('NGS_Automated', '4.4.0','-bare'),
     ('hashdeep', '4.4-20180907-18a6b5d','', ('GCCcore','11.3.0'))
 ]
 
