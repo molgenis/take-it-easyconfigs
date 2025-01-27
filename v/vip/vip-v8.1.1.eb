@@ -35,7 +35,7 @@ sanity_check_paths = {
     'files': ['vip.sh'],
     'dirs': ['/apps/data/vip/resources', '/apps/data/vip/images']
 }
-
+modextravars={'VIP_DIR_DATA':'/apps/data/vip'}
 moduleclass = 'bio'
 
 modloadmsg = """
