@@ -28,14 +28,14 @@ dependencies = [
 # set default singularity image folder
 #
 postinstallcmds = [
-    'cd %(installdir)s/ ; cp  %(installdir)s/install-%(version)s.sh ../ ; cd ../ ; mkdir -p /apps/data/vip/resources && mkdir -p /apps/data/vip/images ; ln -sf /apps/data/vip/resources && ln -sf /apps/data/vip/images ; rm -r %(version)s ; bash install-%(version)s.sh -v %(version)s'
+	'cd %(installdir)s/ ; cp  %(installdir)s/install-%(version)s.sh ../ ; cd ../ ; rm -r %(version)s;  bash install-%(version)s.sh -n -v %(version)s VIP_DIR=/apps/software/vip/%(version)s VIP_DIR_DATA=/apps/data/vip VIP_VER=%(version)s' 
 ]
 
 sanity_check_paths = {
     'files': ['vip.sh'],
     'dirs': ['/apps/data/vip/resources', '/apps/data/vip/images']
 }
-
+modextravars={'VIP_DIR_DATA':'/apps/data/vip'}
 moduleclass = 'bio'
 
 modloadmsg = """
