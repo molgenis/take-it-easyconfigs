@@ -725,9 +725,9 @@ distlib==0.3.6 \
     # via
     #   -r /home/umcg-rkanninga/PythonPlus-3.10.4-GCCcore-11.3.0-v22.11.4-requirements.txt
     #   virtualenv
-django==4.1.5 \
-    --hash=sha256:4b214a05fe4c99476e99e2445c8b978c8369c18d4dea8e22ec412862715ad763 \
-    --hash=sha256:ff56ebd7ead0fd5dbe06fe157b0024a7aaea2e0593bb3785fb594cf94dad58ef
+django==4.1.7 \
+    --hash=sha256:44f714b81c5f190d9d2ddad01a532fe502fa01c4cb8faf1d081f4264ed15dcd8 \
+    --hash=sha256:f2f431e75adc40039ace496ad3b9f17227022e8b11566f4b363da44c7e44761e
     # via -r /home/umcg-rkanninga/PythonPlus-3.10.4-GCCcore-11.3.0-v22.11.4-requirements.txt
 docopt==0.6.2 \
     --hash=sha256:49b3a825280bd66b3aa83585ef59c4a8c82f2c8a522dbe754a8bc8d08c85c491
