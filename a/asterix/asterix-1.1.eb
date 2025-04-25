@@ -1,0 +1,25 @@
+name = 'asterix'
+version = '1.1'
+
+homepage = 'https://github.com/molgenis/asterix'
+description = """The Asterix project is designed to facilitate pharmacogenetic (PGx) analysis by converting individual genetic variants into medication-level advice using translation tables."""
+
+toolchain = SYSTEM
+easyblock = 'PackedBinary'
+
+source_urls = [('http://github.com/molgenis/asterix/archive/refs/tags/')]
+sources = [('%s.tar.gz' % (version))]
+
+checksums = ['d28a72749f9ce04f03bbfe72ae59ec02fddd804c586e6d709e3902b593eca03b']
+
+dependencies = [
+	('Java', '11', '-LTS'),
+]
+
+
+sanity_check_paths = {
+    'files': ['requirements.txt'],
+    'dirs': []
+}
+
+moduleclass = 'bio'
