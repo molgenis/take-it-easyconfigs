@@ -1,7 +1,7 @@
 easyblock = 'Tarball'
 
 name = 'vip-config-umcg-gd'
-version = 'v1.0.1'
+version = 'v1.1.0'
 
 homepage = "" #required variable
 description = """Variant Interpretation Pipeline configuration for UMCG Genome Diagnostics"""
@@ -11,7 +11,7 @@ toolchain = {'name': 'system', 'version': ''}
 #https://github.com/molgenis/vip-config-umcg-gd/archive/refs/tags/
 source_urls = [('https://github.com/molgenis/%s/archive/refs/tags/' % (name))]
 sources = [('%s.tar.gz' % (version))]
-checksums = ['5d63118d3f738aae82eda26421d5d031']
+checksums = ['c202f529178eee297e3c14f0bfc85a80f8d14e4ffb487a1a8776d24c9e73a37a']
 
 #
 # Dependencies.
