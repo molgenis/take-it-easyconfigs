@@ -13,7 +13,6 @@ dependencies = [
     ('vip', 'v8.4.0'),
     ('vip-config-umcg-gd', 'v1.0.1'),
     ('NGS_Automated', '4.5.0','-bare'),
-    ('hashdeep', '4.4-20180907-18a6b5d','', ('GCCcore','11.3.0'))
 ]
 
 moduleclass = 'bio'
