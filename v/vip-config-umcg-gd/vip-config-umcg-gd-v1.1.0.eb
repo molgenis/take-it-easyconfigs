@@ -11,7 +11,7 @@ toolchain = {'name': 'system', 'version': ''}
 #https://github.com/molgenis/vip-config-umcg-gd/archive/refs/tags/
 source_urls = [('https://github.com/molgenis/%s/archive/refs/tags/' % (name))]
 sources = [('%s.tar.gz' % (version))]
-checksums = ['c202f529178eee297e3c14f0bfc85a80f8d14e4ffb487a1a8776d24c9e73a37a']
+checksums = ['4a68f3c4e034c774754333fc3cc658b3b4dd8a13de5b5dd2895fdd7449dc8902']
 
 #
 # Dependencies.
