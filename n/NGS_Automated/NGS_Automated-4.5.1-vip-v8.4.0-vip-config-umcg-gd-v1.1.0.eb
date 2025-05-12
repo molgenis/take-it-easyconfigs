@@ -1,5 +1,5 @@
 name = 'NGS_Automated'
-version = '4.5.0'
+version = '4.5.1'
 namelower = name.lower()
 versionsuffix = "-vip-v8.4.0-vip-config-umcg-gd-v1.1.0"
 
@@ -12,7 +12,7 @@ easyblock = 'Bundle'
 dependencies = [
     ('vip', 'v8.4.0'),
     ('vip-config-umcg-gd', 'v1.1.0'),
-    ('NGS_Automated', '4.5.0','-bare'),
+    ('NGS_Automated', '4.5.1','-bare'),
 ]
 
 moduleclass = 'bio'
