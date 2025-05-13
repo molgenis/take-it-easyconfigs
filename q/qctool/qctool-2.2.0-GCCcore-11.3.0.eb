@@ -1,0 +1,40 @@
+easyblock = 'Waf'
+
+name = 'qctool'
+version = '2.2.0'
+_commit = '86639c1ad4e7cba1'
+
+homepage = 'https://www.well.ox.ac.uk/~gav/qctool_v2/index.html'
+description = "QCTOOL is a command-line utility program for basic quality control of gwas datasets"
+
+toolchain = {'name': 'GCCcore', 'version': '11.3.0'}
+
+# source tarball is generated on the fly and can be slow, --download-timeout may be necessary
+source_urls = ['https://enkre.net/cgi-bin/code/%%(namelower)s/tarball/%s' % _commit]
+sources = [{
+    'filename': '%(name)s-%(version)s.tar.gz',
+    'download_filename': '%%(namelower)s-%s.tar.gz' % _commit
+}]
+patches = ['%(name)s-%(version)s_use_flexiblas.patch']
+checksums = [
+    {'qctool-2.2.0.tar.gz': '2ded823f597faa3bfe9e72ef8c21485eee7fece65aa50d0a40ea7220f1cae475'},
+    {'qctool-2.2.0_use_flexiblas.patch': 'c38b9d6aca21c8da801e40ece70e10ab3e5d3f04652660d48a96759c2b34182a'},
+]
+
+builddependencies = [
+    ('Python', '3.10.4','-bare'),
+]
+
+_bins = ['hptest', 'inthinnerator', 'ldbird', 'qctool', 'selfmap']
+# all installed binaries have a suffix containing the version, make symlinks without this suffix
+postinstallcmds = ['ln -s %s_v%%(version)s %%(installdir)s/bin/%s' % (x, x) for x in _bins]
+
+sanity_check_paths = {
+    'files': ['bin/%s' % x for x in _bins],
+    'dirs': []
+}
+
+sanity_check_commands = ['%s -help' % x for x in _bins]
+
+moduleclass = 'bio'
+
