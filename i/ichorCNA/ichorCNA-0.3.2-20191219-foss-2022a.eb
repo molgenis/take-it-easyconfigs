@@ -107,7 +107,7 @@ exts_list = [
     }),
     ('BiocGenerics', '0.52.0', {
         'source_tmpl': local_package_name_tmpl,
-        'source_urls': bioconductor_options['source_urls'],,
+        'source_urls': bioconductor_options['source_urls'],
         'checksums': ['14f56a8d34dc2c005a8f07711cef22321eba92bfc5548853e8fcec03565e7fd9'],
     }),
     ('BiocManager', '1.30.25', {
@@ -117,7 +117,7 @@ exts_list = [
     }),
     ('BiocVersion', '3.20.0', {
         'source_tmpl': local_package_name_tmpl,
-        'source_urls': bioconductor_options['source_urls'],,
+        'source_urls': bioconductor_options['source_urls'],
         'checksums': ['9de14e40e3f085da92bc9f375ee6e1a81b8676b43882a45a3abf84faf94db6c7'],
     }),
     ('cli', '3.6.5', {
@@ -137,12 +137,12 @@ exts_list = [
     }),
     ('S4Vectors', '0.44.0', {
         'source_tmpl': local_package_name_tmpl,
-        'source_urls': bioconductor_options['source_urls'],,
+        'source_urls': bioconductor_options['source_urls'],
         'checksums': ['34aa8f96c07506fd3157d6b9af8bf2796a24fbf4265105b556d10b12b3252c72'],
     }),
     ('IRanges', '2.40.1', {
         'source_tmpl': local_package_name_tmpl,
-        'source_urls': bioconductor_options['source_urls'],,
+        'source_urls': bioconductor_options['source_urls'],
         'checksums': ['9ae03baf196f745f3361d00813b2b23018a48805c7c49ad98e091d7eac91c8fa'],
     }),
     ('jsonlite', '2.0.0', {
@@ -172,32 +172,32 @@ exts_list = [
     }),
     ('UCSC.utils', '1.2.0', {
         'source_tmpl': local_package_name_tmpl,
-        'source_urls': bioconductor_options['source_urls'],,
+        'source_urls': bioconductor_options['source_urls'],
         'checksums': ['c45c98fa6391dcfb13b58196dfcc26c10a670a44721839cb526ad7f03956de92'],
     }),
     ('GenomeInfoDbData', '1.2.13', {
         'source_tmpl': local_package_name_tmpl,
-        'source_urls': bioconductor_options['source_urls'],,
+        'source_urls': bioconductor_options['source_urls'],
         'checksums': ['51a33c432e65261ef81a7c2039b17cbdf7a0b417376fdb7ada4d618566f7074e'],
     }),
     ('GenomeInfoDb', '1.42.3', {
         'source_tmpl': local_package_name_tmpl,
-        'source_urls': bioconductor_options['source_urls'],,
+        'source_urls': bioconductor_options['source_urls'],
         'checksums': ['b4a2563243baec017d37b285649eb5fe5e3c07f2a826dc6003ed7aae5f9b9b2e'],
     }),
     ('zlibbioc', '1.52.0', {
         'source_tmpl': local_package_name_tmpl,
-        'source_urls': bioconductor_options['source_urls'],,
+        'source_urls': bioconductor_options['source_urls'],
         'checksums': ['dfb69c584fda322ae8b9faed8e011b7f604dfd76f65acdc461a7c8ddca3be15b'],
     }),
     ('XVector', '0.46.0', {
         'source_tmpl': local_package_name_tmpl,
-        'source_urls': bioconductor_options['source_urls'],,
+        'source_urls': bioconductor_options['source_urls'],
         'checksums': ['ce261b3fda9a7ca809bdd2b92a8550de7ec9a3fd6153dc5358e12453d5d6f636'],
     }),
     ('GenomicRanges', '1.58.0', {
         'source_tmpl': local_package_name_tmpl,
-        'source_urls': bioconductor_options['source_urls'],,
+        'source_urls': bioconductor_options['source_urls'],
         'checksums': ['10c8c13bacc3cf36fa70bc0f58916b97da36381811dac361a062a2f58a958cc5'],
     }),
     ('glue', '1.8.0', {
@@ -207,7 +207,7 @@ exts_list = [
     }),
     ('HMMcopy', '1.48.0', {
         'source_tmpl': local_package_name_tmpl,
-        'source_urls': bioconductor_options['source_urls'],,
+        'source_urls': bioconductor_options['source_urls'],
         'checksums': ['653ecab206c0ce15ff5e096d702ed5010b0d55782a8befdd438441cbc4eb3099'],
     }),
     ('rlang', '1.1.6', {
