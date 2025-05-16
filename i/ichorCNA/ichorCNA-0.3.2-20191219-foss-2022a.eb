@@ -58,7 +58,7 @@ sanity_check_paths = {
     'dirs': [('library', '.')],
 }
 
-local_package_name_tmpl = local_package_name_tmpl
+local_package_name_tmpl = '%(name)s_%(version)s.tar.gz'
 exts_defaultclass = 'RPackage'
 exts_filter = ('R -q --no-save', 'library(%(ext_name)s)')
 
