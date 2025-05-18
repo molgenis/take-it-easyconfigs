@@ -248,7 +248,7 @@ exts_list = [
     ('ichorCNA', '0.3.2-20191219', {
         'source_tmpl': local_package_name_tmpl,
         'source_urls': [GITHUB_SOURCE],
-        'download_filename': '%s-%s-%s.tar.gz' % (name, version, local_commit),
+        'download_filename': '%s.tar.gz' % local_commit,
         'filename': SOURCE_TAR_GZ,
         'checksums': ['38dbee4f4127fc27c4bd51fe3d99cb9eebea6fa9a15463127384923c217f1d74'],
     })
