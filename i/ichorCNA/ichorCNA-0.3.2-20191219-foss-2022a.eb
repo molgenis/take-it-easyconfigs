@@ -245,10 +245,9 @@ exts_list = [
         'source_urls': local_cran_options['source_urls'],
         'checksums': ['a4adec51bb3f04214b1d8ef40d3a58949f21b1497cbeaf2ba552e0891eef45de'],
     }),
-    ('ichorCNA', '0.3.2-20191219', {
-        'source_tmpl': local_package_name_tmpl,
+    (name, version, {
+        'source_tmpl': '%s.tar.gz' % local_commit,
         'source_urls': [GITHUB_SOURCE],
-        'download_filename': '%s.tar.gz' % local_commit,
         'filename': SOURCE_TAR_GZ,
         'checksums': ['38dbee4f4127fc27c4bd51fe3d99cb9eebea6fa9a15463127384923c217f1d74'],
     })
