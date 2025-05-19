@@ -232,7 +232,7 @@ exts_list = [
         'patches': ['ichorCNA-0.3.2-20191219.patch'],
         'checksums': [
             '38dbee4f4127fc27c4bd51fe3d99cb9eebea6fa9a15463127384923c217f1d74',
-            '449343613c522b0872e11091c8bc63c59b4680b35e6ae5453d7b40ba3601c8e7'  # ichorCNA-0.3.2-20191219.patch
+            '07497b59047328a485844f13af374a1392581325877d31e9f4dcad4d19ee24f6'  # ichorCNA-0.3.2-20191219.patch
         ],
     })
 ]

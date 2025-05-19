@@ -1,3 +1,11 @@
+diff -ru ichorCNA-5bfc03ed854f0e93fe5b624c97c1290fa0053837.original/.Rbuildignore ichorCNA-5bfc03ed854f0e93fe5b624c97c1290fa0053837.patched/.Rbuildignore
+--- ichorCNA-5bfc03ed854f0e93fe5b624c97c1290fa0053837.original/.Rbuildignore	2019-12-19 06:26:31.000000000 +0000
++++ ichorCNA-5bfc03ed854f0e93fe5b624c97c1290fa0053837.patched/.Rbuildignore	2025-05-19 14:37:49.000000000 +0000
+@@ -1,4 +1,2 @@
+ ^README\.Rmd$
+ ^.travis\.yml$
+-scripts/
+-LICENSE
 diff -ru ichorCNA-5bfc03ed854f0e93fe5b624c97c1290fa0053837.original/.Rinstignore ichorCNA-5bfc03ed854f0e93fe5b624c97c1290fa0053837.patched/.Rinstignore
 --- ichorCNA-5bfc03ed854f0e93fe5b624c97c1290fa0053837.original/.Rinstignore	2019-12-19 06:26:31.000000000 +0000
 +++ ichorCNA-5bfc03ed854f0e93fe5b624c97c1290fa0053837.patched/.Rinstignore	2025-05-19 14:24:04.000000000 +0000
