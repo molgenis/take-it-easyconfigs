@@ -232,9 +232,8 @@ exts_list = [
         'patches': ['ichorCNA-0.3.2-20191219.patch'],
         'checksums': [
             '38dbee4f4127fc27c4bd51fe3d99cb9eebea6fa9a15463127384923c217f1d74',
-            'c7448c841259ff7c2d04679ca50d9dafaea8c8cf7ec9d3d29231dad7bdeff283'  # ichorCNA-0.3.2-20191219.patch
+            '449343613c522b0872e11091c8bc63c59b4680b35e6ae5453d7b40ba3601c8e7'  # ichorCNA-0.3.2-20191219.patch
         ],
-        'preinstallopts': 'mv -v %(builddir)s/%(name)s/%(name)s-%(version)s/scripts %(builddir)s/%(name)s/%(name)s-%(version)s/inst/ && ',
     })
 ]
 
