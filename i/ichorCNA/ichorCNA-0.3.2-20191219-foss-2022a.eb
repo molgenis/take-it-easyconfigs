@@ -240,5 +240,6 @@ exts_list = [
 
 postinstallcmds = [
     'mkdir -p %(installdir)s/ichorCNA/bin',
-    'cd %(installdir)s/ichorCNA/bin && ln -s ../scripts/*.R'
+    "cd %(installdir)s/ichorCNA/bin && find ../scripts -name '*.R' -exec ln -s {} \;",
+    'chmod a+x %(installdir)s/ichorCNA/bin/*.R'
 ]
