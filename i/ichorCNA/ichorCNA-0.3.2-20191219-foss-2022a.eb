@@ -234,7 +234,7 @@ exts_list = [
             '38dbee4f4127fc27c4bd51fe3d99cb9eebea6fa9a15463127384923c217f1d74',
             '07497b59047328a485844f13af374a1392581325877d31e9f4dcad4d19ee24f6'  # ichorCNA-0.3.2-20191219.patch
         ],
-        'preinstallopts': 'mv -v %(builddir)s/%(name)s/%(name)s-%(version)s/scripts %(builddir)s/%(name)s/%(name)s-%(version)s/inst/ && ',
+        'preinstallopts': 'mv -v %(builddir)s/%(name)s/%(name)s-*/scripts %(builddir)s/%(name)s/%(name)s-*/inst/ && ',
     })
 ]
 
