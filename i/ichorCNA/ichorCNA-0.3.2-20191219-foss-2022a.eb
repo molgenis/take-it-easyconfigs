@@ -171,6 +171,11 @@ exts_list = [
         'source_urls': local_bioconductor_options['source_urls'],
         'checksums': ['10c8c13bacc3cf36fa70bc0f58916b97da36381811dac361a062a2f58a958cc5'],
     }),
+    ('getopt', '1.20.4', {
+        'source_tmpl': local_package_name_tmpl,
+        'source_urls': local_cran_options['source_urls'],
+        'checksums': ['87d36cbe6dba41dbc1d78d845210266cdd08c7440d977d738a6e45db14221e8b'],
+    }),
     ('glue', '1.8.0', {
         'source_tmpl': local_package_name_tmpl,
         'source_urls': local_cran_options['source_urls'],
@@ -200,6 +205,11 @@ exts_list = [
         'source_tmpl': local_package_name_tmpl,
         'source_urls': local_cran_options['source_urls'],
         'checksums': ['a2bff83f792a1acb801bfe6330bb62724c74d5308832f2cb6a6178336ace55d2'],
+    }),
+    ('optparse', '1.7.5', {
+        'source_tmpl': local_package_name_tmpl,
+        'source_urls': local_cran_options['source_urls'],
+        'checksums': ['0cc917505780786e69b8ceca4b3840ed7b0c011495108ec05af3871965415712'],
     }),
     ('Rcpp', '1.0.14', {
         'source_tmpl': local_package_name_tmpl,
