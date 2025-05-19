@@ -11,7 +11,10 @@ homepage = 'https://github.com/broadinstitute/ichorCNA/wiki'
 description = """ichorCNA is a tool for estimating the fraction of tumor in cell-free DNA
 from ultra-low-pass whole genome sequencing."""
 moduleclass = 'bio'
-modextrapaths = {'R_LIBS': ['library', '']}
+modextrapaths = {
+    'R_LIBS': ['library/', ''],
+    'PATH': ['./ichorCNA/bin/']
+}
 
 toolchain = {'name': 'foss', 'version': '2022a'}
 
