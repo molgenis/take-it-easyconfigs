@@ -66,8 +66,7 @@ local_cran_options = {
     'source_urls': [
         'http://cran.r-project.org/src/contrib/',
         'http://cran.r-project.org/src/contrib/Archive/%(name)s',
-    ],
-    'source_tmpl': local_package_name_tmpl,
+    ]
 }
 local_bioconductor_options = {
     'source_urls': [
@@ -85,8 +84,7 @@ local_bioconductor_options = {
         'http://bioconductor.org/packages/3.20/data/experiment/src/contrib/Archive/%(name)s/',
         'http://bioconductor.org/packages/3.20/workflows/src/contrib/Archive/%(name)s/',
         'http://bioconductor.org/packages/3.20/books/src/contrib/Archive/%(name)s/',
-    ],
-    'source_tmpl': local_package_name_tmpl,
+    ]
 }
 
 #
@@ -229,6 +227,16 @@ exts_list = [
         'source_tmpl': local_package_name_tmpl,
         'source_urls': local_cran_options['source_urls'],
         'checksums': ['a2bff83f792a1acb801bfe6330bb62724c74d5308832f2cb6a6178336ace55d2'],
+    }),
+    ('Rcpp', '1.0.14', {
+        'source_tmpl': local_package_name_tmpl,
+        'source_urls': local_cran_options['source_urls'],
+        'checksums': ['74e84a52efb0e3e2713cdbbef5234b5ae1d44b33d32c3c337993e7fc423a8002'],
+    }),
+    ('plyr', '1.8.9', {
+        'source_tmpl': local_package_name_tmpl,
+        'source_urls': local_cran_options['source_urls'],
+        'checksums': ['15b5e7f711d53bf41b8687923983b8ef424563aa2f74c5195feb5b1df1aee103'],
     }),
     ('stringi', '1.8.7', {
         'source_tmpl': local_package_name_tmpl,
