@@ -3,7 +3,7 @@
 #
 easyblock = 'Bundle'
 name = 'ichorCNA'
-local_commit = '5bfc03e'
+local_commit = '5bfc03ed854f0e93fe5b624c97c1290fa0053837'
 version = '0.3.2-20191219'
 github_account = 'broadinstitute'
 
@@ -224,19 +224,18 @@ exts_list = [
         'checksums': ['a4adec51bb3f04214b1d8ef40d3a58949f21b1497cbeaf2ba552e0891eef45de'],
     }),
     (name, version, {
-        'source_tmpl': '%s.tar.gz' % local_commit,
+        'sources': [{
+            'download_filename': '%s.tar.gz' % local_commit,
+            'filename': '%s-%s.tar.gz' % (name, local_commit),
+        }],
         'source_urls': [GITHUB_SOURCE],
-        'filename': SOURCE_TAR_GZ,
         'patches': ['ichorCNA-0.3.2-20191219.patch'],
         'checksums': [
             '38dbee4f4127fc27c4bd51fe3d99cb9eebea6fa9a15463127384923c217f1d74',
             'c7448c841259ff7c2d04679ca50d9dafaea8c8cf7ec9d3d29231dad7bdeff283'  # ichorCNA-0.3.2-20191219.patch
         ],
+        'preinstallopts': 'mv -v %(builddir)s/%(name)s/%(name)s-%(version)s/scripts %(builddir)s/%(name)s/%(name)s-%(version)s/inst/ && ',
     })
-]
-
-preinstallcmds = [
-    'mv -v %(builddir)s/%(name)s-%(version)s/scripts %(builddir)s/%(name)s-%(version)s/inst/'
 ]
 
 postinstallcmds = [
