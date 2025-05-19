@@ -257,6 +257,19 @@ exts_list = [
         'source_tmpl': '%s.tar.gz' % local_commit,
         'source_urls': [GITHUB_SOURCE],
         'filename': SOURCE_TAR_GZ,
-        'checksums': ['38dbee4f4127fc27c4bd51fe3d99cb9eebea6fa9a15463127384923c217f1d74'],
+        'patches': 'ichorCNA-0.3.2-20191219.patch',
+        'checksums': [
+            '38dbee4f4127fc27c4bd51fe3d99cb9eebea6fa9a15463127384923c217f1d74',
+            'c7448c841259ff7c2d04679ca50d9dafaea8c8cf7ec9d3d29231dad7bdeff283'  # ichorCNA-0.3.2-20191219.patch
+        ],
     })
+]
+
+preinstallcmds = [
+    'mv -v %(builddir)s/%(name)s-%(version)s/scripts %(builddir)s/%(name)s-%(version)s/inst/'
+]
+
+postinstallcmds = [
+    'mkdir -p %(installdir)s/ichorCNA/bin',
+    'cd %(installdir)s/ichorCNA/bin && ln -s ../scripts/*.R'
 ]
