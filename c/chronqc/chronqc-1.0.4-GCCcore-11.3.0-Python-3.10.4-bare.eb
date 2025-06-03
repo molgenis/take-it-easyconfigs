@@ -38,7 +38,7 @@ exts_list = [
         'patches': ['chronqc-1.0.4.patch'],
         'checksums': [
             '174dd35fc6a4718188999d4b79305b4c', # chronqc-1.0.4.tar.gz
-            '5b30d341c698c773589e77304e4002268a19eb6f7925a65e23ac0630e05782b4', # chronqc-1.0.4.patch
+            '7d63a057fc940754a83bbbad3ee32d32a56047bc703ffb18e554a07a6b2a2304', # chronqc-1.0.4.patch
         ],
     }),
 ]

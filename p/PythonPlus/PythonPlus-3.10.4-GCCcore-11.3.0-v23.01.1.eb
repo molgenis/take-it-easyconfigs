@@ -1,5 +1,4 @@
 easyblock = 'PythonPackage'
-#easyblock = 'PythonPackage'
 
 name = 'PythonPlus'
 version = '3.10.4'            # Same as the vanilla Python module on which these add-on modules depend.
