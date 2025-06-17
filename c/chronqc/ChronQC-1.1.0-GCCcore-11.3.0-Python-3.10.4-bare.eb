@@ -4,7 +4,7 @@ name = 'ChronQC'
 version = '1.1.0'
 
 
-homepage = 'https://github.com/nilesh-tawari/ChronQC'
+homepage = 'https://github.com/molgenis/ChronQC'
 description = """A Quality Control Monitoring System for Clinical Next Generation Sequencing."""
 versionsuffix = '-Python-3.10.4-bare'
 toolchain = {'name': 'GCCcore', 'version': '11.3.0'}
