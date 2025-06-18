@@ -9,6 +9,9 @@ description = """N/A"""
 
 toolchain = SYSTEM
 
+#
+# Not available for download.
+#
 #source_urls = ['N/A']
 sources = ['%(name)s-%(version)s.tar.gz']
 checksums = [
@@ -31,6 +34,9 @@ sanity_check_paths = {
     'files': ['VirtualBaby'],
     'dirs': [''],
 }
+sanity_check_commands = [
+    ('VirtualBaby', '--help')
+]
 
 moduleclass = 'bio'
 modextrapaths = {'PATH': ''}
