@@ -8,7 +8,7 @@ description = """a reference implementation of the BGEN format, written in C++.
  The library can be used as the basis for BGEN support in other software,
  or as a reference for developers writing their own implementations of the BGEN format."""
 
-toolchain = {'name': 'GCCcore', 'version': '11.3.0'}
+toolchain = {'name': 'GCCcore', 'version': '13.3.0'}
 
 sources = [{
     'source_urls': ['https://enkre.net/cgi-bin/code/bgen/tarball/6ac2d582f9/'],
@@ -16,6 +16,10 @@ sources = [{
 }]
 
 checksums = ['121f5956f04ad174bc410fa7deed59e2ebff0ec818a3c66cf5d667357dddfb62']
+
+builddependencies = [
+    ('Python', '3.12.3'),
+]
 
 sanity_check_paths = {
     'files': [
