@@ -19,33 +19,38 @@ checksums = [
 ]
 
 patches = [
-  # use GCC not ICC
-  'BOLT-LMM-v2.4.1-GCCcore-13.3.0.Makefile.patch'
+   # use GCC not ICC
+   'BOLT-LMM-v2.4.1-GCCcore-13.3.0.Makefile.patch'
 ]
 
 dependencies = [
-    ('Autoconf', '2.72', '', ('GCCcore','13.3.0')),
-    ('OpenBLAS', '0.3.27', '', ('GCC', '13.3.0')),
-    ('Boost', '1.85.0', '', ('GCC', '13.3.0')),
-    ('NLopt', '2.7.0', '', ('GCCcore', '13.3.0'))
+   ('Autoconf', '2.72', '', ('GCCcore','13.3.0')),
+   ('OpenBLAS', '0.3.27', '', ('GCC', '13.3.0')),
+   ('Boost', '1.85.0', '', ('GCC', '13.3.0')),
+   ('NLopt', '2.7.0', '', ('GCCcore', '13.3.0'))
 ]
 
 configure_cmd = 'true' # skip configure
 start_dir = f'{name}_{version}'
 build_cmd = 'make -C src'
 install_cmd = """
-  mkdir -p %(installdir)s
-  cp src/bolt %(installdir)s/
-  cp -r lib %(installdir)s/
-  ln -s %(installdir)s/lib %(installdir)s/lib64
-  cp -r src %(installdir)s/
-  cp -r tables %(installdir)s/
-  cp -r example %(installdir)s/
+   mkdir -p %(installdir)s
+   cp src/bolt %(installdir)s/
+   cp -r lib %(installdir)s/
+   ln -s %(installdir)s/lib %(installdir)s/lib64
+   cp -r src %(installdir)s/
+   cp -r tables %(installdir)s/
+   cp -r example %(installdir)s/
 """
 
+# allow path to point to bolt main directory
+modextrapaths = {
+    'PATH': '.',
+}
+
 sanity_check_paths = {
-    'files': ['bolt'],
-    'dirs': ['tables', 'lib', 'src'],
+   'files': ['bolt'],
+   'dirs': ['tables', 'lib', 'src'],
 }
 
 moduleclass = 'bio'
