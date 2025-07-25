@@ -1,0 +1,30 @@
+easyblock = 'PackedBinary'
+
+name = 'BOLT-LMM'
+version = 'v2.4.1'
+
+homepage = 'https://data.broadinstitute.org/alkesgroup/BOLT-LMM/'
+description = """The BOLT-LMM software package currently consists of two main algorithms, the BOLT-LMM algorithm for mixed 
+model association testing, and the BOLT-REML algorithm for variance components analysis (i.e., partitioning of 
+SNP-heritability and estimation of genetic correlations)."""
+
+toolchain = {'name': 'GCCcore', 'version': '13.3.0'}
+
+source_urls = ['https://data.broadinstitute.org/alkesgroup/%(name)s/downloads/']
+sources = ['%(name)s_%(version)s.tar.gz']
+
+checksums = ['65f13a51277a0834e03911a9e98c9325be95d1d896a3e7b8d2aa759776a78aa6']
+
+dependencies = [
+    ('Autoconf', '2.72', '', ('GCCcore','13.3.0')),
+    ('ScaLAPACK', '2.2.0', '', ('gompi', '2024a-fb')),
+    ('Boost', '1.85.0', '', ('GCC', '13.3.0')),
+    ('NLopt', '2.7.0', '', ('GCCcore', '13.3.0'))
+]
+
+sanity_check_paths = {
+    'files': ['bolt'],
+    'dirs': ['tables', 'lib', 'src'],
+}
+
+moduleclass = 'bio'
