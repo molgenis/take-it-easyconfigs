@@ -2,6 +2,7 @@ easyblock = 'Tarball'
 
 name = 'Trimmomatic'
 version = '0.39'
+versionsuffix = '-Java-%(javaver)s-LTS'
 
 homepage = 'http://www.usadellab.org/cms/?page=trimmomatic'
 description = """Trimmomatic performs a variety of useful trimming tasks for Illumina 
@@ -17,7 +18,7 @@ checksums= [
 ]
 
 dependencies = [
-    ('Java', '21-LTS')
+    ('Java', '21', '-LTS')
 ]
 
 postinstallcmds = ['cd %(installdir)s/ && ln -s trimmomatic-%(version)s.jar trimmomatic.jar']
