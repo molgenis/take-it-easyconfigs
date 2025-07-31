@@ -15,18 +15,19 @@ options = {'modulename': False,}
 homepage = 'https://github.com/biobakery/MetaPhlAn/'
 description = """The PythonPlus bundle contains a plain vanilla Python supplemented with a selection of add-on modules."""
 
-toolchain = {'name': 'GCCcore', 'version': '13.3.0'}
+toolchain = {'name': 'gfbf', 'version': '2024a'}
 toolchainopts = {'pic': True}
 
 dependencies = [
     ('Python', '3.12.3'),
-    ('Bowtie2', '2.5.4', '', ('GCC', '13.3.0')),
+    #('SciPy-bundle, '2024.05'),
+    ('Bowtie2', '2.5.4'),
     ('minimap2', '2.30'),
 ]
 
 sources = ['%(name)s-%(version)s-requirements_hashed.txt']
 checksums = [
-    '4318597b28977f3945ba5b85f24d14cbf0f863eea7f86ba0e49bc188453bc18d'  #  MetaPhlAn-4.2.2-requirements_hashed.txt
+    'e2a6582d677eddb99946a3ca7563d8b2dd4763d5d760d339db2ad9c6adba970a'  #  MetaPhlAn-4.2.2-requirements_hashed.txt
 ]
 
 pip_ignore_installed = False
