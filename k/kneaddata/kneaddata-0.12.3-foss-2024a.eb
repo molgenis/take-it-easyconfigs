@@ -15,7 +15,7 @@ dependencies = [
     ('Bowtie2', '2.5.4'),
     ('Java', '21-LTS', '', SYSTEM),
     ('TRF', '4.09.1'),
-    ('FastQC', '0.11.9', '-Java-%(javaver)s', SYSTEM),
+    ('FastQC', '0.12.1', '-Java-%(javaver)s', SYSTEM),
 ]
 
 exts_list = [
