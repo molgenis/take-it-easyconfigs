@@ -20,7 +20,7 @@ toolchainopts = {'pic': True}
 
 dependencies = [
     ('Python', '3.12.3'),
-    ('Bowtie2', '2.5.4'),
+    ('Bowtie2', '2.5.4', ('GCC', '13.3.0')),
     ('minimap2', '2.30'),
 ]
 
