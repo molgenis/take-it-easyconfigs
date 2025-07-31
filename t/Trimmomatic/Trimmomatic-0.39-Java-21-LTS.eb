@@ -10,7 +10,6 @@ description = """Trimmomatic performs a variety of useful trimming tasks for Ill
 
 toolchain = SYSTEM
 
-Trimmomatic-0.39.zip
 source_urls = ['https://github.com/usadellab/Trimmomatic/releases/download/v%(version)s/']
 sources = [SOURCE_ZIP]
 checksums= [
