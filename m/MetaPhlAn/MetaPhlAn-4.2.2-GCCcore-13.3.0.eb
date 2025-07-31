@@ -26,7 +26,7 @@ dependencies = [
 
 sources = ['%(name)s-%(version)s-requirements_hashed.txt']
 checksums = [
-    '6a6326aba080b57473230df0145b22adc25f9ec664bb6af49cf518eb3aeee856'  #  MetaPhlAn-4.2.2-requirements_hashed.txt
+    '4318597b28977f3945ba5b85f24d14cbf0f863eea7f86ba0e49bc188453bc18d'  #  MetaPhlAn-4.2.2-requirements_hashed.txt
 ]
 
 pip_ignore_installed = False
