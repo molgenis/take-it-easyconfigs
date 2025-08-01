@@ -1,4 +1,4 @@
-easyblock = 'Bundle'
+easyblock = 'PythonBundle'
 
 name = 'numpy'
 version = '2.3.2'
