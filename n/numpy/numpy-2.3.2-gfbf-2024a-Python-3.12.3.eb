@@ -1,0 +1,40 @@
+easyblock = 'Bundle'
+
+name = 'numpy'
+version = '2.3.2'
+versionsuffix = '-%s-%s' % (python, pyver)
+
+homepage = 'https://numpy.org//'
+description = """NumPy is an open source project that enables numerical computing with Python."""
+
+toolchain = {'name': 'gfbf', 'version': '2024a'}
+
+dependencies = [
+    ('Python', '3.12.3'),
+]
+
+#
+# This is a bundle of extra Python packages to be used with a "bare" Python installation.
+#
+exts_defaultclass = 'PythonPackage'
+
+exts_list = [
+    ('numpy', '2.3.2', {
+        'source_urls': ['https://files.pythonhosted.org/packages/37/7d/3fec4199c5ffb892bed55cff901e4f39a58c81df9c44c280499e92cad264/numpy-2.3.2.tar.gz'],
+        'checksums': ['e0486a11ec30cdecb53f184d496d1c6a20786c81e55e41640270130056f8ee48'],
+    }),
+]
+
+modextrapaths = {'PYTHONPATH': ['lib/python%(pyshortver)s/site-packages']}
+
+#
+# Run a full sanity check as opposed to just trying to load the Python package.
+#
+full_sanity_check = True
+
+sanity_check_paths = {
+    'files': [],
+    'dirs':  ['lib/python%(pyshortver)s/site-packages'],
+}
+
+moduleclass = 'lang'

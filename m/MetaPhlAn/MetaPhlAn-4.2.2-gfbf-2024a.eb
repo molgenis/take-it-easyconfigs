@@ -20,14 +20,14 @@ toolchainopts = {'pic': True}
 
 dependencies = [
     ('Python', '3.12.3'),
-    #('SciPy-bundle, '2024.05'),
+    ('numpy, '2.3.2', '-Python-%s' % pyver),
     ('Bowtie2', '2.5.4'),
     ('minimap2', '2.30'),
 ]
 
 sources = ['%(name)s-%(version)s-requirements_hashed.txt']
 checksums = [
-    'e2a6582d677eddb99946a3ca7563d8b2dd4763d5d760d339db2ad9c6adba970a'  #  MetaPhlAn-4.2.2-requirements_hashed.txt
+    '6a6326aba080b57473230df0145b22adc25f9ec664bb6af49cf518eb3aeee856'  #  MetaPhlAn-4.2.2-requirements_hashed.txt
 ]
 
 pip_ignore_installed = False

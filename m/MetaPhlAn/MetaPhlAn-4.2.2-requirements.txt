@@ -13,7 +13,7 @@ idna==3.10
 kiwisolver==1.4.8
 matplotlib==3.10.3
 MetaPhlAn==4.2.2
-numpy==1.26.4
+numpy==2.3.2
 packaging==25.0
 pandas==2.3.1
 PhyloPhlAn==3.1.1
