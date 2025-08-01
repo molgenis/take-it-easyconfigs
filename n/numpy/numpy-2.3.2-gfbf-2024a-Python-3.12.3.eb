@@ -17,12 +17,12 @@ dependencies = [
 # This is a bundle of extra Python packages to be used with a "bare" Python installation.
 #
 exts_defaultclass = 'PythonPackage'
-use_pip = True
 
 exts_list = [
     ('numpy', '2.3.2', {
         'source_urls': ['https://files.pythonhosted.org/packages/source/n/numpy'],
         'checksums': ['e0486a11ec30cdecb53f184d496d1c6a20786c81e55e41640270130056f8ee48'],
+        'use_pip': True,
     }),
 ]
 
