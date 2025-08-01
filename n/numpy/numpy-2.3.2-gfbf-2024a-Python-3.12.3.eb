@@ -1,4 +1,4 @@
-easyblock = 'PythonBundle'
+easyblock = 'PythonPackage'
 
 name = 'numpy'
 version = '2.3.2'
@@ -8,28 +8,32 @@ homepage = 'https://numpy.org//'
 description = """NumPy is an open source project that enables numerical computing with Python."""
 
 toolchain = {'name': 'gfbf', 'version': '2024a'}
+toolchainopts = {'pic': True}
 
 dependencies = [
     ('Python', '3.12.3'),
 ]
 
-#
-# This is a bundle of extra Python packages to be used with a "bare" Python installation.
-#
-exts_defaultclass = 'PythonPackage'
-
-exts_list = [
-    ('numpy', '2.3.2', {
-        'source_urls': ['https://files.pythonhosted.org/packages/source/n/numpy'],
-        'checksums': ['e0486a11ec30cdecb53f184d496d1c6a20786c81e55e41640270130056f8ee48'],
-        'use_pip': True,
-    }),
+sources = ['%(name)s-%(version)s-requirements_hashed.txt']
+checksums = [
+    '4f2d26b21f94b432a3d3e04cb9f5ca9d3407ae184048b2cb879bdd8f669919db'  #  numpy-2.3.2-requirements_hashed.txt
 ]
 
+pip_ignore_installed = False
+sanity_pip_check = True
+unpack_sources = False
+use_pip = True
+use_pip_for_deps = True
+use_pip_requirement = True
+installopts = '--require-hashes'
+
+#
+# Sanity checking.
+#
 sanity_check_paths = {
     'files': [],
-    'dirs':  ['lib/python%(pyshortver)s/site-packages'],
+    'dirs': ['lib/python%(pyshortver)s/site-packages']
 }
 
-modextrapaths = {'PYTHONPATH': ['lib/python%(pyshortver)s/site-packages']}
 moduleclass = 'lang'
+
