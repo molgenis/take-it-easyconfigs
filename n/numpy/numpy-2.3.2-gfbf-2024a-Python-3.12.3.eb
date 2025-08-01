@@ -2,7 +2,7 @@ easyblock = 'Bundle'
 
 name = 'numpy'
 version = '2.3.2'
-versionsuffix = '-%s-%s' % (python, pyver)
+versionsuffix = '-Python-%(pyver)s'
 
 homepage = 'https://numpy.org//'
 description = """NumPy is an open source project that enables numerical computing with Python."""
