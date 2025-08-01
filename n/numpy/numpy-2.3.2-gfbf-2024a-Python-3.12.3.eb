@@ -17,6 +17,7 @@ dependencies = [
 # This is a bundle of extra Python packages to be used with a "bare" Python installation.
 #
 exts_defaultclass = 'PythonPackage'
+use_pip = True
 
 exts_list = [
     ('numpy', '2.3.2', {
