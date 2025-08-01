@@ -20,7 +20,7 @@ toolchainopts = {'pic': True}
 
 dependencies = [
     ('Python', '3.12.3'),
-    ('numpy, '2.3.2', '-Python-%s' % (pyver)),
+    ('numpy, '2.3.2', '-Python-%(pyver)s'),
     ('Bowtie2', '2.5.4'),
     ('minimap2', '2.30'),
 ]
