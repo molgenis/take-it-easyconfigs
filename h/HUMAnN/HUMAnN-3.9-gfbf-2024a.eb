@@ -1,7 +1,7 @@
 easyblock = 'PythonPackage'
 
-name = 'MetaPhlAn'
-version = '4.2.2'
+name = 'HUMAnN'
+version = '3.9'
 
 #
 # Solving santiy check problem:
@@ -12,10 +12,9 @@ version = '4.2.2'
 #
 options = {'modulename': False,} 
 
-homepage = 'https://github.com/biobakery/MetaPhlAn/'
-description = """MetaPhlAn is a computational tool for species-level microbial profiling
- (bacteria, archaea, eukaryotes, and viruses) from metagenomic shotgun sequencing data.
- StrainPhlAn (available within MetaPhlAn) allows strain-level microbial population genomics."""
+homepage = 'https://github.com/biobakery/humann/'
+description = """A pipeline for profiling the presence/absence and abundance of microbial pathways
+ in a community from metagenomic or metatranscriptomic sequencing data."""
 
 toolchain = {'name': 'gfbf', 'version': '2024a'}
 toolchainopts = {'pic': True}
@@ -25,7 +24,12 @@ dependencies = [
     ('Cython', '3.1.2', '-Python-%(pyver)s'),
     ('numpy', '2.3.2', '-Python-%(pyver)s'),
     ('Bowtie2', '2.5.4'),
-    ('minimap2', '2.30'),
+    ('MetaPhlAn', '4.2.2'),
+    ('DIAMOND', '2.1.13'),
+    ('MinPath', '1.6'),
+    # ('Xipe', ''), source code no longer available online
+    ('SAMtools', '1.21'),
+
 ]
 
 sources = ['%(name)s-%(version)s-requirements_hashed.txt']
@@ -45,12 +49,12 @@ installopts = '--require-hashes'
 # Sanity checking.
 #
 sanity_check_paths = {
-    'files': ['bin/metaphlan'],
+    'files': ['bin/humann'],
     'dirs': ['lib/python%(pyshortver)s/site-packages']
 }
  
 sanity_check_commands = [
-    ('metaphlan --help'),
+    ('humann --help'),
 ]
 
 moduleclass = 'bio'
