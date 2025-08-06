@@ -29,12 +29,11 @@ dependencies = [
     ('MinPath', '1.6'),
     # ('Xipe', ''), source code no longer available online
     ('SAMtools', '1.21'),
-
 ]
 
 sources = ['%(name)s-%(version)s-requirements_hashed.txt']
 checksums = [
-    ''  # 
+    '87cb15415909c5261a9a10b2cb9cb43ec5ae110da955667e6be9791a73e652f6'  # HUMAnN-3.9-requirements_hashed.txt
 ]
 
 pip_ignore_installed = False
