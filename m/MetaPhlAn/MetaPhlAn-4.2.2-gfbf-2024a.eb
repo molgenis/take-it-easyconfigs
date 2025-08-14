@@ -4,7 +4,7 @@ name = 'MetaPhlAn'
 version = '4.2.2'
 
 #
-# Solving santiy check problem:
+# Solving sanity check problem:
 #   sanity tries to import module pythonplus, as it thinks it's python module = fail
 # Solution (implemented in 2013)
 #   https://github.com/easybuilders/easybuild-framework/blob/develop/easybuild/framework/extension.py#L204
