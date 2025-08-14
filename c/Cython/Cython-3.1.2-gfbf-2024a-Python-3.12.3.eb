@@ -4,7 +4,7 @@ name = 'Cython'
 version = '3.1.2'
 versionsuffix = '-Python-%(pyver)s'
 
-homepage = 'https://numpy.org//'
+homepage = 'https://cython.org/'
 description = """NumPy is an open source project that enables numerical computing with Python."""
 
 toolchain = {'name': 'gfbf', 'version': '2024a'}
