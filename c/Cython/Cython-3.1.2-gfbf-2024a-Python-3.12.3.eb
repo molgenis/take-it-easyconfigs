@@ -5,7 +5,8 @@ version = '3.1.2'
 versionsuffix = '-Python-%(pyver)s'
 
 homepage = 'https://cython.org/'
-description = """NumPy is an open source project that enables numerical computing with Python."""
+description = """Cython is an optimising static compiler for both the Python programming
+language and the extended Cython programming language (based on Pyrex)."""
 
 toolchain = {'name': 'gfbf', 'version': '2024a'}
 toolchainopts = {'pic': True}
