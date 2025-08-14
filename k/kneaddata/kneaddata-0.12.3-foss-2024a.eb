@@ -18,6 +18,11 @@ dependencies = [
     ('FastQC', '0.12.1', '-Java-%(javaver)s', SYSTEM),
 ]
 
+sanity_check_paths = {
+    'files': ['bin/kneaddata'],
+    'dirs': ['lib/python%(pyshortver)s/site-packages/kneaddata']
+}
+sanity_check_commands = ['kneaddata --help']
 exts_list = [
     (name, version, {
         'checksums': ['c534c54c82f8883b3c123d184a639840c4e1900b8495c499be3e29a04728cdb3'],
