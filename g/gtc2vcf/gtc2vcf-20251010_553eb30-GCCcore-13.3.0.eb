@@ -1,7 +1,7 @@
 easyblock = 'ConfigureMake'
 
 name = 'gtc2vcf'
-_local_bcftools_version = '1.19'
+_local_bcftools_version = '1.22'
 _local_gtc2vcf_hash = '553eb30e04415f594109ac82e63c92f61a57bbec'
 version = '20251010_' + _local_gtc2vcf_hash[0:7]
 
@@ -10,7 +10,7 @@ homepage = 'https://github.com/freeseek/gtc2vcf'
 description = """Plugins for BCFtools to convert Illumina GTC or Affymetrix CHP files to VCF.
 """
 
-toolchain = {'name': 'GCCcore', 'version': '11.3.0'}
+toolchain = {'name': 'GCCcore', 'version': '13.3.0'}
 
 sources = [{
     'source_urls': ['https://github.com/samtools/bcftools/releases/download/%s/' %(_local_bcftools_version)],
@@ -22,12 +22,12 @@ sources = [{
     'extract_cmd': 'tar -xvzf %s && mv gtc2vcf-*/{idat2gtc.c,gtc2vcf.{c,h},affy2vcf.c,BAFregress.c} bcftools-*/plugins/',
 }]
 checksums = [
-    '782b5f1bc690415192231e82213b3493b047f45e630dc8ef6f154d6126ab3e68', #  bcftools-1.19.tar.bz2
+    'f2ab9e2f605b1203a7e9cbfb0a3eb7689322297f8c34b45dc5237fe57d98489f', #  bcftools-1.22.tar.bz2
     '099967d3577aea322205f9cf1bc27c12045ec7ced131f4c7f65c6fde498b92ac', #  gtc2vcf-(_local_gtc2vcf_hash).tar.gz
 ]
 
 builddependencies = [
-    ('binutils', '2.38'),
+    ('binutils', '2.42'),
 ]
 
 dependencies = [
