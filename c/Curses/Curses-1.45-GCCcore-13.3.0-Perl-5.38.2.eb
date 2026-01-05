@@ -12,7 +12,7 @@ toolchainopts = {'optarch': True, 'pic': True}
 
 source_urls = ['https://cpan.metacpan.org/authors/id/G/GI/GIRAFFED']
 sources = [SOURCE_TAR_GZ]
-checksums = ['fb9efea8c7b5ed5f8ea5dee49d35252accfc05ee6e75cb9a37ab7c847cd261d7']
+checksums = ['84221e0013a2d64a0bae6a32bb44b1ae5734d2cb0465fb89af3e3abd6e05aeb2']
 
 dependencies = [
     ('Perl', '5.38.2',),
