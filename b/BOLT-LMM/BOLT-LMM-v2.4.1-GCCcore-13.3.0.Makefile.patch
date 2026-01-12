@@ -1,0 +1,23 @@
+diff -ruN src.original/Makefile src/Makefile
+--- src.original/Makefile	2025-07-25 09:38:34.157495596 +0000
++++ src/Makefile	2025-07-25 10:06:11.988296398 +0000
+@@ -14,8 +14,8 @@
+ 	linking = dynamic
+ endif
+ 
+-# CC = g++
+-CC = icpc
++CC = g++
++# CC = icpc
+ 
+ ifeq (${debug},true)
+ 	CFLAGS += -g
+@@ -74,7 +74,7 @@
+ ifeq (${CC},g++)
+ 	CFLAGS += -fopenmp
+ 	LFLAGS += -fopenmp
+-	LLAPACK = -llapack -lgfortran
++	LLAPACK = -lopenblas -lgfortran
+ 	ifeq (${linking},static)
+ 		LFLAGS += -static
+ 		LPATHS += -L${GLIBC_STATIC_DIR} -L${ZLIB_STATIC_DIR}
