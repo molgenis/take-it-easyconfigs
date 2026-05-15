@@ -1,6 +1,6 @@
 name = 'NGS_Automated'
 version = '3.3.0'
-namelower = name.lower()
+
 versionsuffix = "-NGS_Demultiplexing-2.4.1"
 
 homepage = 'https://github.com/molgenis/NGS_Automated'
