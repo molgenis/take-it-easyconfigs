@@ -1,0 +1,68 @@
+name = 'cluster-utils'
+version = 'v26.06.1'
+
+homepage = 'https://github.com/molgenis/cluster-utils/'
+description = """Utilities for cluster users."""
+
+toolchain = {'name': 'GCCcore', 'version': '13.3.0'}
+easyblock = 'CmdCp'
+
+source_urls = [('https://github.com/molgenis/%s/archive/' % (name))]
+sources = [('%s.tar.gz' % (version))]
+checksums = [('sha256', 'ab89e6cbc94bbe0452f8d7367cf9cc95e485a59cf943c4ccdc641239b66ee996')]
+
+dependencies = [
+    ('ncurses', '6.5'),                # For ctop.
+    ('Curses', '1.45', '-Perl-5.38.2') # For ctop.
+]
+
+local_executables = [
+    'caccounts',
+    'cfinger',
+    'cnodes',
+    'cprio',
+    'cps',
+    'cqos',
+    'cqueue',
+    'cshare',
+    'ctop',
+    'colleagues',
+    'quota',
+    'sjeff',
+    'swapstat'
+]
+
+files_to_copy = [
+    'README.md',
+    'LICENSE',
+    (['bin/*'], 'bin/')
+]
+
+#
+# We don't really need a command for the install step,
+# but as we have to have one in order to recycle the CmdCp easyblock... just ls.
+#
+cmds_map = [('.*', "echo 'Skipping install command.'")]
+
+#
+# Make scripts executable.
+# (Mode may by masked by umask.)
+#
+postinstallcmds = [
+    'chmod -R g+rwX,o+rX,o-w "%(installdir)s/"*',
+    'chmod a+x "%(installdir)s/bin/"* ',
+    'rm %(installdir)s/bin/sjload*',
+    'rm %(installdir)s/bin/hpc-environment*',
+]
+
+#
+# Sanity checking.
+#
+sanity_check_paths = {
+    'files': ['README.md'] + ['bin/%s' % x for x in local_executables],
+    'dirs': ['bin']
+}
+sanity_check_commands = [('quota', '-h')]
+
+moduleclass = 'tools'
+
