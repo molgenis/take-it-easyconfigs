@@ -1,7 +1,7 @@
 name = 'CompareGenotypeCalls'
 version = '1.8.1'
 
-homepage = 'https://download.molgeniscloud.org/downloads/'
+homepage = 'https://github.com/PatrickDeelen/DiverseScripts/tree/master/CompareGenotypeCalls'
 description = """"""
 
 toolchain = SYSTEM

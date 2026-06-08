@@ -13,7 +13,7 @@ source_urls = ['https://github.com/LUMC/array-as-vcf/archive/']
 
 sources = ['%(version)s.tar.gz']
 checksums = [
-'a05076692cb41772c293406bdc8237849bff1a614ffc1dcd3c3922c6dabe3132'
+    'a05076692cb41772c293406bdc8237849bff1a614ffc1dcd3c3922c6dabe3132'
 ]
 
 use_pip = True
@@ -21,7 +21,7 @@ sanity_pip_check = True
 
 
 dependencies = [
-    ('Python', '3.10.4', '-bare', ('GCCcore', '11.3.0')),
+    ('Python', '3.10.4', '-bare'),
 ]
 
 sanity_check_paths = {
