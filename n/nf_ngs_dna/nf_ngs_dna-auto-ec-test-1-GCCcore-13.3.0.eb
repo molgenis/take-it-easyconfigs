@@ -1,0 +1,30 @@
+name = 'nf_ngs_dna'
+version = 'auto-ec-test-1'
+
+homepage = 'https://github.com/molgenis/nf_ngs_dna/'
+description = """Nexflow ngs_dna pipeline used in the UMCG."""
+
+toolchain = {'name': 'GCCcore', 'version': '13.3.0'}
+easyblock = 'CmdCp'
+
+source_urls = [('https://github.com/molgenis/%s/archive/' % (name))]
+sources = [('%s.tar.gz' % (version))]
+checksums = [('sha256', '9e85849db8c41f06eb4bf5f06d3fc2ed75ba232f5c2a6283857f6f151ddea945')]
+
+dependencies = [
+    ('BCFtools', ''),
+    ('BEDTools', ''),
+    ('gVCF2BED', ''),
+    ('HTSlib', ''),
+]
+
+#
+# Sanity checking.
+#
+sanity_check_paths = {
+    'files': ['README.md', 'workflow_dragen.nf'],
+    'dirs': ['modules', 'scripts', 'tests']
+}
+
+moduleclass = 'bio'
+
