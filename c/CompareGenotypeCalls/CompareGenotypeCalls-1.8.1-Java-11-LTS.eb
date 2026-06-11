@@ -1,14 +1,14 @@
 name = 'CompareGenotypeCalls'
 version = '1.8.1'
 
-homepage = 'https://download.molgeniscloud.org/downloads/'
+homepage = 'https://github.com/PatrickDeelen/DiverseScripts/tree/master/CompareGenotypeCalls'
 description = """"""
 
 toolchain = SYSTEM
 easyblock = 'Tarball'
 
 # download
-source_urls = ['https://github.com/PatrickDeelen/DiverseScripts/tree/master/CompareGenotypeCalls']
+source_urls = ['https://download.molgeniscloud.org/downloads/']
 sources = ['CompareGenotypeCalls-%(version)s-SNAPSHOT-dist.zip']
 checksums = ['6beef3344fdf163bb91a24649f8571c36b44c60af4c26e310c6d872c64321423']
 

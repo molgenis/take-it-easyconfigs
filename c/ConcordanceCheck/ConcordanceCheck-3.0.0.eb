@@ -17,10 +17,10 @@ checksums = ['ed6fa5f6aefed84519222e005f67dd143dd3d605be45dc9850533881828f165b']
 
 dependencies = [
        ('CompareGenotypeCalls', '1.8.1', '-Java-11-LTS'),
-       ('BCFtools', '1.19','',('GCCcore','11.3.0')),
-       ('SAMtools', '1.16.1','',('GCCcore','11.3.0')),
+       ('BCFtools', '1.19', '', ('GCCcore', '11.3.0')),
+       ('SAMtools', '1.16.1', '', ('GCCcore', '11.3.0')),
        ('nextflow', '23.10.1', '-Java-11-LTS'),
-       ('array-as-vcf', '1.1.0', '-Python-3.10.4',('GCCcore','11.3.0')),
+       ('array-as-vcf', '1.1.0', '-Python-3.10.4', ('GCCcore', '11.3.0')),
        ('picard', '2.26.10', '-Java-11-LTS'),
 ]
 
