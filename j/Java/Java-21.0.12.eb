@@ -19,13 +19,13 @@ sources = [_tarball_tmpl.format('%(jdkarch)s')]
 checksums = [
     {
         _tarball_tmpl.format('x64'):
-            'sha256:e4446ff06a276155697597cc0f1b15da004ff083f4964a35271ecee567177370',
+            'e4446ff06a276155697597cc0f1b15da004ff083f4964a35271ecee567177370',
         _tarball_tmpl.format('aarch64'):
-            'sha256:eba38e871b02d407897bfe017ea35352dfc1420ef6d2112425b0c67325ca509d',
+            'eba38e871b02d407897bfe017ea35352dfc1420ef6d2112425b0c67325ca509d',
         _tarball_tmpl.format('ppc64le'):
-            'sha256:082dac6781cd86c1c1903608b8f354c6dc453313d81881a1e87b9a22663ac5ca',
+            '082dac6781cd86c1c1903608b8f354c6dc453313d81881a1e87b9a22663ac5ca',
         _tarball_tmpl.format('riscv64'):
-            'sha256:86f836b5a94b3354f236b72339d04418fea178c41624637dd94e510f6597c372',
+            '86f836b5a94b3354f236b72339d04418fea178c41624637dd94e510f6597c372',
     }
 ]
 
