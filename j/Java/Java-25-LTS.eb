@@ -1,7 +1,7 @@
 easyblock = 'ModuleRC'
 
 name = 'Java'
-version = '21'
+version = '25'
 versionsuffix = '-LTS'
 
 homepage = 'http://java.com/'
@@ -10,6 +10,6 @@ description = """Java Platform, Standard Edition (Java SE) lets you develop and 
 
 toolchain = SYSTEM
 
-dependencies = [('Java', '%(version)s.0.12')]
+dependencies = [('Java', '%(version)s.0.4')]
 
 moduleclass = 'lang'
