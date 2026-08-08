@@ -1,0 +1,56 @@
+easyblock = 'ConfigureMake'
+
+name = 'BOLT-LMM'
+version = 'v2.4.1'
+
+homepage = 'https://data.broadinstitute.org/alkesgroup/BOLT-LMM/'
+description = """The BOLT-LMM software package currently consists of two main algorithms, the BOLT-LMM algorithm for mixed 
+model association testing, and the BOLT-REML algorithm for variance components analysis (i.e., partitioning of 
+SNP-heritability and estimation of genetic correlations)."""
+
+toolchain = {'name': 'GCCcore', 'version': '13.3.0'}
+
+source_urls = ['https://data.broadinstitute.org/alkesgroup/%(name)s/downloads/']
+sources = ['%(name)s_%(version)s.tar.gz']
+
+checksums = [
+   '65f13a51277a0834e03911a9e98c9325be95d1d896a3e7b8d2aa759776a78aa6',
+   '57eef1be7800c866c52a63bd48f3296b882ae87ffd89a42569c5d7528debcb33'
+]
+
+patches = [
+   # use GCC not ICC
+   'BOLT-LMM-v2.4.1-GCCcore-13.3.0.Makefile.patch'
+]
+
+dependencies = [
+   ('Autoconf', '2.72', '', ('GCCcore','13.3.0')),
+   ('OpenBLAS', '0.3.27', '', ('GCC', '13.3.0')),
+   ('Boost', '1.85.0', '', ('GCC', '13.3.0')),
+   ('NLopt', '2.7.0', '', ('GCCcore', '13.3.0'))
+]
+
+configure_cmd = 'true' # skip configure
+start_dir = f'{name}_{version}'
+build_cmd = 'make -C src'
+install_cmd = """
+   mkdir -p %(installdir)s
+   cp src/bolt %(installdir)s/
+   cp -r lib %(installdir)s/
+   ln -s %(installdir)s/lib %(installdir)s/lib64
+   cp -r src %(installdir)s/
+   cp -r tables %(installdir)s/
+   cp -r example %(installdir)s/
+"""
+
+# allow path to point to bolt main directory
+modextrapaths = {
+    'PATH': '.',
+}
+
+sanity_check_paths = {
+   'files': ['bolt'],
+   'dirs': ['tables', 'lib', 'src'],
+}
+
+moduleclass = 'bio'
