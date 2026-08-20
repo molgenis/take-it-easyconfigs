@@ -15,7 +15,6 @@ source_urls = [('http://github.com/molgenis/%s/archive/' % (name))]
 sources = [('%s.tar.gz' % (version))]
 
 checksums = ['b039d190cfd0fff8439f2042d75b92bbcf8de44b443df3934514653bdc0af0f6']
-32c30214e17db3a1401d644e411c94249cf550c63654ea2385dbaab041fb288e']
 
 sanity_check_paths = {
     'files': [
