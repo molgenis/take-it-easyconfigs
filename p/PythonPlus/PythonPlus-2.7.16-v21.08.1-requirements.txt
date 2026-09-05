@@ -197,7 +197,7 @@ wcwidth==0.1.7
 webcolors==1.9.1
 webencodings==0.5.1
 Werkzeug==0.15.6
-wheel==0.33.4
-wheel==0.33.4
+wheel==0.38.1
+wheel==0.38.1
 xgboost==0.82
 zipp==0.5.2
