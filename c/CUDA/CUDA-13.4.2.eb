@@ -18,4 +18,6 @@ checksums = [{
         'e67e8fb132232f63cd8ae43ab5c89bf90b8e47686b2e3e1e2c55435c43148542'
 }]
 
+accept_eula = True
+
 moduleclass = 'system'
