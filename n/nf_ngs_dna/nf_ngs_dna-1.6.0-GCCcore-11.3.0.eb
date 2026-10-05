@@ -9,7 +9,7 @@ easyblock = 'Tarball'
 
 source_urls = [('https://github.com/molgenis/%s/archive/' % (name))]
 sources = [('%s.tar.gz' % (version))]
-checksums = [('sha256', 'ac81346f73ffd6382c67e164e414e1f5fdc89dc4efdc5b773b918d0eb6351fec')]
+checksums = [('sha256', 'e28d59fd85d92af5a9da5ab615c9d53416b0a4dacd928444ee8d35e63c495559')]
 
 dependencies = [
     ('BCFtools', '1.16'),
