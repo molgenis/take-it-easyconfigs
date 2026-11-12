@@ -10,6 +10,7 @@ description = """Java Platform, Standard Edition (Java SE) lets you develop and 
 
 toolchain = SYSTEM
 
-dependencies = [('Java', '%(version)s.0.4')]
+# see https://github.com/easybuilders/easybuild-easyconfigs/blob/develop/easybuild/easyconfigs/j/Java/Java-25.0.5.eb
+dependencies = [('Java', '%(version)s.0.5')]
 
 moduleclass = 'lang'
