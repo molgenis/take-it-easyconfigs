@@ -31,9 +31,9 @@ dependencies = [
     ('SAMtools', '1.21'),
 ]
 
-sources = ['%(name)s-%(version)s-requirements_hashed.txt']
+sources = ['%(name)s-%(version)s-requirements_hashed_updateNov26.txt']
 checksums = [
-    '70bd42b1d7416d59eda4e5a6f3226033b904a52688ac75fd9095865c640089a2'  # HUMAnN-4.0.0.alpha.1-requirements_hashed.txt
+    '4abda3c3220a78d1b540a64808f6262a6e296f68f7981792bdddec6fb3755007' # HUMAnN-4.0.0.alpha.1-requirements_hashed_updateNov26.txt
 ]
 
 pip_ignore_installed = False
