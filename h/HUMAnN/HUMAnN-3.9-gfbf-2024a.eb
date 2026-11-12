@@ -33,7 +33,7 @@ dependencies = [
 
 sources = ['%(name)s-%(version)s-requirements_hashed_updateNov26.txt']
 checksums = [
-    'c69846592e5051121b08c9d978ae167048cae159b2b4ad4f7f82b9b7bec142e9' HUMAnN-3.9-requirements_hashed_updateNov26.txt
+    'c69846592e5051121b08c9d978ae167048cae159b2b4ad4f7f82b9b7bec142e9'  # HUMAnN-3.9-requirements_hashed_updateNov26.txt
 ]
 
 pip_ignore_installed = False
