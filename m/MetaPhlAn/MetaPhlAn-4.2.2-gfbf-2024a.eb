@@ -28,9 +28,9 @@ dependencies = [
     ('minimap2', '2.30'),
 ]
 
-sources = ['%(name)s-%(version)s-requirements_hashed_updateNov26.txt']
+sources = ['%(name)s-%(version)s-requirements_hashed_261113.txt']
 checksums = [
-    'a91a700a4e5edddf49b65e2638bd691cd8d8a22528c2f37d0a48e952b79c052c'  #  MetaPhlAn-4.2.2-requirements_hashed.txt
+    'a91a700a4e5edddf49b65e2638bd691cd8d8a22528c2f37d0a48e952b79c052c'  #  MetaPhlAn-4.2.2-requirements_hashed_261113.txt
 ]
 
 pip_ignore_installed = False
