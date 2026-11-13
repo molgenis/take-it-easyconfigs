@@ -1,0 +1,53 @@
+easyblock = 'PythonPackage'
+
+name = 'multiqc'
+version = '1.35'
+
+# solving santiy check:
+#   sanity tries to import module multiqc, as it thinks it's python module = fail
+# solution (implemented in 2013)
+#   https://github.com/easybuilders/easybuild-framework/blob/develop/easybuild/framework/extension.py#L204
+#   https://www.mail-archive.com/easybuild@lists.ugent.be/msg06020.html
+options = {'modulename': False,}
+
+homepage = 'http://multiqc.info/'
+description = """Create aggregate bioinformatics analysis reports across many samples and tools."""
+
+toolchain = {'name': 'GCCcore', 'version': '15.2.0'}
+toolchainopts = {'pic': True}
+
+# depend on numpy because of https://github.com/biocore/scikit-bio/issues/1734
+dependencies = [
+    ('Python', '3.14.2'),
+    ('LZO', '2.10'),
+    ('libxml2', '2.15.1'),
+    ('libxslt', '1.1.45'),
+    ('libpng', '1.6.56'),
+    ('cairo', '1.18.4'),
+    ('libffi', '3.5.2'),
+    ('ICU', '78.3'),
+]
+
+# make sure they do not involve pip or setuptools as those two should be
+# alredy included in python core
+sources = ['%(name)s-%(version)s-GCCcore-15.2.0-requirements_hashed.txt']
+checksums = ['174e788b761a108b62846b1a7d5675e62ec717d1015faecfd4145c2e412b9ea0']
+
+pip_ignore_installed = False
+sanity_pip_check = True
+unpack_sources = False
+use_pip = True
+use_pip_for_deps = True
+use_pip_requirement = True
+
+#
+# Sanity checking.
+#
+
+local_binaries = ['multiqc']
+sanity_check_paths = {
+    'files': ['bin/%s' % x for x in local_binaries],
+    'dirs':  ['bin', 'lib/python%(pyshortver)s/site-packages'],
+}
+
+moduleclass = 'lang'
