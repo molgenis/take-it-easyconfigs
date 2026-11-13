@@ -1,0 +1,22 @@
+diff -ru OpenBLAS-0.3.20.original/cpuid_x86.c OpenBLAS-0.3.20.patched/cpuid_x86.c
+--- OpenBLAS-0.3.20.original/cpuid_x86.c	2022-02-20 21:35:05.000000000 +0000
++++ OpenBLAS-0.3.20.patched/cpuid_x86.c	2026-11-13 16:10:23.000000000 +0000
+@@ -1644,7 +1644,8 @@
+ 	  else
+ 	    return CPUTYPE_BARCELONA;
+         }
+-      case 10: // Zen3		      
++      case 10: // Zen3/4
++      case 11: // Zen5/5c/6 
+ 	if(support_avx())
+ #ifndef NO_AVX2
+ 	    return CPUTYPE_ZEN;
+@@ -2370,7 +2371,7 @@
+ 	  }
+ 	  break;
+ 	}
+-      } else if (exfamily == 8 || exfamily == 10) {
++      } else if (exfamily == 8 || exfamily == 10 || exfamily == 11) {
+ 	switch (model) {
+ 	case 1:
+ 	  // AMD Ryzen
