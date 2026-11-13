@@ -1,7 +1,7 @@
 name = 'Java'
 _java_version = '21'
-_patch_version = '12'
-_build_version = '8'
+_patch_version = '13'
+_build_version = '9'
 version = f'{_java_version}.0.{_patch_version}'
 
 homepage = 'https://openjdk.org'
@@ -19,13 +19,13 @@ sources = [_tarball_tmpl.format('%(jdkarch)s')]
 checksums = [
     {
         _tarball_tmpl.format('x64'):
-            'e4446ff06a276155697597cc0f1b15da004ff083f4964a35271ecee567177370',
+            'd7f5d5cf865a2902b70ff549b97586a7d3f234e016f041ab447ea740c7d66d1c',
         _tarball_tmpl.format('aarch64'):
-            'eba38e871b02d407897bfe017ea35352dfc1420ef6d2112425b0c67325ca509d',
+            'e3522e707fc7dbe2a72c30746b1e7068301a0213ecd213d4491f35a14eb55578',
         _tarball_tmpl.format('ppc64le'):
-            '082dac6781cd86c1c1903608b8f354c6dc453313d81881a1e87b9a22663ac5ca',
+            'cfaedcc659213833ead9c2a50987d8dcbd0e7a2d82217abb43acb64c0dd3d8cc',
         _tarball_tmpl.format('riscv64'):
-            '86f836b5a94b3354f236b72339d04418fea178c41624637dd94e510f6597c372',
+            '639d712c96899ec84e95394f90e8b4cc6a0ad0154bbec2fe657f8da00b182013',
     }
 ]
 

@@ -1,0 +1,31 @@
+name = 'Java'
+_java_version = '8'
+_patch_version = '512'
+_build_version = 'b09'
+version = f'{_java_version}.{_patch_version}'
+
+homepage = 'http://openjdk.java.net'
+description = """Java Platform, Standard Edition (Java SE) lets you develop and deploy
+Java applications on desktops and servers."""
+
+toolchain = SYSTEM
+
+_tarball_tmpl = f'OpenJDK{_java_version}U-jdk_{{}}_linux_hotspot'
+_tarball_tmpl += f'_{_java_version}u{_patch_version}{_build_version}.tar.gz'
+
+# Using the Adoptium Eclipse Temurin builds, recommended by https://whichjdk.com/#distributions
+source_urls = [f'https://github.com/adoptium/temurin{_java_version}-binaries/releases/download/'
+               f'jdk{_java_version}u{_patch_version}-{_build_version}/']
+sources = [_tarball_tmpl.format('%(jdkarch)s')]
+checksums = [
+    {
+        _tarball_tmpl.format('x64'):
+            'fb3bfa869012419b562bb4235d0d83ec4f8c1dda62ae432ba20c6c3a7e43f7e4',
+        _tarball_tmpl.format('aarch64'):
+            '01263df22c4553f63146bbae807e70cd4628dd0d9ec7582f01cb2453f7c69aaa',
+        _tarball_tmpl.format('ppc64le'):
+            '8a1e67cdb014b924ddd4775cef3089b065aea2a73e9d540e938586319c73a4e1',
+    }
+]
+
+moduleclass = 'lang'
