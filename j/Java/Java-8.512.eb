@@ -21,10 +21,6 @@ checksums = [
     {
         _tarball_tmpl.format('x64'):
             'fb3bfa869012419b562bb4235d0d83ec4f8c1dda62ae432ba20c6c3a7e43f7e4',
-        _tarball_tmpl.format('aarch64'):
-            '01263df22c4553f63146bbae807e70cd4628dd0d9ec7582f01cb2453f7c69aaa',
-        _tarball_tmpl.format('ppc64le'):
-            '8a1e67cdb014b924ddd4775cef3089b065aea2a73e9d540e938586319c73a4e1',
     }
 ]
 
