@@ -2873,12 +2873,10 @@ urllib3[socks]==1.26.13 \
     #   requests
     #   selenium
     #   twine
-virtualenv==20.17.1 \
-    --hash=sha256:ce3b1684d6e1a20a3e5ed36795a97dfc6af29bc3970ca8dab93e11ac6094b3c4 \
-    --hash=sha256:f8b927684efc6f1cc206c9db297a570ab9ad0e51c16fa9e45487d36d1905c058
-    # via
-    #   -r /home/umcg-rkanninga/PythonPlus-3.10.4-GCCcore-11.3.0-v22.11.4-requirements.txt
-    #   poetry
+virtualenv==21.15.13 \
+    --hash=sha256:2744de3b2ba59027ed7eb87c773d4907f56287f4db23b459e8172dcdb41c208d \
+    --hash=sha256:f3ad23551343034e613f9c4d8279f282958a19729f5fc2bcb758afcf95fe3a01
+    # via -r requirements.in
 watchdog==2.2.1 \
     --hash=sha256:102a60093090fc3ff76c983367b19849b7cc24ec414a43c0333680106e62aae1 \
     --hash=sha256:17f1708f7410af92ddf591e94ae71a27a13974559e72f7e9fde3ec174b26ba2e \
