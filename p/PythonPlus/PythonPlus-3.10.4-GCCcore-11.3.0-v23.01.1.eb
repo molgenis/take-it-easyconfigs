@@ -31,7 +31,7 @@ dependencies = [
 # make sure they do not involve pip or setuptools as those two should be
 # alredy included in python core
 sources = ['%(name)s-%(version)s-GCCcore-11.3.0%(versionsuffix)s-requirements_hashes.txt']
-checksums = ['2a05f230719ac2460895445afa9ce5bbf8cd77453bccbd84b70b8ad73867b3d4']
+checksums = ['d984b1a904792fd8f5666fa8219d393082c033f9ad47229235e4c81db6b70568']
 
 
 pip_ignore_installed = False
